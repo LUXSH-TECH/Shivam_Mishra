@@ -1,5 +1,7 @@
 import re
 from django.core.exceptions import ValidationError
+from accounts.models import User
+
 
 def custom_password_validator(password):
     if not re.search(r'[A-Z]', password):

@@ -133,7 +133,7 @@ class PasswordResetSerializer(serializers.Serializer):
 
         if not PasswordResetTokenGenerator().check_token(user, token):
             raise serializers.ValidationError("Invalid or expired token.")
-        #TODO- save user 
+         
         data['user'] = user
         return data
 

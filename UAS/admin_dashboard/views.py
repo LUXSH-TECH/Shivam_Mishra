@@ -117,7 +117,7 @@ class DeleteUserView(APIView):
 class CreatePermissionView(APIView):
     queryset = Permission.objects.all()
     serializer_class = PermissionSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
@@ -313,3 +313,54 @@ class GetUserRoleDetailsView(APIView):
         
         except UserRoles.DoesNotExist:
             return Response({'status': 'failed', 'reason': 'user role not found'}, status=status.HTTP_400_BAD_REQUEST)
+        
+
+class UpdateUserRoleView(APIView):
+    queryset = UserRoles.objects.all()
+    serializer_class = UserRoleSerialiser
+
+    def get_object(self):
+        user_role_id = self.request.data.get('id')
+        return get_object_or_404(UserRoles, id=user_role_id)
+    
+    def put(self, request):
+        try:
+            user_role = self.get_object()   
+            user = request.data.get('user')
+            role = request.data.get('role')
+
+            if user:
+                try:
+                    user_instance = User.objects.get(id=user)
+                    user_role.user = user_instance
+                except User.DoesNotExist:
+                    raise ValidationError(f"User with ID {user} does not exist")
+                
+            if role:
+                try:
+                    role_instance = Role.objects.get(id=role)
+                    user_role.role = role_instance
+                except Role.DoesNotExist:
+                    raise ValidationError(f"Role with ID {role} does not exist")
+            
+            user_role.save()
+
+            serializer = self.serializer_class(user_role)
+
+            return Response({'message': 'user role updated successfully', 'updated_data': serializer.data}, status=status.HTTP_200_OK)
+        
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+
+class DeleteUserRoleView(APIView):
+
+    def post(self, request):
+        try:
+            user_role = UserRoles.objects.get(id)
+        except UserRoles.DoesNotExist:
+            return Response({'message': 'user role does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        user_role.delete()
+
+        return Response({'message': 'user role deleted'}, status=status.HTTP_202_ACCEPTED)

@@ -34,7 +34,7 @@ class LoginView(APIView):
     View for user login with rate limiter and account locking mechanism
     '''
     MAX_FAILED_ATTEMPTS = 3  # Maximum allowed failed attempts
-    LOCKOUT_DURATION = 300  # Lockout duration in seconds (5 minutes)
+    LOCKOUT_DURATION = 300  
 
     def post(self, request):
         username = request.data.get('username')
@@ -134,10 +134,9 @@ class PasswordResetRequestView(APIView):
 @method_decorator(csrf_exempt, name='dispatch')
 class PasswordResetView(APIView):
     permission_classes = [AllowAny]
-    #giving nortype error not able to find the uid and token
+    
     def post(self, request, uidb64, token):
         data = request.data.copy()  
-
         data.update({"uidb64": uidb64, "token": token})  
         
         serializer = PasswordResetSerializer(data=data)

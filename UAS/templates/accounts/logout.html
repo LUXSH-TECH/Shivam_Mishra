@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Logout{% endblock title %}
+
+{% block content %}
+<h2>Logout</h2>
+<form id="logout-form">
+    <button type="submit">Logout</button>
+</form>
+<script>
+    document.getElementById('logout-form').addEventListener('submit', function(e)
+    e.preventDefault();
+    fetch('api/accounts/logout/', {
+        method : 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify()
+    })
+    );
+</script>
+{% endblock content %}

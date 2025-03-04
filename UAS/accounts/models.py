@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.utils import timezone
-
+import datetime
 # Create your models here.
 
 class UserManager(BaseUserManager):
@@ -62,6 +62,15 @@ class User(AbstractBaseUser):
     @property
     def is_staff(self):
         return self.is_admin    
+
+
+class OTP(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    otp = models.CharField(max_length=6)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def is_valid(self):
+        return (timezone.now - self.created_at).total_seconds() < 300  # 5 min expiry (to be changed)
 
 
 class Permission(models.Model):

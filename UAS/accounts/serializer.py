@@ -38,7 +38,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
 
         class Meta:
             model = User
-            fields = ['username', 'email', 'password', 'full_name', 'is_active', 'is_inactive', 'is_locked']
+            fields = ['username', 'email', 'password', 'full_name', 'is_active','is_admin', 'is_inactive', 'is_locked']
             read_only_fields = ['created_at', 'updated_at']
             extra_kwargs = {'password': {'write_only': True}}
 
@@ -112,17 +112,19 @@ class PasswordResetRequestSerializer(serializers.Serializer):
 
 
 class PasswordResetSerializer(serializers.Serializer):
-    new_password = serializers.CharField(write_only=True, required=True)
+    password = serializers.CharField(required=True, validators=[custom_password_validator])
+    uid = serializers.CharField(write_only=True, required=True)
+    token = serializers.CharField(write_only=True, required=True)
 
     def validate(self, data):
-        uidb64 = data.get('uidb64')
+        uid = data.get('uid')
         token = data.get('token')
 
-        if not uidb64 or not token:
+        if not uid or not token:
             raise serializers.ValidationError("Invalid reset link data.")
 
         try:
-            uid = urlsafe_base64_decode(uidb64).decode()
+            uid = urlsafe_base64_decode(uid).decode()
             print(f"Decoded UID: {uid}")  # Debugging
 
             user = User.objects.get(id=uid)
@@ -139,9 +141,9 @@ class PasswordResetSerializer(serializers.Serializer):
 
     def save(self):
         user = self.validated_data['user']
-        new_password = self.validated_data['new_password']
+        password = self.validated_data['password']
 
         # Set the new password
-        user.set_password(new_password)
+        user.set_password(password)
         user.save()
         return user

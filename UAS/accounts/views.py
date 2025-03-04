@@ -9,29 +9,65 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.core.cache import cache
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-# from drf_spectacular.utils import extend_schema
-
+from django.core.mail import send_mail
+from random import randint
+from allauth.account.signals import user_logged_in
+from django.dispatch import receiver
+from allauth.account.utils import perform_login
+from allauth.account.models import EmailAddress
+from allauth.account.utils import send_email_confirmation
+from allauth.account.views import ConfirmEmailView
+from django.http import JsonResponse
 # Create your views here.
 
+# class RegisterView(APIView):
+#     '''
+#     view for user registration 
+#     '''
+#     queryset = User.objects.all()
+#     serializer_class = UserRegisterSerializer
+    
+#     def post(self,request):
+#         if request.method == 'POST':
+#             serializer = self.serializer_class(data=request.data)
+#             if serializer.is_valid():
+#                 serializer.save()
+#                 return Response(serializer.data, status=status.HTTP_201_CREATED)
+#             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+
 class RegisterView(APIView):
-    '''
-    view for user registration 
-    '''
+    """
+    View for user registration with email verification using django-allauth.
+    """
     queryset = User.objects.all()
     serializer_class = UserRegisterSerializer
     
-    def post(self,request):
-        if request.method == 'POST':
-            serializer = self.serializer_class(data=request.data)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            # Save the user instance
+            user = serializer.save()
+            # Trigger email confirmation
+            send_email_confirmation(request, user)
+            return Response(
+                {'detail': 'Registration successful. Verification email sent.'},
+                status=status.HTTP_201_CREATED
+            )
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+class CustomConfirmEmailView(ConfirmEmailView):
+    def get(self, *args, **kwargs):
+        self.object = self.get_object()  # Retrieves the email confirmation object
+        self.object.confirm(self.request)
+        return JsonResponse({'detail': 'Email confirmed successfully.'})
         
 
 class LoginView(APIView):
     '''
-    View for user login with rate limiter and account locking mechanism
+    Login view  with MFA using otp through user email and
+    rate limiter and account locking mechanism.
     '''
     MAX_FAILED_ATTEMPTS = 3  # Maximum allowed failed attempts
     LOCKOUT_DURATION = 300  
@@ -65,9 +101,13 @@ class LoginView(APIView):
         # Track failed login attempts in cache
         cache_key = f'login_attempts_{user.username}'
         failed_attempts = cache.get(cache_key, 0)    
-
+        
         # Authenticate the user
         authenticated_user = authenticate(username=user.username, password=password)
+
+        # # Ensure email is verified if required
+        # if EmailAddress.objects.filter(user=user, verified=False).exists():
+        #     return Response({'error': 'Email is not verified'}, status=status.HTTP_400_BAD_REQUEST)
 
         if authenticated_user is None:
             # Increment failed login attempts in cache
@@ -87,24 +127,65 @@ class LoginView(APIView):
         cache.delete(cache_key)
         print('successfull login attempt cache key is reset.')
 
-        # Generate tokens
-        refresh = RefreshToken.for_user(authenticated_user)
+        otp = str(randint(100000, 999999))
+
+        otp_instance, created = OTP.objects.update_or_create(user=user, defaults={'otp': otp, 'created_at': timezone.now()})
+
+        send_mail(
+            'Your OTP Code',
+            f'Your OTP code is {otp}. It expires in 5 minutes.',
+            'from@example.com',
+            [user.email],
+            fail_silently=False,
+        )
+
+        return Response({'message': 'OTP sent to your email. Please verify.'}, status=status.HTTP_200_OK)
+
+
+class VerifyOTPView(APIView):
+    '''
+    Verifies the OTP and issues JWT tokens.
+    '''
+    def post(self, request):
+        username = request.data.get('username')
+        otp = request.data.get('otp')
+
+        if not username or not otp:
+            return Response({'error': 'Username and OTP are required'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            user = User.objects.get(email=username) if '@' in username else User.objects.get(username=username)
+        except User.DoesNotExist:
+            return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+
+        try:
+            otp_instance = OTP.objects.get(user=user)
+        except OTP.DoesNotExist:
+            return Response({'error': 'OTP not found. Please request a new one.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        if not otp_instance.is_valid() or otp_instance.otp != otp:
+            return Response({'error': 'Invalid or expired OTP'}, status=status.HTTP_400_BAD_REQUEST)
+
+        #If OTP is valid, delete it and issue tokens
+        otp_instance.delete()
+
+        perform_login(request, user)
+
+        refresh = RefreshToken.for_user(user)
         access_token = str(refresh.access_token)
 
-        # Update last login
-        authenticated_user.last_login = timezone.now()
-        authenticated_user.save(update_fields=["last_login"])
+        user.last_login = timezone.now()
+        user.save(update_fields=["last_login"])
 
-        # Return response with tokens
         return Response(
             {
-                'status': 'login successful',
+                'status': 'OTP verified. Login successful',
                 'refresh': str(refresh),
                 'access': access_token,
             },
             status=status.HTTP_200_OK
         )
-    
+
 
 class ChangePasswordView(APIView):
     permission_classes = [IsAuthenticated]
@@ -131,13 +212,13 @@ class PasswordResetRequestView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@method_decorator(csrf_exempt, name='dispatch')
+# @method_decorator(csrf_exempt, name='dispatch')
 class PasswordResetView(APIView):
     permission_classes = [AllowAny]
     
-    def post(self, request, uidb64, token):
+    def post(self, request, uid, token):
         data = request.data.copy()  
-        data.update({"uidb64": uidb64, "token": token})  
+        data.update({"uid": uid, "token": token})  
         
         serializer = PasswordResetSerializer(data=data)
         if serializer.is_valid():

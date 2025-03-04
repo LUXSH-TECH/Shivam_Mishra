@@ -25,4 +25,8 @@ urlpatterns = [
     path('uas_admin/', include('admin_dashboard.urls')),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    # Allauth and REST-auth URLs
+    path('auth/', include('allauth.urls')),  # Allauth views (registration, login, etc.)
+    path('api/auth/', include('dj_rest_auth.urls')),  # Rest-auth for API authentication
+    path('api/auth/registration/', include('dj_rest_auth.registration.urls')),  # API registration
 ]

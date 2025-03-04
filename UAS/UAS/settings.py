@@ -42,10 +42,23 @@ INSTALLED_APPS = [
     #custom
     'accounts',
     'admin_dashboard',
+    #third-party-apps
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'drf_spectacular',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
+]
+
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # Default authentication
+    'allauth.account.auth_backends.AuthenticationBackend',  # Enables allauth
 ]
 
 REST_FRAMEWORK = {
@@ -56,6 +69,17 @@ REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema", 
 }
 
+#Dj rest auth settings
+REST_AUTH = {
+    "TOKEN_MODEL": None,
+    "USE_JWT": True,
+    "DJ_REST_AUTH_TOKEN_MODEL": None,
+}
+
+# AUTHENTICATION_BACKENDS = (
+#     'allauth.account.auth_backends.AuthenticationBackend',
+# )
+
 MIDDLEWARE = [
     #cors Middleware on top priority matters
     'django.middleware.security.SecurityMiddleware',
@@ -65,6 +89,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'UAS.urls'
@@ -119,9 +144,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-    {
-        'NAME': 'accounts.helper.custom_password_validator',  # Custom password validator
-    },
+    # {
+    #     'NAME': 'accounts.helper.custom_password_validator',  # Custom password validator
+    # },
 ]
 
 
@@ -174,3 +199,17 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_HOST_USER = None
 # EMAIL_HOST_PASSWORD = None
 # EMAIL_USE_TLS = False
+ 
+# Authentication settings
+ACCOUNT_LOGIN_METHODS = {'username', 'email'}  
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "optional"  # Can be "mandatory", "optional", or "none"
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+ACCOUNT_LOGOUT_REDIRECT_URL = "accounts/api/login/"  # Redirect after logout
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
+# ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = "/"
+
+# Login/logout settings
+# LOGIN_REDIRECT_URL = "uas_admin/user_list/"
+# LOGOUT_REDIRECT_URL = "accounts/api/login/"

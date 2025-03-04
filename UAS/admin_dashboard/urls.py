@@ -17,6 +17,15 @@ urlpatterns = [
     path('create_role/', CreateRoleView.as_view(), name ='create role'),
     path('role_details/<int:id>/', GetRoleDetailsView.as_view(), name ='role details'),
     path('update_role/', UpdateRoleView.as_view(), name = 'udpate role'),
-    path('delete_role/', DeleteRoleView.as_view(), name ='delete role'),
+    path('delete_role/<int:id>', DeleteRoleView.as_view(), name ='delete role'),
     #             <----- UserRole urls ----->
+    path('create_user_role/', CreateUserRoleView.as_view(), name='create-user-role'),
+    path('user_role_details/<int:id>/', GetUserRoleDetailsView.as_view(), name='user-role-details'),
+    path('update_role/', UpdateUserRoleView.as_view(), name='update-role'),
+    path('delete_role/<int:id>', DeleteUserRoleView.as_view(), name='delete_role'),
+    #             <----- ViewAccess urls ----->
+    path('list_create_view_access/', ViewAccessListCreateView.as_view(), name='list-create-view-access'),
+    path('view_access_details/<int:id>/', GetViewAccessDetailsView.as_view(), name='view-access-details'),
+    path('update_view_access/', ViewAccessUpdateView.as_view(), name='update-view-access'),
+    path('delete_view_access/<int:id>/', ViewAccessDeleteView.as_view(), name='delete-view-access'),
 ]

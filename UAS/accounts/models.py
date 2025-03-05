@@ -70,7 +70,7 @@ class OTP(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def is_valid(self):
-        return (timezone.now - self.created_at).total_seconds() < 300  # 5 min expiry (to be changed)
+        return (timezone.now() - self.created_at).total_seconds() < 300  # 5 min expiry (to be changed)
 
 
 class Permission(models.Model):

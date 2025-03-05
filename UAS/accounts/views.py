@@ -177,14 +177,20 @@ class VerifyOTPView(APIView):
         user.last_login = timezone.now()
         user.save(update_fields=["last_login"])
 
-        return Response(
+        response = Response(
             {
                 'status': 'OTP verified. Login successful',
-                'refresh': str(refresh),
                 'access': access_token,
+                'refresh': str(refresh),
             },
             status=status.HTTP_200_OK
         )
+        #storing refresh token in a cusotm header
+        response["Refresh-Token"] = str(refresh)
+        #for clints to be able to read custom header
+        response["Access-Control-Expose-Headers"] = "Refresh-Token"
+        print(str(refresh))
+        return response
 
 
 class ChangePasswordView(APIView):
@@ -228,16 +234,37 @@ class PasswordResetView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+# class LogoutView(APIView):
+#     def post(self, request):
+#          try:
+#             refresh_token = request.data["refresh_token"]
+#             token = RefreshToken(refresh_token)
+#             token.blacklist()
+            
+#             return Response({'message': 'Successfully logged out.'},status=status.HTTP_200_OK)
+#          except Exception as e:
+#              return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
 class LogoutView(APIView):
+    # permission_classes = [IsAuthenticated]
+
     def post(self, request):
-         try:
-            refresh_token = request.data["refresh_token"]
+        try:
+            # Get refresh token from a custom header
+            refresh_token = request.headers.get('Refresh-Token')
+            if not refresh_token:
+                return Response({"error": "No refresh token provided"}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Blacklist the refresh token
             token = RefreshToken(refresh_token)
             token.blacklist()
-            
-            return Response({'message': 'Successfully logged out.'},status=status.HTTP_200_OK)
-         except Exception as e:
-             return Response(status=status.HTTP_400_BAD_REQUEST)
+
+            return Response({'message': 'Successfully logged out'}, status=status.HTTP_200_OK)
+
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
 
 # class LogoutView(APIView):
 

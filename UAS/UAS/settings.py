@@ -213,3 +213,34 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 # Login/logout settings
 # LOGIN_REDIRECT_URL = "uas_admin/user_list/"
 # LOGOUT_REDIRECT_URL = "accounts/api/login/"
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/user_activity.log',  # Log file path
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'user_activity': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}

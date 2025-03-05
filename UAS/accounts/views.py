@@ -18,6 +18,10 @@ from allauth.account.models import EmailAddress
 from allauth.account.utils import send_email_confirmation
 from allauth.account.views import ConfirmEmailView
 from django.http import JsonResponse
+import logging
+from admin_dashboard.models import *
+
+logger = logging.getLogger('user_activtiy')
 # Create your views here.
 
 # class RegisterView(APIView):
@@ -75,9 +79,11 @@ class LoginView(APIView):
     def post(self, request):
         username = request.data.get('username')
         password = request.data.get('password')
+        ip_address = request.Meta.get('REMOTE_ADDR','')
 
         # Validate username and password
         if not username or not password:
+            logger.warning(f"Failed login attempt from {ip_address}: Missing username or password.")
             return Response({'error': 'Username and password are required'}, status=status.HTTP_400_BAD_REQUEST)
 
         # Check if the username is an email or username
@@ -85,6 +91,7 @@ class LoginView(APIView):
             try:
                 user = User.objects.get(email=username)
             except User.DoesNotExist:
+                logger.warning(f"Failed login attempt for {username} from {ip_address}: User does not exist")
                 return Response({'error': 'Invalid email or password'}, status=status.HTTP_401_UNAUTHORIZED)
         else:
             try:
@@ -96,6 +103,7 @@ class LoginView(APIView):
         
         if user.is_locked:
             print(f"locked account attempt by {user.username}")
+            logger.warning(f"Login attempt by Locked Account by {user.username} from {ip_address}")
             return Response({'error': 'Account is locked'}, status=status.HTTP_403_FORBIDDEN)
 
         # Track failed login attempts in cache
@@ -119,6 +127,7 @@ class LoginView(APIView):
             if failed_attempts >= self.MAX_FAILED_ATTEMPTS:
                 user.is_locked = True
                 user.save()
+                logger.error(f"Account locked due to excessive failed login attempts for {user.username} from {ip_address}")
                 return Response({'error': 'Too many failed attempts. Account is locked.'}, status=status.HTTP_403_FORBIDDEN)
 
             return Response({'error': 'Invalid username or password'}, status=status.HTTP_401_UNAUTHORIZED)
@@ -126,6 +135,7 @@ class LoginView(APIView):
         # Reset failed login attempts on successful login
         cache.delete(cache_key)
         print('successfull login attempt cache key is reset.')
+        logger.info(f"Successful login for {user.username} from {ip_address}")
 
         otp = str(randint(100000, 999999))
 
@@ -149,8 +159,10 @@ class VerifyOTPView(APIView):
     def post(self, request):
         username = request.data.get('username')
         otp = request.data.get('otp')
+        ip_address = request.Meta.get('REMOTE_ADDR','')
 
         if not username or not otp:
+            logger.warning(f"Failed attempt from {ip_address}: Missing username or otp.")
             return Response({'error': 'Username and OTP are required'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
@@ -168,7 +180,7 @@ class VerifyOTPView(APIView):
 
         #If OTP is valid, delete it and issue tokens
         otp_instance.delete()
-
+        logger.info(f"Successfull Login by {user.username}: otp deleted.")
         perform_login(request, user)
 
         refresh = RefreshToken.for_user(user)
@@ -187,8 +199,7 @@ class VerifyOTPView(APIView):
         )
         #storing refresh token in a cusotm header
         response["Refresh-Token"] = str(refresh)
-        #for clints to be able to read custom header
-        response["Access-Control-Expose-Headers"] = "Refresh-Token"
+        
         print(str(refresh))
         return response
 
@@ -202,6 +213,12 @@ class ChangePasswordView(APIView):
             user = request.user
             user.save()
 
+            ip_address = request.META.get('REMOTE_ADDR', '')
+
+            # Logging the password change event
+            UserActivity.objects.create(user=user, action="Password Changed", ip_address=ip_address)
+            logger.info(f"Password changed for {user.username} from {ip_address}")
+
             return Response({'message': 'Password changed successfully'}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -214,6 +231,12 @@ class PasswordResetRequestView(APIView):
         if serializer.is_valid():
             # Send password reset email
             serializer.save()
+
+            ip_address = request.META.get('REMOTE_ADDR', '')
+
+            UserActivity.objects.create(user=request.user, action="Password Request Initiated.", ip_address=ip_address)
+            logger.info(f"Reset Password request from {request.user.username} from {ip_address}")
+
             return Response({"message": "A password reset link is sent to your email."}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -230,6 +253,12 @@ class PasswordResetView(APIView):
         if serializer.is_valid():
             # Reset the user's password
             serializer.save()
+
+            ip_address = request.META.get('REMOTE_ADDR', '')
+
+            UserActivity.objects.create(user=request.user, action="Password successfully Reset.", ip_address=ip_address)
+            logger.info(f"Password reset for {request.user.username} from {ip_address}")
+
             return Response({"message": "Password has been reset successfully."}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

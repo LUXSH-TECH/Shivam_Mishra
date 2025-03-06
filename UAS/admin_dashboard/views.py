@@ -9,10 +9,13 @@ from admin_dashboard.serializers import *
 from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from admin_dashboard.permissions import DynamicRolePermission
+import logging
 # from django.utils.decorators import method_decorator
 # from accounts.helper import role_required
 
 # Create your views here.
+
+logger = logging.getLogger('user_activity')
 
 class CreateUserView(APIView):
     # permission_classes = [IsAuthenticated]
@@ -21,6 +24,8 @@ class CreateUserView(APIView):
     permission_classes = [IsAuthenticated, IsAdminUser]
     
     def post(self, request):
+        auth_user = request.user
+        ip_address = request.Meta.get('REMOTE_ADDR', '')
        
         serializer = self.serializer_class(data=request.data)
         
@@ -28,19 +33,32 @@ class CreateUserView(APIView):
             
             email = serializer.validated_data['email']
             if User.objects.filter(email=email).exists():
+                logger.warning(f"User {auth_user.username} attempted to create a user with an existing email {email} from {ip_address}")
                 return Response({'error': 'Email already exists'}, status=status.HTTP_400_BAD_REQUEST)
 
-            user = serializer.save()
+            new_user = serializer.save()
+            logger.info(f"User {auth_user.username} created a new user {new_user.username} (user_id: {new_user.id}) from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Created user {auth_user.username}", ip_address=ip_address)
 
-            return Response({'message': 'User created successfully', 'user_id': user.id}, status=status.HTTP_201_CREATED)
-            
+            return Response({'message': 'User created successfully', 'user_id': new_user.id}, status=status.HTTP_201_CREATED)
+        
+        logger.error(f"User {auth_user.username} failed to create user from {ip_address}. Errors: {serializer.errors}")
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)  
     
 
 class UserListView(generics.ListAPIView):
-    queryset = User.objects.filter(is_superuser=False,is_user=True)  # Exclude superusers
+    queryset = User.objects.filter(is_superuser=False, is_user=True)  # Exclude superusers
     serializer_class = UserSerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsAdminUser]
+
+    def get(self, request, *args, **kwargs):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
+        logger.info(f"User {auth_user.username} fetched the user list from {ip_address}")
+        UserActivity.objects.create(user=auth_user, action="Fetched user list", ip_address=ip_address)
+
+        return super().get(request, *args, **kwargs) 
 
 
 class GetUserDetailView(APIView):
@@ -49,8 +67,14 @@ class GetUserDetailView(APIView):
     permission_classes = [IsAuthenticated, IsAdminUser]
     
     def get(self, request, id):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
         try:
             user = User.objects.get(id=id, is_superuser=False, is_user=True)
+            
+            logger.info(f"User {auth_user.username} fetched the details of user {user.username} from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Fetched details of {user.username}", ip_address=ip_address)
 
             user_details = {
                 'username': user.username,
@@ -62,7 +86,9 @@ class GetUserDetailView(APIView):
                 'created_at': user.created_at,
                 'updated_at': user.updated_at,
             }
+
             return Response({'message': 'user details fetched successfully', 'user': user_details}, status=status.HTTP_200_OK)
+        
         except User.DoesNotExist:
             return Response({"Status": "Failed", "Reason": "User not found"}, status=status.HTTP_404_NOT_FOUND)
         
@@ -73,6 +99,9 @@ class UpdateUserDetailsView(APIView):
     permission_classes = [IsAuthenticated, IsAdminUser]
 
     def put(self, request):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
         user_id = request.data.get('id')
         username = request.data.get('username')
         full_name = request.data.get('name')
@@ -101,6 +130,9 @@ class UpdateUserDetailsView(APIView):
         user.full_clean()
         user.save()
 
+        logger.info(f"User {auth_user.username} updated user {user.username} (user_id: {id}) from {ip_address}")
+        UserActivity.objects.create(user=auth_user, action=f"Updated user {user.username} details", ip_address=ip_address)
+
         return Response({'message': 'user details updated successfully', 'user_id': user_id}, status=status.HTTP_200_OK)
 
 
@@ -108,6 +140,9 @@ class DeleteUserView(APIView):
     permission_classes = [IsAuthenticated, IsAdminUser]
     
     def delete(self, request, id):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
         try:
             user = User.objects.get(id=id)
 
@@ -118,6 +153,8 @@ class DeleteUserView(APIView):
             return Response({'error': 'user not found'}, status=status.HTTP_404_NOT_FOUND)
         
         user.delete()
+        logger.info(f"User {auth_user.username} deleted user {user.username} (user_id: {id}) from {ip_address}")
+        UserActivity.objects.create(user=auth_user, action=f"Deleted user {user.username}", ip_address=ip_address)
 
         return Response({'message': 'user deleted'}, status=status.HTTP_202_ACCEPTED)
     
@@ -125,14 +162,19 @@ class DeleteUserView(APIView):
 class CreatePermissionView(APIView):
     queryset = Permission.objects.all()
     serializer_class = PermissionSerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     def post(self, request):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
         serializer = self.serializer_class(data=request.data)
 
         if serializer.is_valid():
             
             permission = serializer.save()
+            logger.info(f"User {auth_user.username} created a new permission {permission.name}  from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Created permission {permission.name}", ip_address=ip_address)
 
             return Response({'message': 'permission created', 'permission_id': permission.id}, status=status.HTTP_201_CREATED)
         
@@ -142,10 +184,17 @@ class CreatePermissionView(APIView):
 class GetPermissionDetailsView(APIView):
     queryset = Permission.objects.all()
     serializer_class = PermissionSerializer
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, id):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
         try:
             permission = Permission.objects.get(id=id)
+
+            logger.info(f"User {auth_user.username} fetched the details of permission {permission.name} from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Fetched details of {permission.name}", ip_address=ip_address)
 
             permission_details = {
                 'name': permission.name,
@@ -163,12 +212,16 @@ class GetPermissionDetailsView(APIView):
 class UpdatePermissionView(APIView):
     queryset = Permission.objects.all()
     serializer_class = PermissionSerializer
+    permission_classes = [IsAuthenticated]
 
     def get_object(self):
         permission_id = self.request.data.get('id')
         return get_object_or_404(Permission, id=permission_id)
     
     def put(self, request):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
         try:
             permission = self.get_object()
 
@@ -179,6 +232,8 @@ class UpdatePermissionView(APIView):
             permission.codename = codename
 
             permission.save()
+            logger.info(f"User {auth_user.username} updated permission {permission.name}  from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Updated permission {permission.name} details", ip_address=ip_address)
 
             serializer = self.serializer_class(permission)
 
@@ -189,8 +244,12 @@ class UpdatePermissionView(APIView):
         
 
 class DeletePermissionView(APIView):
+    permission_classes = [IsAuthenticated]
 
     def delete(self, request, id):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
         try:
             permission = Permission.objects.get(id=id)
 
@@ -198,6 +257,8 @@ class DeletePermissionView(APIView):
             return Response({'error': 'permission not found'}, status=status.HTTP_404_NOT_FOUND)
         
         permission.delete()
+        logger.info(f"User {auth_user.username} deleted permission {permission.name} from {ip_address}")
+        UserActivity.objects.create(user=auth_user, action=f"Deleted permission {permission.name}", ip_address=ip_address)
 
         return Response({'message': 'permission deleted'}, status=status.HTTP_202_ACCEPTED)        
     
@@ -208,10 +269,15 @@ class CreateRoleView(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
         serializer = self.serializer_class(data=request.data)
 
         if serializer.is_valid():
             role = serializer.save()
+            logger.info(f"User {auth_user.username} created a new role {role.name}  from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Created role {role.name}", ip_address=ip_address)
 
             return Response({'message': 'role created', 'role_id': role.id}, status=status.HTTP_201_CREATED)
         
@@ -224,8 +290,13 @@ class GetRoleDetailsView(APIView):
     permission_classes = [IsAuthenticated]
     
     def get(self, request, id):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
         try:
             role = Role.objects.get(id=id)
+            logger.info(f"User {auth_user.username} fetched the details of role {role.name} from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Fetched details of {role.name}", ip_address=ip_address)
 
             role_details = {
                 'name': role.name,
@@ -246,6 +317,9 @@ class UpdateRoleView(APIView):
     permission_classes = [IsAuthenticated]
 
     def put(self, request):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
         role_id = request.data.get('id')
 
         if not role_id:
@@ -270,6 +344,8 @@ class UpdateRoleView(APIView):
                 return Response({'error': 'Permission does not exist'}, status=status.HTTP_400_BAD_REQUEST)
 
         role.save()
+        logger.info(f"User {auth_user.username} updated role {role.name}  from {ip_address}")
+        UserActivity.objects.create(user=auth_user, action=f"Updated role {role.name} details", ip_address=ip_address)
 
         serializer = RoleSerializer(role)
         return Response({'message': 'Role updated successfully', 'updated_data': serializer.data}, status=status.HTTP_200_OK)
@@ -279,6 +355,9 @@ class DeleteRoleView(APIView):
     permission_classes = [IsAuthenticated]
 
     def delete(self, request, id):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
         try:
             role = Role.objects.get(id=id)
         
@@ -286,6 +365,8 @@ class DeleteRoleView(APIView):
             return Response({'error': 'role does not exist'}, status=status.HTTP_400_BAD_REQUEST)
         
         role.delete()
+        logger.info(f"User {auth_user.username} deleted role {role.name} from {ip_address}")
+        UserActivity.objects.create(user=auth_user, action=f"Deleted role {role.name}", ip_address=ip_address)        
 
         return Response({'message': 'role deleted'}, status=status.HTTP_202_ACCEPTED)
     
@@ -311,6 +392,9 @@ class CreateUserRoleView(APIView):
         if serializer.is_valid():
             # user = request.data.get('user')
             # role = request.data.get('role')
+            auth_user = request.user
+            ip_address = request.META.get('REMOTE_ADDR', '')      
+
             user = serializer.validated_data['user']
             role = serializer.validated_data['role']
 
@@ -333,10 +417,14 @@ class CreateUserRoleView(APIView):
                 role = role_instance,
                 user = user_instance
             )
+            
+            logger.info(f"User {auth_user.username} assigned role '{role_instance.name}' to user '{user_instance.username}' from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Assigned role '{role_instance.name}' to user {user_instance.username}", ip_address=ip_address)
 
             serializer.save()
             return Response({'message': 'user role created', 'user_role_id': user_role.id}, status=status.HTTP_201_CREATED)
         
+        logger.warning(f"User {auth_user.username} failed to create user role due to  {serializer.errors}")
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
 
@@ -346,8 +434,14 @@ class GetUserRoleDetailsView(APIView):
     permission_classes = [IsAuthenticated, IsAdminUser]
 
     def get(self, request, id):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '') 
+
         try:
             user_role = UserRoles.objects.get(id=id)
+
+            logger.info(f"User {auth_user.username} fetched the details of user role of user {user_role.user.username} from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Fetched details of user role of user {user_role.user.username}", ip_address=ip_address)
 
             user_role_details = {
                 'user': user_role.user.username,
@@ -370,6 +464,9 @@ class UpdateUserRoleView(APIView):
         return get_object_or_404(UserRoles, id=user_role_id)
     
     def put(self, request):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '') 
+
         try:
             user_role = self.get_object()       
             user = request.data.get('user')
@@ -399,6 +496,9 @@ class UpdateUserRoleView(APIView):
             #save user role
             user_role.save()
 
+            logger.info(f"User {auth_user.username} updated user role of user {user_role.user.username} from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Updated user role of user {user_role.user.username} details", ip_address=ip_address)
+
             serializer = self.serializer_class(user_role)
 
             return Response({'message': 'user role updated successfully', 'updated_data': serializer.data}, status=status.HTTP_200_OK)
@@ -411,12 +511,17 @@ class DeleteUserRoleView(APIView):
     permission_classes = [IsAuthenticated, IsAdminUser]
 
     def post(self, request):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '') 
+
         try:
             user_role = UserRoles.objects.get(id)
         except UserRoles.DoesNotExist:
             return Response({'message': 'user role does not exist'}, status=status.HTTP_400_BAD_REQUEST)
         
         user_role.delete()
+        logger.info(f"User {auth_user.username} deleted user role of user {user_role.user.username} from {ip_address}")
+        UserActivity.objects.create(user=auth_user, action=f"Deleted user role of user {user_role.user.username}", ip_address=ip_address) 
 
         return Response({'message': 'user role deleted'}, status=status.HTTP_202_ACCEPTED)
 
@@ -427,7 +532,7 @@ class ViewAccessListCreateView(APIView):
     """
     queryset = ViewAccess.objects.all()
     serializer_class = ViewAccessSerializer
-    permission_classes = [IsAdminUser]
+    permission_classes = [IsAuthenticated, IsAdminUser]
 
     def get(self, request):
         accesses = self.queryset()
@@ -435,9 +540,15 @@ class ViewAccessListCreateView(APIView):
         return Response(serializer.data)
 
     def post(self, request):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '') 
+
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            view_access = serializer.save()
+
+            logger.info(f"User {auth_user.username} created view access '{view_access.view_name}' from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"create view access '{view_access.view_name}'", ip_address=ip_address)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -449,8 +560,13 @@ class GetViewAccessDetailsView(APIView):
     permission_classes = [IsAuthenticated, IsAdminUser]
 
     def get(self, request, id):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
         try:
             view_access = ViewAccess.objects.get(id=id)
+            logger.info(f"User {auth_user.username} fetched the details of view access{view_access.view_name} from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Fetched details of view access {view_access.view_name}", ip_address=ip_address)
 
             view_access_details = {
                 'view_name': view_access.view_name,
@@ -469,12 +585,16 @@ class ViewAccessUpdateView(APIView):
     """
     queryset = ViewAccess.objects.all()
     serializer_class = ViewAccessSerializer
+    permission_classes = [IsAuthenticated]
 
     def get_object(self):
         view_accesss_id = self.request.data.get('id')
         return get_object_or_404(ViewAccess, id=view_accesss_id)
     
     def put(self, request):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '') 
+
         try:
             view_access = self.get_object()
 
@@ -485,6 +605,8 @@ class ViewAccessUpdateView(APIView):
             view_access.roles = roles
 
             view_access.save()
+            logger.info(f"User {auth_user.username} updated view access {view_access.view_name} from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Updated view access {view_access.view_name} details", ip_address=ip_address)            
 
             serializer = self.serializer_class(view_access)
 
@@ -495,12 +617,19 @@ class ViewAccessUpdateView(APIView):
         
 
 class ViewAccessDeleteView(APIView):
+    permission_classes = [IsAuthenticated]
     
     def delete(self, request, id):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '') 
+
         try:
             view_access = ViewAccess.objects.get(id=id)
         except ViewAccess.DoesNotExist:
             return Response({'message':'view access rule does not exist'}, status=status.HTTP_400_BAD_REQUEST)
         
         view_access.delete()
+        logger.info(f"User {auth_user.username} deleted view access {view_access.view_name} from {ip_address}")
+        UserActivity.objects.create(user=auth_user, action=f"Deleted view access {view_access.view_name}", ip_address=ip_address)    
+
         return Response({'message': 'veiw access rule deleted succesfully'}, status=status.HTTP_202_ACCEPTED)

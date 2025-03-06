@@ -1,0 +1,114 @@
+INFO 2025-03-06 17:33:19,904 autoreload Watching for file changes with StatReloader
+INFO 2025-03-06 18:01:29,736 autoreload Watching for file changes with StatReloader
+INFO 2025-03-06 18:02:19,093 autoreload Watching for file changes with StatReloader
+INFO 2025-03-06 18:11:11,756 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2025-03-06 18:11:12,120 basehttp "GET /admin/ HTTP/1.1" 200 17605
+INFO 2025-03-06 18:11:12,308 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+INFO 2025-03-06 18:11:12,320 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-03-06 18:11:12,320 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+INFO 2025-03-06 18:11:12,320 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+INFO 2025-03-06 18:11:12,320 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-03-06 18:11:12,320 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-03-06 18:11:12,361 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-03-06 18:11:12,364 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-03-06 18:11:12,367 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+WARNING 2025-03-06 18:11:12,408 log Not Found: /favicon.ico
+WARNING 2025-03-06 18:11:12,408 basehttp "GET /favicon.ico HTTP/1.1" 404 3315
+INFO 2025-03-06 18:11:24,909 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 13994
+INFO 2025-03-06 18:11:24,937 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-03-06 18:11:25,005 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2025-03-06 18:11:25,020 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-03-06 18:11:25,020 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-06 18:11:25,020 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-03-06 18:11:25,036 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-03-06 18:11:25,065 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-03-06 18:11:25,068 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-03-06 18:11:25,072 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-03-06 18:11:25,089 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-03-06 18:11:25,135 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-03-06 18:11:25,154 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-03-06 18:11:25,185 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-03-06 18:11:25,186 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-03-06 18:11:35,070 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 13117
+INFO 2025-03-06 18:11:35,115 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-06 18:11:37,225 basehttp "GET /admin/socialaccount/socialapp/add/ HTTP/1.1" 200 18296
+INFO 2025-03-06 18:11:37,263 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+INFO 2025-03-06 18:11:37,264 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-03-06 18:11:37,265 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-06 18:11:37,288 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-03-06 18:11:37,298 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+INFO 2025-03-06 18:12:32,721 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\UAS\settings.py changed, reloading.
+INFO 2025-03-06 18:12:33,837 autoreload Watching for file changes with StatReloader
+INFO 2025-03-06 18:12:51,771 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\UAS\settings.py changed, reloading.
+INFO 2025-03-06 18:12:52,951 autoreload Watching for file changes with StatReloader
+INFO 2025-03-06 18:26:13,353 basehttp "POST /admin/socialaccount/socialapp/add/ HTTP/1.1" 302 0
+INFO 2025-03-06 18:26:13,467 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 14811
+INFO 2025-03-06 18:26:13,508 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-06 18:26:13,575 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-03-06 18:28:20,854 basehttp "GET /auth/google/login HTTP/1.1" 301 0
+INFO 2025-03-06 18:28:20,951 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-06 18:33:24,475 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 14590
+INFO 2025-03-06 18:33:32,008 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-06 18:34:06,624 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 14590
+WARNING 2025-03-06 18:34:39,092 log Not Found: /google/login/callback/
+WARNING 2025-03-06 18:34:39,092 basehttp "GET /google/login/callback/ HTTP/1.1" 404 3348
+WARNING 2025-03-06 18:34:47,723 log Not Found: /google/login/
+WARNING 2025-03-06 18:34:47,724 basehttp "GET /google/login/ HTTP/1.1" 404 3321
+WARNING 2025-03-06 18:35:09,292 log Not Found: /auth/google
+WARNING 2025-03-06 18:35:09,293 basehttp "GET /auth/google HTTP/1.1" 404 10637
+INFO 2025-03-06 18:35:52,929 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-06 18:39:19,931 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-06 18:39:30,964 basehttp "GET /auth/google/login/callback/ HTTP/1.1" 200 1668
+INFO 2025-03-06 18:39:53,573 basehttp "GET /auth/logout/ HTTP/1.1" 200 1925
+INFO 2025-03-06 18:39:58,336 basehttp "POST /auth/logout/ HTTP/1.1" 302 0
+WARNING 2025-03-06 18:39:58,339 log Not Found: /auth/logout/accounts/api/login/
+WARNING 2025-03-06 18:39:58,339 basehttp "GET /auth/logout/accounts/api/login/ HTTP/1.1" 404 10697
+INFO 2025-03-06 18:41:56,941 basehttp "GET /auth/google/login/token/ HTTP/1.1" 200 1321
+INFO 2025-03-06 18:42:35,526 basehttp "GET /auth/google/login/callback/ HTTP/1.1" 200 1111
+INFO 2025-03-06 18:42:43,489 basehttp "GET /auth/login/ HTTP/1.1" 200 2521
+INFO 2025-03-06 18:42:54,906 basehttp "GET /auth/google/login/?process=login HTTP/1.1" 302 0
+INFO 2025-03-06 18:55:18,942 basehttp "GET /auth/login/ HTTP/1.1" 200 2521
+INFO 2025-03-06 18:55:38,227 basehttp "GET /auth/google/login/callback/ HTTP/1.1" 200 1111
+INFO 2025-03-06 18:55:50,874 basehttp "GET /auth/signup/ HTTP/1.1" 200 2976
+INFO 2025-03-06 18:56:00,755 basehttp "GET /auth/login/ HTTP/1.1" 200 2521
+INFO 2025-03-06 18:56:06,491 basehttp "GET /auth/google/login/?process=login HTTP/1.1" 302 0
+INFO 2025-03-06 18:57:24,296 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\UAS\settings.py changed, reloading.
+INFO 2025-03-06 18:57:25,957 autoreload Watching for file changes with StatReloader
+INFO 2025-03-06 18:57:29,842 basehttp "GET /auth/login/ HTTP/1.1" 200 2521
+INFO 2025-03-06 18:57:31,120 basehttp "GET /auth/google/login/?process=login HTTP/1.1" 302 0
+INFO 2025-03-06 18:59:35,515 basehttp "GET /auth/login/ HTTP/1.1" 200 2521
+INFO 2025-03-06 18:59:43,211 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-06 18:59:48,779 basehttp "GET /auth/login/ HTTP/1.1" 200 2521
+INFO 2025-03-06 19:00:36,209 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-06 19:02:12,554 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-06 19:02:25,575 log Not Found: /
+WARNING 2025-03-06 19:02:25,576 basehttp "GET / HTTP/1.1" 404 3264
+INFO 2025-03-06 19:02:35,893 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-06 19:02:36,075 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2025-03-06 19:02:36,178 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-03-06 19:02:44,332 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-03-06 19:02:44,387 basehttp "GET /admin/ HTTP/1.1" 200 17608
+INFO 2025-03-06 19:02:48,409 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 13994
+INFO 2025-03-06 19:02:48,458 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-06 19:02:50,653 basehttp "GET /admin/socialaccount/socialtoken/ HTTP/1.1" 200 14977
+INFO 2025-03-06 19:02:50,683 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-06 19:02:51,886 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 14590
+INFO 2025-03-06 19:02:51,911 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-06 19:02:53,194 basehttp "GET /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 200 18659
+INFO 2025-03-06 19:02:53,214 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-06 19:02:55,878 basehttp "GET /admin/socialaccount/socialaccount/add/ HTTP/1.1" 200 15960
+INFO 2025-03-06 19:02:55,919 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-06 19:03:03,141 basehttp "GET /admin/socialaccount/socialtoken/add/ HTTP/1.1" 200 17399
+INFO 2025-03-06 19:03:03,173 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-06 19:03:03,208 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-03-06 19:03:03,208 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-03-06 19:03:03,251 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-03-06 19:03:03,251 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-03-06 19:03:10,823 basehttp "GET /admin/account/emailaddress/add/ HTTP/1.1" 200 15607
+INFO 2025-03-06 19:03:10,862 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-06 19:03:14,335 basehttp "GET /admin/account/emailaddress/ HTTP/1.1" 200 16393
+INFO 2025-03-06 19:03:14,368 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-06 19:03:22,141 basehttp "GET /auth/login/ HTTP/1.1" 302 0
+WARNING 2025-03-06 19:03:22,143 log Not Found: /accounts/profile/
+WARNING 2025-03-06 19:03:22,143 basehttp "GET /accounts/profile/ HTTP/1.1" 404 6858
+INFO 2025-03-06 19:40:22,187 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0

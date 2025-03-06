@@ -52,7 +52,20 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'dj_rest_auth',
     'dj_rest_auth.registration',
+    'allauth.socialaccount.providers.google',
 ]
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        'OAUTH_PKCE_ENABLED': True,
+    }
+}
 
 SITE_ID = 1
 
@@ -204,11 +217,17 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_LOGIN_METHODS = {'username', 'email'}  
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = "optional"  # Can be "mandatory", "optional", or "none"
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"  # Can be "mandatory", "optional", or "none"
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_LOGOUT_REDIRECT_URL = "accounts/api/login/"  # Redirect after logout
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 # ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = "/"
+
+SOCIALACCOUNT_EMAIL_REQUIRED = True
+SOCIALACCOUNT_EMAIL_VERIFICATION = False
+SOCIALACCOUNT_EMAIL_AUTHENTICATION = True
+SOCIALACCOUNT_LOGIN_ON_GET= True
+SOCIALACCOUNT_AUTO_SIGNUP = True  # Automatically create user on first login
 
 # Login/logout settings
 # LOGIN_REDIRECT_URL = "uas_admin/user_list/"

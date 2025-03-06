@@ -233,9 +233,10 @@ class PasswordResetRequestView(APIView):
             serializer.save()
 
             ip_address = request.META.get('REMOTE_ADDR', '')
+            user = User.objects.get(email=serializer.validated_data["email"])
 
-            UserActivity.objects.create(user=request.user, action="Password Request Initiated.", ip_address=ip_address)
-            logger.info(f"Reset Password request from {request.user.username} from {ip_address}")
+            UserActivity.objects.create(user=user, action="Password Reset Request Initiated.", ip_address=ip_address)
+            logger.info(f"Password reset request initiated for {user.username} from {ip_address}")
 
             return Response({"message": "A password reset link is sent to your email."}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -252,12 +253,12 @@ class PasswordResetView(APIView):
         serializer = PasswordResetSerializer(data=data)
         if serializer.is_valid():
             # Reset the user's password
-            serializer.save()
+            user = serializer.save()
 
             ip_address = request.META.get('REMOTE_ADDR', '')
 
-            UserActivity.objects.create(user=request.user, action="Password successfully Reset.", ip_address=ip_address)
-            logger.info(f"Password reset for {request.user.username} from {ip_address}")
+            UserActivity.objects.create(user=user, action="Password Reset Successfully.", ip_address=ip_address)
+            logger.info(f"Password reset successful for {user.username} from {ip_address}")
 
             return Response({"message": "Password has been reset successfully."}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -276,19 +277,25 @@ class PasswordResetView(APIView):
 
 
 class LogoutView(APIView):
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     def post(self, request):
+        ip_address = request.META.get('REMOTE_ADDR', '')
+        user = request.user
         try:
             # Get refresh token from a custom header
             refresh_token = request.headers.get('Refresh-Token')
             if not refresh_token:
+                logger.warning(f"Logout attempt failed (no token) by {user.username} from {ip_address}")
                 return Response({"error": "No refresh token provided"}, status=status.HTTP_400_BAD_REQUEST)
 
             # Blacklist the refresh token
             token = RefreshToken(refresh_token)
             token.blacklist()
 
+            logger.info(f"User {user.username} successfully logged out from {ip_address}")
+
+            UserActivity.objects.create(user=user, action="Logged out", ip_address=ip_address)
             return Response({'message': 'Successfully logged out'}, status=status.HTTP_200_OK)
 
         except Exception as e:

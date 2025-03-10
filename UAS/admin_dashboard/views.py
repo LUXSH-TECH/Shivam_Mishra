@@ -21,11 +21,11 @@ class CreateUserView(APIView):
     # permission_classes = [IsAuthenticated]
     queryset = User.objects.all()
     serializer_class = CreateUserSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
     
     def post(self, request):
         auth_user = request.user
-        ip_address = request.Meta.get('REMOTE_ADDR', '')
+        ip_address = request.META.get('REMOTE_ADDR', '')
        
         serializer = self.serializer_class(data=request.data)
         
@@ -49,7 +49,7 @@ class CreateUserView(APIView):
 class UserListView(generics.ListAPIView):
     queryset = User.objects.filter(is_superuser=False, is_user=True)  # Exclude superusers
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def get(self, request, *args, **kwargs):
         auth_user = request.user
@@ -64,7 +64,7 @@ class UserListView(generics.ListAPIView):
 class GetUserDetailView(APIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
     
     def get(self, request, id):
         auth_user = request.user
@@ -96,7 +96,7 @@ class GetUserDetailView(APIView):
 class UpdateUserDetailsView(APIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
 
     def put(self, request):
         auth_user = request.user
@@ -137,7 +137,7 @@ class UpdateUserDetailsView(APIView):
 
 
 class DeleteUserView(APIView):
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
     
     def delete(self, request, id):
         auth_user = request.user
@@ -162,7 +162,7 @@ class DeleteUserView(APIView):
 class CreatePermissionView(APIView):
     queryset = Permission.objects.all()
     serializer_class = PermissionSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def post(self, request):
         auth_user = request.user
@@ -184,7 +184,7 @@ class CreatePermissionView(APIView):
 class GetPermissionDetailsView(APIView):
     queryset = Permission.objects.all()
     serializer_class = PermissionSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def get(self, request, id):
         auth_user = request.user
@@ -212,7 +212,7 @@ class GetPermissionDetailsView(APIView):
 class UpdatePermissionView(APIView):
     queryset = Permission.objects.all()
     serializer_class = PermissionSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def get_object(self):
         permission_id = self.request.data.get('id')
@@ -244,7 +244,7 @@ class UpdatePermissionView(APIView):
         
 
 class DeletePermissionView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def delete(self, request, id):
         auth_user = request.user
@@ -266,7 +266,7 @@ class DeletePermissionView(APIView):
 class CreateRoleView(APIView):
     queryset = Role.objects.all()
     serializer_class = RoleSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def post(self, request):
         auth_user = request.user
@@ -287,7 +287,7 @@ class CreateRoleView(APIView):
 class GetRoleDetailsView(APIView):
     queryset = Role.objects.all()
     serializers = RoleSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
     
     def get(self, request, id):
         auth_user = request.user
@@ -314,7 +314,7 @@ class GetRoleDetailsView(APIView):
 class UpdateRoleView(APIView):
     queryset = Role.objects.all()
     serializers = RoleSerializer 
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def put(self, request):
         auth_user = request.user
@@ -352,7 +352,7 @@ class UpdateRoleView(APIView):
 
 
 class DeleteRoleView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def delete(self, request, id):
         auth_user = request.user
@@ -374,7 +374,7 @@ class DeleteRoleView(APIView):
 class CreateUserRoleView(APIView):
     queryset = UserRoles.objects.all()
     serializer_class = UserRoleSerialiser
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
 
     # def post(self, request):
     #     serializer = self.serializer_class(data=request.data)
@@ -431,7 +431,7 @@ class CreateUserRoleView(APIView):
 class GetUserRoleDetailsView(APIView):
     queryset = UserRoles.objects.all()
     serializer_class = UserRoleSerialiser
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def get(self, request, id):
         auth_user = request.user
@@ -457,7 +457,7 @@ class GetUserRoleDetailsView(APIView):
 class UpdateUserRoleView(APIView):
     queryset = UserRoles.objects.all()
     serializer_class = UserRoleSerialiser
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
 
     def get_object(self):
         user_role_id = self.request.data.get('id')
@@ -508,7 +508,7 @@ class UpdateUserRoleView(APIView):
         
 
 class DeleteUserRoleView(APIView):
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
 
     def post(self, request):
         auth_user = request.user
@@ -532,7 +532,7 @@ class ViewAccessListCreateView(APIView):
     """
     queryset = ViewAccess.objects.all()
     serializer_class = ViewAccessSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
 
     def get(self, request):
         accesses = self.queryset()
@@ -557,7 +557,7 @@ class ViewAccessListCreateView(APIView):
 class GetViewAccessDetailsView(APIView):
     queryset = ViewAccess.objects.all()
     serializer_class = ViewAccessSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
 
     def get(self, request, id):
         auth_user = request.user
@@ -585,7 +585,7 @@ class ViewAccessUpdateView(APIView):
     """
     queryset = ViewAccess.objects.all()
     serializer_class = ViewAccessSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def get_object(self):
         view_accesss_id = self.request.data.get('id')
@@ -617,7 +617,7 @@ class ViewAccessUpdateView(APIView):
         
 
 class ViewAccessDeleteView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
     
     def delete(self, request, id):
         auth_user = request.user

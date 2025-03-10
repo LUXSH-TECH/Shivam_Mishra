@@ -15,5 +15,6 @@ urlpatterns = [
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('request_password_reset/', request_reset_password_view, name='request-password-reset'),
-    path('reset_password/', reset_password_view, name='reset-password')
+    path('reset_password/', reset_password_view, name='reset-password'),
+    path('success/', success, name= 'success'),
 ]

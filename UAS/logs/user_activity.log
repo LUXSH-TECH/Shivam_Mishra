@@ -112,3 +112,504 @@ INFO 2025-03-06 19:03:22,141 basehttp "GET /auth/login/ HTTP/1.1" 302 0
 WARNING 2025-03-06 19:03:22,143 log Not Found: /accounts/profile/
 WARNING 2025-03-06 19:03:22,143 basehttp "GET /accounts/profile/ HTTP/1.1" 404 6858
 INFO 2025-03-06 19:40:22,187 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-06 23:44:51,121 autoreload Watching for file changes with StatReloader
+INFO 2025-03-06 23:45:09,995 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-06 23:46:19,564 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-07 17:06:48,921 autoreload Watching for file changes with StatReloader
+INFO 2025-03-07 17:07:06,343 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-07 18:06:25,093 autoreload Watching for file changes with StatReloader
+INFO 2025-03-07 18:06:34,080 basehttp "GET /admin/ HTTP/1.1" 200 17608
+INFO 2025-03-07 18:07:10,052 basehttp "GET /admin/ HTTP/1.1" 200 17608
+INFO 2025-03-07 18:07:11,001 basehttp "GET /admin/ HTTP/1.1" 200 17608
+INFO 2025-03-07 18:07:15,183 basehttp "GET /admin/account/ HTTP/1.1" 200 5276
+INFO 2025-03-07 18:07:16,337 basehttp "GET /admin/ HTTP/1.1" 200 17608
+WARNING 2025-03-07 18:07:19,111 log Not Found: /
+WARNING 2025-03-07 18:07:19,111 basehttp "GET / HTTP/1.1" 404 3264
+INFO 2025-03-07 18:07:25,860 basehttp "GET /admin/ HTTP/1.1" 200 17608
+INFO 2025-03-07 20:37:53,537 autoreload Watching for file changes with StatReloader
+INFO 2025-03-07 20:37:56,806 basehttp "GET /admin/ HTTP/1.1" 200 18399
+INFO 2025-03-07 20:38:40,118 basehttp "GET /admin/sites/site/add/ HTTP/1.1" 200 15034
+INFO 2025-03-07 20:38:40,170 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 20:38:45,988 basehttp "GET /admin/socialaccount/socialapp/add/ HTTP/1.1" 200 20386
+INFO 2025-03-07 20:38:46,025 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 20:38:46,119 basehttp "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-03-07 20:38:46,121 basehttp "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15502
+INFO 2025-03-07 20:38:46,168 basehttp "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-03-07 20:38:46,172 basehttp "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+INFO 2025-03-07 20:38:46,175 basehttp "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2025-03-07 20:40:29,209 basehttp "POST /admin/socialaccount/socialapp/add/ HTTP/1.1" 302 0
+INFO 2025-03-07 20:40:29,248 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 15434
+INFO 2025-03-07 20:40:29,287 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 20:40:34,215 basehttp "GET /admin/sites/site/ HTTP/1.1" 200 15654
+INFO 2025-03-07 20:40:34,253 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 20:40:34,280 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-03-07 20:40:37,016 basehttp "GET /admin/sites/site/ HTTP/1.1" 200 15654
+INFO 2025-03-07 20:40:37,057 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 20:45:38,824 basehttp "GET /admin/sites/site/1/change/ HTTP/1.1" 200 15292
+INFO 2025-03-07 20:45:38,854 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 20:50:38,938 basehttp "POST /admin/sites/site/1/change/ HTTP/1.1" 302 0
+INFO 2025-03-07 20:50:38,958 basehttp "GET /admin/sites/site/ HTTP/1.1" 200 15877
+INFO 2025-03-07 20:50:39,006 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-07 20:51:05,115 log Not Found: /
+WARNING 2025-03-07 20:51:05,115 basehttp "GET / HTTP/1.1" 404 3264
+INFO 2025-03-07 20:51:07,639 basehttp "GET /admin/ HTTP/1.1" 200 18351
+INFO 2025-03-07 20:51:10,980 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 15214
+INFO 2025-03-07 20:51:11,024 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 20:51:11,988 basehttp "GET /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 200 20755
+INFO 2025-03-07 20:51:12,031 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 20:51:22,992 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 15696
+INFO 2025-03-07 20:51:23,024 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 20:51:51,484 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 15214
+INFO 2025-03-07 20:51:51,517 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 20:51:52,731 basehttp "GET /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 200 20755
+INFO 2025-03-07 20:51:52,770 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 20:51:57,802 basehttp "POST /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 302 0
+INFO 2025-03-07 20:51:57,822 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 15436
+INFO 2025-03-07 20:51:57,863 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:42:09,036 autoreload Watching for file changes with StatReloader
+INFO 2025-03-07 22:42:45,228 basehttp "GET /admin/ HTTP/1.1" 200 18328
+INFO 2025-03-07 22:42:49,126 basehttp "GET /admin/accounts/userroles/ HTTP/1.1" 200 15290
+INFO 2025-03-07 22:42:49,174 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:42:50,994 basehttp "GET /admin/accounts/userroles/2/change/ HTTP/1.1" 200 17606
+INFO 2025-03-07 22:42:51,037 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:42:53,217 basehttp "GET /admin/accounts/userroles/ HTTP/1.1" 200 15290
+INFO 2025-03-07 22:42:53,254 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:42:58,591 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15455
+INFO 2025-03-07 22:42:58,622 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:00,247 basehttp "GET /admin/accounts/userroles/ HTTP/1.1" 200 15290
+INFO 2025-03-07 22:43:00,280 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:04,719 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16433
+INFO 2025-03-07 22:43:04,759 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:08,234 basehttp "GET /admin/admin_dashboard/viewaccess/5/change/ HTTP/1.1" 200 16262
+INFO 2025-03-07 22:43:08,272 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:10,274 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16433
+INFO 2025-03-07 22:43:18,465 basehttp "GET /admin/admin_dashboard/viewaccess/3/change/ HTTP/1.1" 200 16278
+INFO 2025-03-07 22:43:18,502 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:21,044 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16433
+INFO 2025-03-07 22:43:26,244 basehttp "GET /admin/admin_dashboard/viewaccess/4/change/ HTTP/1.1" 200 16253
+INFO 2025-03-07 22:43:26,285 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:31,864 basehttp "POST /admin/admin_dashboard/viewaccess/4/change/ HTTP/1.1" 302 0
+INFO 2025-03-07 22:43:31,894 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16685
+INFO 2025-03-07 22:43:31,928 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:33,315 basehttp "GET /admin/admin_dashboard/viewaccess/4/change/ HTTP/1.1" 200 16262
+INFO 2025-03-07 22:43:33,353 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:35,438 basehttp "POST /admin/admin_dashboard/viewaccess/4/change/ HTTP/1.1" 302 0
+INFO 2025-03-07 22:43:35,458 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16685
+INFO 2025-03-07 22:43:35,499 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:36,683 basehttp "GET /admin/admin_dashboard/viewaccess/5/change/ HTTP/1.1" 200 16262
+INFO 2025-03-07 22:43:36,726 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:39,206 basehttp "POST /admin/admin_dashboard/viewaccess/5/change/ HTTP/1.1" 302 0
+INFO 2025-03-07 22:43:39,231 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16685
+INFO 2025-03-07 22:43:39,264 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:40,162 basehttp "GET /admin/admin_dashboard/viewaccess/1/change/ HTTP/1.1" 200 16228
+INFO 2025-03-07 22:43:40,206 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:51,585 basehttp "POST /admin/admin_dashboard/viewaccess/1/change/ HTTP/1.1" 302 0
+INFO 2025-03-07 22:43:51,606 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16672
+INFO 2025-03-07 22:43:51,637 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:53,482 basehttp "GET /admin/admin_dashboard/viewaccess/3/change/ HTTP/1.1" 200 16278
+INFO 2025-03-07 22:43:53,534 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:57,174 basehttp "POST /admin/admin_dashboard/viewaccess/3/change/ HTTP/1.1" 302 0
+INFO 2025-03-07 22:43:57,215 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16689
+INFO 2025-03-07 22:43:57,247 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:43:58,315 basehttp "GET /admin/admin_dashboard/viewaccess/4/change/ HTTP/1.1" 200 16262
+INFO 2025-03-07 22:43:58,359 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:44:00,449 basehttp "POST /admin/admin_dashboard/viewaccess/4/change/ HTTP/1.1" 302 0
+INFO 2025-03-07 22:44:00,480 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16685
+INFO 2025-03-07 22:44:00,513 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:44:02,090 basehttp "GET /admin/admin_dashboard/viewaccess/5/change/ HTTP/1.1" 200 16262
+INFO 2025-03-07 22:44:02,128 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:44:04,225 basehttp "POST /admin/admin_dashboard/viewaccess/5/change/ HTTP/1.1" 302 0
+INFO 2025-03-07 22:44:04,249 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16685
+INFO 2025-03-07 22:44:04,281 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:44:06,377 basehttp "GET /admin/admin_dashboard/viewaccess/5/change/ HTTP/1.1" 200 16271
+INFO 2025-03-07 22:44:06,415 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:44:09,200 basehttp "POST /admin/admin_dashboard/viewaccess/5/change/ HTTP/1.1" 302 0
+INFO 2025-03-07 22:44:09,223 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16685
+INFO 2025-03-07 22:44:09,255 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:44:10,652 basehttp "GET /admin/admin_dashboard/viewaccess/4/change/ HTTP/1.1" 200 16271
+INFO 2025-03-07 22:44:10,698 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 22:44:12,162 basehttp "POST /admin/admin_dashboard/viewaccess/4/change/ HTTP/1.1" 302 0
+INFO 2025-03-07 22:44:12,190 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16685
+INFO 2025-03-07 22:44:12,230 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-03-07 23:02:32,392 log Internal Server Error: /accounts/api/login/
+Traceback (most recent call last):
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\request.py", line 421, in __getattr__
+    return getattr(_request, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'Meta'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\UAS\accounts\views.py", line 87, in post
+    ip_address = request.Meta.get('REMOTE_ADDR','')
+                 ^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\request.py", line 423, in __getattr__
+    return self.__getattribute__(attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'Meta'
+ERROR 2025-03-07 23:02:32,395 basehttp "POST /accounts/api/login/ HTTP/1.1" 500 106612
+INFO 2025-03-07 23:05:44,551 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\accounts\views.py changed, reloading.
+INFO 2025-03-07 23:05:46,135 autoreload Watching for file changes with StatReloader
+INFO 2025-03-07 23:05:48,233 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\accounts\views.py changed, reloading.
+INFO 2025-03-07 23:05:49,301 autoreload Watching for file changes with StatReloader
+INFO 2025-03-07 23:06:07,459 autoreload Watching for file changes with StatReloader
+INFO 2025-03-07 23:06:11,437 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-07 23:08:42,976 autoreload Watching for file changes with StatReloader
+ERROR 2025-03-07 23:08:46,493 log Internal Server Error: /accounts/api/login/
+Traceback (most recent call last):
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\request.py", line 421, in __getattr__
+    return getattr(_request, attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'Meta'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\UAS\accounts\views.py", line 87, in post
+    ip_address = request.Meta.get('REMOTE_ADDR','')
+                 ^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\request.py", line 423, in __getattr__
+    return self.__getattribute__(attr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Request' object has no attribute 'Meta'
+ERROR 2025-03-07 23:08:46,495 basehttp "POST /accounts/api/login/ HTTP/1.1" 500 106612
+INFO 2025-03-07 23:09:09,069 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\accounts\views.py changed, reloading.
+INFO 2025-03-07 23:09:10,254 autoreload Watching for file changes with StatReloader
+INFO 2025-03-07 23:09:16,509 autoreload Watching for file changes with StatReloader
+INFO 2025-03-07 23:09:19,912 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-07 23:09:31,928 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 525
+WARNING 2025-03-07 23:10:17,662 log Not Found: /uas_admin/user_role_details/<int:id>/
+WARNING 2025-03-07 23:10:17,662 basehttp "GET /uas_admin/user_role_details/%3Cint:id%3E/ HTTP/1.1" 404 9318
+INFO 2025-03-07 23:10:39,678 basehttp "GET /admin/ HTTP/1.1" 200 18448
+INFO 2025-03-07 23:10:41,264 basehttp "GET /admin/accounts/userroles/ HTTP/1.1" 200 15290
+INFO 2025-03-07 23:10:41,309 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 23:10:51,630 basehttp "GET /admin/accounts/userroles/1/change/ HTTP/1.1" 200 17621
+INFO 2025-03-07 23:10:51,663 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-07 23:11:19,299 log Forbidden: /uas_admin/user_role_details/1/
+WARNING 2025-03-07 23:11:19,299 basehttp "GET /uas_admin/user_role_details/1/ HTTP/1.1" 403 63
+INFO 2025-03-07 23:12:34,995 basehttp "GET /admin/ HTTP/1.1" 200 18448
+INFO 2025-03-07 23:12:39,137 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16433
+INFO 2025-03-07 23:12:39,178 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 23:12:49,245 basehttp "GET /admin/admin_dashboard/viewaccess/3/change/ HTTP/1.1" 200 16287
+INFO 2025-03-07 23:12:49,278 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 23:12:54,635 basehttp "POST /admin/admin_dashboard/viewaccess/3/change/ HTTP/1.1" 302 0
+INFO 2025-03-07 23:12:54,656 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16689
+INFO 2025-03-07 23:12:54,694 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 23:14:51,302 basehttp "GET /admin/accounts/userroles/ HTTP/1.1" 200 15290
+INFO 2025-03-07 23:14:51,341 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 23:14:59,823 basehttp "GET /admin/accounts/userroles/2/change/ HTTP/1.1" 200 17606
+INFO 2025-03-07 23:14:59,861 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 23:15:04,399 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15455
+INFO 2025-03-07 23:15:04,431 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 23:15:06,576 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 15842
+INFO 2025-03-07 23:15:06,606 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 23:15:17,868 basehttp "GET /admin/accounts/userroles/ HTTP/1.1" 200 15290
+INFO 2025-03-07 23:15:17,909 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 23:16:57,949 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-07 23:16:59,070 autoreload Watching for file changes with StatReloader
+ERROR 2025-03-07 23:17:02,996 log Internal Server Error: /uas_admin/user_role_details/1/
+Traceback (most recent call last):
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\permissions.py", line 37, in has_permission
+    return user_role.permissions.filter(codename=required_permission).exists()
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Role' object has no attribute 'permissions'
+ERROR 2025-03-07 23:17:02,998 basehttp "GET /uas_admin/user_role_details/1/ HTTP/1.1" 500 107418
+ERROR 2025-03-07 23:18:06,594 log Internal Server Error: /uas_admin/user_role_details/1/
+Traceback (most recent call last):
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 415, in initial
+    self.check_permissions(request)
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\permissions.py", line 37, in has_permission
+    return user_role.permissions.filter(codename=required_permission).exists()
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Role' object has no attribute 'permissions'
+ERROR 2025-03-07 23:18:06,596 basehttp "GET /uas_admin/user_role_details/1/ HTTP/1.1" 500 107418
+INFO 2025-03-07 23:31:44,691 autoreload Watching for file changes with StatReloader
+INFO 2025-03-07 23:31:51,304 basehttp "GET /admin/accounts/userroles/ HTTP/1.1" 200 15781
+INFO 2025-03-07 23:31:51,343 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 23:31:52,684 basehttp "GET /admin/admin_dashboard/useractivity/ HTTP/1.1" 200 15625
+INFO 2025-03-07 23:31:52,713 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 23:31:54,197 basehttp "GET /admin/admin_dashboard/useractivity/1/change/ HTTP/1.1" 200 17820
+INFO 2025-03-07 23:31:54,238 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-07 23:33:51,481 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-07 23:34:04,147 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 525
+WARNING 2025-03-07 23:34:16,499 log Forbidden: /uas_admin/user_role_details/1/
+WARNING 2025-03-07 23:34:16,500 basehttp "GET /uas_admin/user_role_details/1/ HTTP/1.1" 403 63
+INFO 2025-03-07 23:57:25,254 autoreload Watching for file changes with StatReloader
+INFO 2025-03-07 23:57:36,946 basehttp "GET /admin/ HTTP/1.1" 200 19174
+INFO 2025-03-07 23:57:42,167 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-08 00:01:07,426 basehttp "GET /auth/google/login/callback/?state=E89AmFaNnMibdkV7&code=4%2F0AQSTgQER7CToZOUkCAcc_C0a-XLZR365joPaFySeTFQ500oC-x6S_8JSoj2GxtC2B9nXNg&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent HTTP/1.1" 200 1668
+INFO 2025-03-10 17:11:25,152 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 17:11:43,223 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 17:11:55,146 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-10 17:12:03,922 basehttp "GET /auth/google/login/callback/?state=S5MvtalIvkcpSG32&code=4%2F0AQSTgQHTlQIgJCTt6Gch5Mh7SaEvoEGPo9VpJOG7vzd6Ajh99Q5J2CqddCrcvuMIOHxqzQ&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent HTTP/1.1" 302 0
+WARNING 2025-03-10 17:12:03,971 log Not Found: /auth/google/login/callback/uas_admin/user_list/
+WARNING 2025-03-10 17:12:03,971 basehttp "GET /auth/google/login/callback/uas_admin/user_list/ HTTP/1.1" 404 11236
+INFO 2025-03-10 17:20:10,086 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 17:20:40,368 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-10 17:22:13,586 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-10 17:25:19,959 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\UAS\settings.py changed, reloading.
+INFO 2025-03-10 17:25:21,079 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 17:25:42,831 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-10 17:58:20,822 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 18:35:24,061 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 19:10:10,141 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 19:10:34,590 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-10 19:53:59,666 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 19:54:23,079 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-10 19:55:14,465 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-10 19:55:14,740 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3834
+INFO 2025-03-10 19:55:14,783 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-03-10 19:55:14,793 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-03-10 19:55:14,793 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-03-10 19:55:14,793 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-03-10 19:55:14,794 basehttp "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-03-10 19:55:14,795 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:55:14,906 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:55:14,906 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:48,874 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-03-10 19:56:49,001 basehttp "GET /admin/ HTTP/1.1" 200 19174
+INFO 2025-03-10 19:56:49,046 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:49,047 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:49,047 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:52,385 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16468
+INFO 2025-03-10 19:56:52,412 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:52,425 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:52,428 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:52,428 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:52,428 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:52,429 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:52,429 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:52,433 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:52,434 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:52,534 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 19:56:52,560 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:52,578 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:58,519 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 15705
+INFO 2025-03-10 19:56:58,569 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 19:56:59,805 basehttp "GET /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 200 21255
+INFO 2025-03-10 19:56:59,843 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:59,852 basehttp "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:59,852 basehttp "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:59,852 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:59,856 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 19:56:59,861 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:59,863 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:59,918 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:59,923 basehttp "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:59,923 basehttp "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 304 0
+INFO 2025-03-10 19:56:59,924 basehttp "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 304 0
+INFO 2025-03-10 19:57:12,862 basehttp "POST /admin/logout/ HTTP/1.1" 200 3555
+INFO 2025-03-10 20:43:46,380 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 20:43:49,579 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-10 20:44:00,713 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 525
+WARNING 2025-03-10 20:44:40,301 log Forbidden: /uas_admin/user_role_details/1/
+WARNING 2025-03-10 20:44:40,302 basehttp "GET /uas_admin/user_role_details/1/ HTTP/1.1" 403 63
+INFO 2025-03-10 21:05:21,841 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 21:05:27,381 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-10 21:05:27,441 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2025-03-10 21:05:34,003 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-03-10 21:05:34,041 basehttp "GET /admin/ HTTP/1.1" 200 19174
+INFO 2025-03-10 21:05:38,783 basehttp "GET /admin/auth/group/ HTTP/1.1" 200 14476
+INFO 2025-03-10 21:05:38,831 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:05:40,688 basehttp "GET /admin/auth/group/add/ HTTP/1.1" 200 22765
+INFO 2025-03-10 21:05:40,734 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:06:07,163 basehttp "GET /admin/admin_dashboard/useractivity/ HTTP/1.1" 200 16378
+INFO 2025-03-10 21:06:07,206 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:06:12,383 basehttp "GET /admin/admin_dashboard/useractivity/ HTTP/1.1" 200 16378
+INFO 2025-03-10 21:06:12,413 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:06:13,609 basehttp "GET /admin/admin_dashboard/useractivity/3/change/ HTTP/1.1" 200 17867
+INFO 2025-03-10 21:06:13,641 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:06:13,647 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-03-10 21:06:16,333 basehttp "GET /admin/admin_dashboard/useractivity/ HTTP/1.1" 200 16378
+INFO 2025-03-10 21:06:16,366 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:06:21,015 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16924
+INFO 2025-03-10 21:06:21,062 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:06:28,395 basehttp "GET /admin/admin_dashboard/viewaccess/5/change/ HTTP/1.1" 200 16753
+INFO 2025-03-10 21:06:28,439 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:06:36,603 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 16333
+INFO 2025-03-10 21:06:36,694 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:06:38,030 basehttp "GET /admin/accounts/permission/4/change/ HTTP/1.1" 200 16990
+INFO 2025-03-10 21:06:38,060 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:06:38,064 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-03-10 21:06:38,067 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-03-10 21:06:38,154 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-03-10 21:06:38,156 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-03-10 21:06:47,936 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16924
+INFO 2025-03-10 21:06:47,988 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:06:53,028 basehttp "GET /admin/accounts/userroles/ HTTP/1.1" 200 15781
+INFO 2025-03-10 21:06:53,058 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:06:54,886 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15946
+INFO 2025-03-10 21:06:54,918 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:06:58,862 basehttp "GET /admin/accounts/permission/add/ HTTP/1.1" 200 16706
+INFO 2025-03-10 21:06:58,904 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:28:51,913 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\permissions.py changed, reloading.
+INFO 2025-03-10 21:28:53,225 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 21:30:23,752 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\permissions.py changed, reloading.
+INFO 2025-03-10 21:30:24,909 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 21:35:52,468 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\UAS\settings.py changed, reloading.
+INFO 2025-03-10 21:35:53,634 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 21:41:56,639 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 16333
+INFO 2025-03-10 21:41:56,683 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:42:18,199 basehttp "POST /admin/accounts/permission/ HTTP/1.1" 200 15358
+INFO 2025-03-10 21:42:18,431 basehttp "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-03-10 21:42:21,326 basehttp "POST /admin/accounts/permission/ HTTP/1.1" 302 0
+INFO 2025-03-10 21:42:21,356 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 14315
+INFO 2025-03-10 21:42:21,391 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:42:24,335 basehttp "GET /admin/accounts/permission/add/ HTTP/1.1" 200 16706
+INFO 2025-03-10 21:42:24,384 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:42:45,821 basehttp "POST /admin/accounts/permission/add/ HTTP/1.1" 302 0
+INFO 2025-03-10 21:42:45,844 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 15746
+INFO 2025-03-10 21:42:45,878 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:42:49,155 basehttp "GET /admin/accounts/permission/add/ HTTP/1.1" 200 16706
+INFO 2025-03-10 21:42:49,196 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:43:13,611 basehttp "POST /admin/accounts/permission/add/ HTTP/1.1" 302 0
+INFO 2025-03-10 21:43:13,639 basehttp "GET /admin/accounts/permission/add/ HTTP/1.1" 200 16978
+INFO 2025-03-10 21:43:13,678 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:43:35,472 basehttp "POST /admin/accounts/permission/add/ HTTP/1.1" 302 0
+INFO 2025-03-10 21:43:35,497 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 16389
+INFO 2025-03-10 21:43:35,556 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:49:09,537 basehttp "GET /admin/accounts/userroles/ HTTP/1.1" 200 15781
+INFO 2025-03-10 21:49:09,572 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:49:12,885 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15946
+INFO 2025-03-10 21:49:12,920 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:49:14,651 basehttp "GET /admin/accounts/role/3/change/ HTTP/1.1" 200 17743
+INFO 2025-03-10 21:49:14,683 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:49:21,158 basehttp "POST /admin/accounts/role/3/change/ HTTP/1.1" 302 0
+INFO 2025-03-10 21:49:21,179 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 16145
+INFO 2025-03-10 21:49:21,225 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 21:50:22,585 basehttp "GET /admin/accounts/userroles/ HTTP/1.1" 200 15781
+INFO 2025-03-10 21:50:22,620 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 22:12:29,570 basehttp "GET /admin/accounts/userroles/2/change/ HTTP/1.1" 200 18144
+INFO 2025-03-10 22:12:29,620 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 22:12:32,832 basehttp "POST /admin/accounts/userroles/2/change/ HTTP/1.1" 302 0
+INFO 2025-03-10 22:12:32,855 basehttp "GET /admin/accounts/userroles/ HTTP/1.1" 200 16001
+INFO 2025-03-10 22:12:32,886 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 22:13:04,392 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-10 22:13:05,729 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-10 22:14:02,257 log Unauthorized: /uas_admin/user_list/
+WARNING 2025-03-10 22:14:02,257 basehttp "GET /uas_admin/user_list/ HTTP/1.1" 401 183
+INFO 2025-03-10 22:14:11,840 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-10 22:14:27,892 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 525
+INFO 2025-03-10 22:15:01,026 views User shubham fetched the user list from 127.0.0.1
+INFO 2025-03-10 22:15:01,066 basehttp "GET /uas_admin/user_list/ HTTP/1.1" 200 885
+WARNING 2025-03-10 22:57:12,175 log Forbidden: /uas_admin/user_role_details/1/
+WARNING 2025-03-10 22:57:12,176 basehttp "GET /uas_admin/user_role_details/1/ HTTP/1.1" 403 63
+INFO 2025-03-10 22:57:51,194 basehttp "GET /admin/accounts/userroles/2/change/ HTTP/1.1" 200 18144
+INFO 2025-03-10 22:57:51,244 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 22:57:59,062 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15946
+INFO 2025-03-10 22:57:59,095 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 22:58:00,055 basehttp "GET /admin/accounts/role/3/change/ HTTP/1.1" 200 17770
+INFO 2025-03-10 22:58:00,093 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 22:59:40,573 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 16154
+INFO 2025-03-10 22:59:40,607 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-10 23:00:40,118 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\permissions.py changed, reloading.
+INFO 2025-03-10 23:00:41,859 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 23:00:52,925 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\permissions.py changed, reloading.
+INFO 2025-03-10 23:00:54,104 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 23:12:04,926 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 23:12:08,269 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-10 23:12:21,481 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 525
+WARNING 2025-03-10 23:12:38,772 log Forbidden: /uas_admin/user_role_details/1/
+WARNING 2025-03-10 23:12:38,772 basehttp "GET /uas_admin/user_role_details/1/ HTTP/1.1" 403 63
+INFO 2025-03-10 23:37:09,881 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 23:37:16,622 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-10 23:37:34,857 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 525
+INFO 2025-03-10 23:38:01,500 views User shubham fetched the user list from 127.0.0.1
+INFO 2025-03-10 23:38:01,549 basehttp "GET /uas_admin/user_list/ HTTP/1.1" 200 885
+INFO 2025-03-10 23:38:06,869 views User shubham fetched the details of user role of user shivam from 127.0.0.1
+INFO 2025-03-10 23:38:06,945 basehttp "GET /uas_admin/user_role_details/1/ HTTP/1.1" 200 62

@@ -49,11 +49,16 @@ class RegisterView(APIView):
     
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
+        ip_address = request.Meta.get('REMOTE_ADDR','')
+        
         if serializer.is_valid():
             # Save the user instance
             user = serializer.save()
             # Trigger email confirmation
             send_email_confirmation(request, user)
+            logger.info(f"Successful registration for {user.username} from {ip_address}")
+            UserActivity.objects.create(user=user, action="user registration", ip_address=ip_address)
+
             return Response(
                 {'detail': 'Registration successful. Verification email sent.'},
                 status=status.HTTP_201_CREATED
@@ -79,7 +84,7 @@ class LoginView(APIView):
     def post(self, request):
         username = request.data.get('username')
         password = request.data.get('password')
-        ip_address = request.Meta.get('REMOTE_ADDR','')
+        ip_address = request.META.get('REMOTE_ADDR','')
 
         # Validate username and password
         if not username or not password:
@@ -159,7 +164,7 @@ class VerifyOTPView(APIView):
     def post(self, request):
         username = request.data.get('username')
         otp = request.data.get('otp')
-        ip_address = request.Meta.get('REMOTE_ADDR','')
+        ip_address = request.META.get('REMOTE_ADDR','')
 
         if not username or not otp:
             logger.warning(f"Failed attempt from {ip_address}: Missing username or otp.")
@@ -181,6 +186,7 @@ class VerifyOTPView(APIView):
         #If OTP is valid, delete it and issue tokens
         otp_instance.delete()
         logger.info(f"Successfull Login by {user.username}: otp deleted.")
+        UserActivity.objects.create(user=user, action="user Login", ip_address=ip_address)
         perform_login(request, user)
 
         refresh = RefreshToken.for_user(user)
@@ -264,18 +270,6 @@ class PasswordResetView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# class LogoutView(APIView):
-#     def post(self, request):
-#          try:
-#             refresh_token = request.data["refresh_token"]
-#             token = RefreshToken(refresh_token)
-#             token.blacklist()
-            
-#             return Response({'message': 'Successfully logged out.'},status=status.HTTP_200_OK)
-#          except Exception as e:
-#              return Response(status=status.HTTP_400_BAD_REQUEST)
-
-
 class LogoutView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -302,37 +296,20 @@ class LogoutView(APIView):
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
-# class LogoutView(APIView):
-
-#     def post(self, request):
-#         try:
-#             auth_header = request.headers.get('Authorization')
-
-#             if auth_header and auth_header.startswith('Bearer '):
-#                 refresh_token = auth_header.split(' ')[1]
-#                 token = RefreshToken(refresh_token)
-#                 token.blacklist()
-                
-#                 return Response({'message': 'You have been logged out'}, status=status.HTTP_200_OK)
-#             else:
-#                 return Response({'error': 'Authorization header missing or invalid'}, status=status.HTTP_400_BAD_REQUEST)
-        
-#         except Exception as e:
-#             return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
-
-
 def register_view(request):
-    return render(request, 'accounts/register.html')
+    return render(request, 'accounts_temp/register.html')
 
 def login_view(request):
-    return render(request, 'accounts/login.html')
+    return render(request, 'accounts_temp/login.html')
 
 def request_reset_password_view(request):
-    return render(request, 'accounts/request_reset_passowrd.html')
+    return render(request, 'accounts_temp/request_reset_passowrd.html')
 
 def reset_password_view(request):
-    return render(request, 'accounts/reset_password.html')
+    return render(request, 'accounts_temp/reset_password.html')
 
 def logout_view(request):
-    return render(request, 'accounts/logout.html')
+    return render(request, 'accounts_temp/logout.html')
 
+def success(request):
+    return render(request, 'accounts_temp/success.html')

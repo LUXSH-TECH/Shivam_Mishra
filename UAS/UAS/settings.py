@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', #new
     #custom
     'accounts',
     'admin_dashboard',
@@ -63,7 +64,7 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': {
             'access_type': 'online',
         },
-        'OAUTH_PKCE_ENABLED': True,
+        'OAUTH_PKCE_ENABLED': False,
     }
 }
 

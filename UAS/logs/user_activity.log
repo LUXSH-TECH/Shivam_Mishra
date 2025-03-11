@@ -679,3 +679,24 @@ INFO 2025-03-12 00:20:10,902 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
 INFO 2025-03-12 00:20:20,569 basehttp "GET /auth/google/login/callback/?state=guolPrzlyG4ez1A1&code=4%2F0AQSTgQFXBAl3sYDf47sjm6vL79CztatZUHn4xNsHa_jR6LDT4jgnO9hs72lsed7Syf-aPw&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent HTTP/1.1" 302 0
 WARNING 2025-03-12 00:20:20,581 log Not Found: /accounts/profile/
 WARNING 2025-03-12 00:20:20,581 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7124
+INFO 2025-03-12 00:31:51,271 autoreload Watching for file changes with StatReloader
+INFO 2025-03-12 00:31:58,317 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-12 00:31:58,353 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3834
+INFO 2025-03-12 00:32:09,000 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-03-12 00:32:09,030 basehttp "GET /admin/ HTTP/1.1" 200 18663
+INFO 2025-03-12 00:32:11,300 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16468
+INFO 2025-03-12 00:32:11,344 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-12 00:32:13,648 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 16850
+INFO 2025-03-12 00:32:13,694 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-12 00:32:25,246 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 16924
+INFO 2025-03-12 00:32:25,296 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-12 00:32:26,498 basehttp "GET /admin/account/emailaddress/ HTTP/1.1" 200 18537
+INFO 2025-03-12 00:32:26,534 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-12 00:32:26,600 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2025-03-12 00:32:27,322 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15946
+INFO 2025-03-12 00:32:27,352 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-12 00:32:28,928 basehttp "GET /admin/socialaccount/socialtoken/ HTTP/1.1" 200 16093
+INFO 2025-03-12 00:32:28,964 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-12 00:32:30,929 basehttp "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 17027
+INFO 2025-03-12 00:32:30,959 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-12 00:32:30,977 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0

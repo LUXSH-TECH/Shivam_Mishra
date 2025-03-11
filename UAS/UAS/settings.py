@@ -234,6 +234,9 @@ SOCIALACCOUNT_AUTO_SIGNUP = True  # Automatically create user on first login
 # LOGIN_REDIRECT_URL = "uas_admin/user_list/"
 # LOGOUT_REDIRECT_URL = "accounts/api/login/"
 
+ACCOUNT_ADAPTER = 'allauth.account.adapter.DefaultAccountAdapter'
+SOCIALACCOUNT_ADAPTER = 'allauth.socialaccount.adapter.DefaultSocialAccountAdapter'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,

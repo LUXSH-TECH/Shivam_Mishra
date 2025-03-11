@@ -613,3 +613,69 @@ INFO 2025-03-10 23:38:01,500 views User shubham fetched the user list from 127.0
 INFO 2025-03-10 23:38:01,549 basehttp "GET /uas_admin/user_list/ HTTP/1.1" 200 885
 INFO 2025-03-10 23:38:06,869 views User shubham fetched the details of user role of user shivam from 127.0.0.1
 INFO 2025-03-10 23:38:06,945 basehttp "GET /uas_admin/user_role_details/1/ HTTP/1.1" 200 62
+INFO 2025-03-10 23:54:18,334 autoreload Watching for file changes with StatReloader
+INFO 2025-03-10 23:54:20,231 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-11 20:40:07,950 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 20:58:25,619 basehttp "GET /admin/ HTTP/1.1" 200 18697
+INFO 2025-03-11 20:58:25,765 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-03-11 20:58:28,234 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 15705
+INFO 2025-03-11 20:58:28,368 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 20:58:29,591 basehttp "GET /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 200 21255
+INFO 2025-03-11 20:58:29,638 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 21:01:46,752 basehttp "GET /admin/ HTTP/1.1" 200 18697
+INFO 2025-03-11 21:01:52,986 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 16850
+INFO 2025-03-11 21:01:53,040 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 21:01:56,660 basehttp "GET /admin/socialaccount/socialaccount/1/change/ HTTP/1.1" 200 18503
+INFO 2025-03-11 21:01:56,690 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 21:07:20,173 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\UAS\settings.py changed, reloading.
+INFO 2025-03-11 21:07:22,350 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 21:07:24,398 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\UAS\settings.py changed, reloading.
+INFO 2025-03-11 21:07:25,490 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 21:12:04,275 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 21:12:18,915 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-11 21:12:31,881 basehttp "GET /admin/socialaccount/socialaccount/1/delete/ HTTP/1.1" 302 0
+INFO 2025-03-11 21:12:32,064 basehttp "GET /admin/login/?next=/admin/socialaccount/socialaccount/1/delete/ HTTP/1.1" 200 4234
+INFO 2025-03-11 21:12:39,608 basehttp "POST /admin/login/?next=/admin/socialaccount/socialaccount/1/delete/ HTTP/1.1" 302 0
+INFO 2025-03-11 21:12:39,819 basehttp "GET /admin/socialaccount/socialaccount/1/delete/ HTTP/1.1" 200 14215
+INFO 2025-03-11 21:12:42,373 basehttp "POST /admin/socialaccount/socialaccount/1/delete/ HTTP/1.1" 302 0
+INFO 2025-03-11 21:12:42,452 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 15284
+INFO 2025-03-11 21:12:42,495 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 21:12:50,568 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-11 21:13:17,764 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 15111
+INFO 2025-03-11 21:13:17,793 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 21:13:33,239 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16468
+INFO 2025-03-11 21:13:33,270 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 21:13:34,609 basehttp "GET /admin/accounts/user/5/change/ HTTP/1.1" 200 22203
+INFO 2025-03-11 21:13:34,654 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 21:13:36,344 basehttp "GET /admin/accounts/user/5/delete/ HTTP/1.1" 200 14264
+INFO 2025-03-11 21:13:37,502 basehttp "POST /admin/accounts/user/5/delete/ HTTP/1.1" 302 0
+INFO 2025-03-11 21:13:37,525 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16350
+INFO 2025-03-11 21:13:37,560 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 23:39:38,944 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-11 23:44:16,013 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-11 23:45:38,713 basehttp "GET /auth/google/login HTTP/1.1" 301 0
+INFO 2025-03-11 23:45:38,794 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-11 23:46:05,295 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\UAS\settings.py changed, reloading.
+INFO 2025-03-11 23:46:07,338 autoreload Watching for file changes with StatReloader
+INFO 2025-03-11 23:46:13,258 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-11 23:54:55,362 basehttp "GET /admin/ HTTP/1.1" 200 18610
+INFO 2025-03-11 23:55:00,219 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 15705
+INFO 2025-03-11 23:55:00,258 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 23:55:03,005 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 15111
+INFO 2025-03-11 23:55:03,037 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 23:55:05,557 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16187
+INFO 2025-03-11 23:55:05,588 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 23:56:15,721 basehttp "GET /admin/ HTTP/1.1" 200 18610
+INFO 2025-03-11 23:56:19,465 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 15705
+INFO 2025-03-11 23:56:19,514 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 23:56:20,565 basehttp "GET /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 200 21255
+INFO 2025-03-11 23:56:20,611 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 23:56:42,256 basehttp "POST /admin/socialaccount/socialapp/1/change/ HTTP/1.1" 302 0
+INFO 2025-03-11 23:56:42,303 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 15927
+INFO 2025-03-11 23:56:42,335 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-11 23:57:06,184 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-12 00:09:31,022 autoreload Watching for file changes with StatReloader
+INFO 2025-03-12 00:20:10,902 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-12 00:20:20,569 basehttp "GET /auth/google/login/callback/?state=guolPrzlyG4ez1A1&code=4%2F0AQSTgQFXBAl3sYDf47sjm6vL79CztatZUHn4xNsHa_jR6LDT4jgnO9hs72lsed7Syf-aPw&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent HTTP/1.1" 302 0
+WARNING 2025-03-12 00:20:20,581 log Not Found: /accounts/profile/
+WARNING 2025-03-12 00:20:20,581 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7124

@@ -10,6 +10,13 @@ from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from admin_dashboard.permissions import DynamicRolePermission
 import logging
+from utils.pagination import CustomPagination
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import OrderingFilter
+import csv
+from django.http import HttpResponse
+from django.db.models import Q
+from django.utils.dateparse import parse_datetime
 # from django.utils.decorators import method_decorator
 # from accounts.helper import role_required
 
@@ -663,3 +670,64 @@ class ViewAccessDeleteView(APIView):
         UserActivity.objects.create(user=auth_user, action=f"Deleted view access {view_access.view_name}", ip_address=ip_address)    
 
         return Response({'message': 'veiw access rule deleted succesfully'}, status=status.HTTP_202_ACCEPTED)
+    
+
+class UserActivityListView(generics.ListAPIView):
+    """
+    API for filtering audit logs.
+    Supports filters: user_id, start_date, end_date, action_type.
+    """
+    serializer_class = UserActivitySerializer
+    pagination_class = CustomPagination
+    filter_backends =  [OrderingFilter]
+    permission_classes = [IsAuthenticated, IsAdminUser]
+
+    ordering_fields = ['timestamp']  # sorting by timestamp
+    ordering = ['-timestamp']  #  newest first
+
+    def get_queryset(self):
+        queryset = UserActivity.objects.all()
+        start_date = self.request.query_params.get('start_date')
+        end_date = self.request.query_params.get('end_date')
+        user_id = self.request.query_params.get('user_id')
+        action = self.request.query_params.get('action')
+
+        # Filter by date range
+        if start_date:
+            start_date = parse_datetime(start_date)
+            if start_date:
+                queryset = queryset.filter(timestamp__gte=start_date) #greater than equal to the value
+
+        if end_date:
+            end_date = parse_datetime(end_date)
+            if end_date:
+                queryset = queryset.filter(timestamp__lte=end_date)#less than and equat to the value
+
+        if user_id:
+            queryset = queryset.filter(user_id=user_id)
+
+        # Filter by action keyword
+        if action:
+            queryset = queryset.filter(action__icontains=action)# keyword lookups
+
+        return queryset
+
+
+class UserActivityCSVReportView(UserActivityListView):
+    permission_classes = [IsAuthenticated, IsAdminUser]
+
+    def get(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+
+        # Creating the HttpResponse object with CSV header
+        response = HttpResponse(content_type='text/csv')
+        current_date = timezone.now().strftime('%Y-%m-%d')
+        response['Content-Disposition'] = f'attachment; filename="user_activity_report_{current_date}.csv"'
+
+        write = csv.writer(response)
+        write.writerow(['User', 'Action', 'IP Address', 'Timestamp'])
+
+        for activity in queryset:
+            write.writerow([activity.user.username, activity.action, activity.ip_address, activity.timestamp])
+
+        return response

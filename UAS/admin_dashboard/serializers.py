@@ -27,3 +27,9 @@ class ViewAccessSerializer(serializers.ModelSerializer):
     class Meta:
         model = ViewAccess
         fields = '__all__'
+
+    
+class UserActivitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserActivity
+        fields = '__all__'

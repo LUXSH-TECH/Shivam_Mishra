@@ -29,4 +29,7 @@ urlpatterns = [
     path('view_access_details/<int:id>/', GetViewAccessDetailsView.as_view(), name='view-access-details'),
     path('update_view_access/', ViewAccessUpdateView.as_view(), name='update-view-access'),
     path('delete_view_access/<int:id>/', ViewAccessDeleteView.as_view(), name='delete-view-access'),
+    #             <----- reports urls ----->
+    path('user_activity_list/', UserActivityListView.as_view(), name='user-activity-list'),
+    path('export_audit_report/', UserActivityCSVReportView.as_view(), name='export-audit-report'),
 ]

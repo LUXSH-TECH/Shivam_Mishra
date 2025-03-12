@@ -7,6 +7,7 @@ urlpatterns = [
     path('user_list/', UserListView.as_view(), name ='user list'),
     path('user_details/<int:id>/', GetUserDetailView.as_view(), name ='user details'),
     path('update_user/', UpdateUserDetailsView.as_view(), name ='update user'),
+    path('toggle_mfa/', ToggleMFAView.as_view(), name='toggle-mfa'),
     path('delete_user/<int:id>/', DeleteUserView.as_view(), name ='delete user'),
     #             <----- permission urls -----> 
     path('create_permission/', CreatePermissionView.as_view(), name ='create permission'),

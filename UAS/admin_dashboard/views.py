@@ -136,6 +136,36 @@ class UpdateUserDetailsView(APIView):
         return Response({'message': 'user details updated successfully', 'user_id': user_id}, status=status.HTTP_200_OK)
 
 
+class ToggleMFAView(APIView):
+    """
+    Allows an admin user to enable or disable MFA for a specific user.
+    """
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    # permission_classes = [IsAuthenticated, IsAdminUser]
+
+    def post(self, request):
+        auth_user = request.user
+        user_id = request.data.get('id')
+        is_mfa_enabled = request.data.get('is_mfa_enabled')
+
+        if user_id is None or is_mfa_enabled is None:
+            return Response({'error':'user ID and mfa status are required'},status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            user = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            return Response({'error':'User not found'}, status=status.HTTP_404_NOT_FOUND)
+        
+        user.is_mfa_enabled = is_mfa_enabled
+        user.save()
+
+        status_msg = "enabled" if is_mfa_enabled else "disabled"
+        # logger.info(f"User {auth_user.username} {status_msg} MFA for user {user.username}")
+
+        return Response({"message": f"MFA {status_msg} successfully for user {user.username}."}, status=status.HTTP_200_OK)
+
+
 class DeleteUserView(APIView):
     permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
     

@@ -142,20 +142,39 @@ class LoginView(APIView):
         print('successfull login attempt cache key is reset.')
         logger.info(f"Successful login for {user.username} from {ip_address}")
 
-        otp = str(randint(100000, 999999))
+        if user.is_mfa_enabled:
+            otp = str(randint(100000, 999999))
 
-        otp_instance, created = OTP.objects.update_or_create(user=user, defaults={'otp': otp, 'created_at': timezone.now()})
+            otp_instance, created = OTP.objects.update_or_create(user=user, defaults={'otp': otp, 'created_at': timezone.now()})
 
-        send_mail(
-            'Your OTP Code',
-            f'Your OTP code is {otp}. It expires in 5 minutes.',
-            'from@example.com',
-            [user.email],
-            fail_silently=False,
-        )
+            send_mail(
+                'Your OTP Code',
+                f'Your OTP code is {otp}. It expires in 5 minutes.',
+                'from@example.com',
+                [user.email],
+                fail_silently=False,
+            )
+            return Response({'message': 'OTP sent to your email. Please verify.'}, status=status.HTTP_200_OK)
+        else:
+            # If MFA is disabled, login without OTP
+            refresh = RefreshToken.for_user(user)
+            access_token = str(refresh.access_token)
 
-        return Response({'message': 'OTP sent to your email. Please verify.'}, status=status.HTTP_200_OK)
+            user.last_login = timezone.now()
+            user.save(update_fields=["last_login"])
 
+            response = Response(
+                {
+                    'status': 'Login successful (MFA disabled)',
+                    'access': access_token,
+                    'refresh': str(refresh),
+                },
+                status=status.HTTP_200_OK
+            )
+            response["Refresh-Token"] = str(refresh)
+
+            return response
+    
 
 class VerifyOTPView(APIView):
     '''

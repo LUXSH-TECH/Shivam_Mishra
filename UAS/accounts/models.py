@@ -43,7 +43,8 @@ class User(AbstractBaseUser):
     is_inactive = models.BooleanField(default=False)
     is_locked = models.BooleanField(default=False)
     created_at = models.DateTimeField(default=timezone.now)
-    updated_at = models.DateTimeField(auto_now=True) 
+    updated_at = models.DateTimeField(auto_now=True)
+    is_mfa_enabled = models.BooleanField(default=True)
 
     objects = UserManager()
 

@@ -177,43 +177,50 @@ class LoginView(APIView):
     
 
 class VerifyOTPView(APIView):
-    '''
+    """
     Verifies the OTP and issues JWT tokens.
-    '''
+    """
     def post(self, request):
         username = request.data.get('username')
         otp = request.data.get('otp')
-        ip_address = request.META.get('REMOTE_ADDR','')
+        ip_address = request.META.get('REMOTE_ADDR', '')
 
+        # Check if username and OTP are provided
         if not username or not otp:
-            logger.warning(f"Failed attempt from {ip_address}: Missing username or otp.")
+            logger.warning(f"Failed attempt from {ip_address}: Missing username or OTP.")
             return Response({'error': 'Username and OTP are required'}, status=status.HTTP_400_BAD_REQUEST)
 
+        # Retrieve the user based on the provided username or email
         try:
             user = User.objects.get(email=username) if '@' in username else User.objects.get(username=username)
         except User.DoesNotExist:
             return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 
+        # Retrieve the OTP instance for the user
         try:
             otp_instance = OTP.objects.get(user=user)
         except OTP.DoesNotExist:
             return Response({'error': 'OTP not found. Please request a new one.'}, status=status.HTTP_400_BAD_REQUEST)
 
+        # Validate the OTP
         if not otp_instance.is_valid() or otp_instance.otp != otp:
             return Response({'error': 'Invalid or expired OTP'}, status=status.HTTP_400_BAD_REQUEST)
 
-        #If OTP is valid, delete it and issue tokens
+        # If OTP is valid, delete it and issue JWT tokens
         otp_instance.delete()
-        logger.info(f"Successfull Login by {user.username}: otp deleted.")
-        UserActivity.objects.create(user=user, action="user Login", ip_address=ip_address)
+        logger.info(f"Successful login by {user.username}: OTP deleted.")
+        UserActivity.objects.create(user=user, action="User login", ip_address=ip_address)
         perform_login(request, user)
 
+        # Generate JWT tokens
         refresh = RefreshToken.for_user(user)
         access_token = str(refresh.access_token)
 
+        # Update user's last login time
         user.last_login = timezone.now()
         user.save(update_fields=["last_login"])
 
+        # Prepare the response with tokens
         response = Response(
             {
                 'status': 'OTP verified. Login successful',
@@ -222,10 +229,9 @@ class VerifyOTPView(APIView):
             },
             status=status.HTTP_200_OK
         )
-        #storing refresh token in a cusotm header
+        # Store refresh token in a custom header
         response["Refresh-Token"] = str(refresh)
-        
-        print(str(refresh))
+
         return response
 
 
@@ -321,8 +327,11 @@ def register_view(request):
 def login_view(request):
     return render(request, 'accounts_temp/login.html')
 
+def verify_otp(request):
+    return render(request, 'accounts_temp/verify_otp.html')
+
 def request_reset_password_view(request):
-    return render(request, 'accounts_temp/request_reset_passowrd.html')
+    return render(request, 'accounts_temp/request_reset_password.html')
 
 def reset_password_view(request):
     return render(request, 'accounts_temp/reset_password.html')

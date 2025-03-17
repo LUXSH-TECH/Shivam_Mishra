@@ -2,20 +2,34 @@
 {% block title %}Logout{% endblock title %}
 
 {% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/logout.css' %}">
 <h2>Logout</h2>
 <form id="logout-form">
     <button type="submit">Logout</button>
 </form>
 <script>
-    document.getElementById('logout-form').addEventListener('submit', function(e)
-    e.preventDefault();
-    fetch('api/accounts/logout/', {
-        method : 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify()
-    })
-    );
+    document.getElementById('logout-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        fetch('http://127.0.0.1:5000/accounts/api/logout/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('access_token')
+            },
+        })
+        .then(response => {
+            if (response.ok) {
+                localStorage.removeItem('access_token');
+                localStorage.removeItem('refresh_token');
+                window.location.href = '/login/';
+            } else {
+                alert('Logout failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
 </script>
 {% endblock content %}

@@ -2,6 +2,8 @@
 {% block title  %} Register {% endblock title %}
 
 {% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
 <h2> Register </h2>
 <form id='register-form'>
     <label for="username">Username:</label>
@@ -31,7 +33,7 @@
             password: document.getElementById('password').value,
         };
         try {
-            const response = await fetch('http://127.0.0.1:5000/accounts/api/register/', {
+            const response = await fetch("{% url 'api-register' %}", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

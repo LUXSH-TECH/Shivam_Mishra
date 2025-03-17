@@ -13,6 +13,7 @@ urlpatterns = [
     #             <-----urls for templates -----> 
     path('register/', register_view, name='register'),
     path('login/', login_view, name='login'),
+    path('verify_otp/', verify_otp, name='verify-otp'),
     path('logout/', logout_view, name='logout'),
     path('request_password_reset/', request_reset_password_view, name='request-password-reset'),
     path('reset_password/', reset_password_view, name='reset-password'),

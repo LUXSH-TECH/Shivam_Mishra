@@ -3,6 +3,8 @@
 {% block title %}Login{% endblock title %}
 
 {% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 <h2>Login</h2>
 <form id="login-form">
     {% csrf_token %}
@@ -42,7 +44,7 @@
         };
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/accounts/api/login/', {
+            const response = await fetch("{% url 'api-login' %}", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -59,6 +61,8 @@
                 // Store tokens in localStorage or cookies
                 localStorage.setItem('access_token', result.access_token);
                 localStorage.setItem('refresh_token', result.refresh_token);
+                // Redirect to success.html
+                window.location.href = "{% url 'success' %}";
             } else {
                 document.getElementById('login-message').innerText = result.error || 'Login failed.';
             }

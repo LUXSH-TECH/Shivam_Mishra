@@ -99,7 +99,7 @@ class PasswordResetRequestSerializer(serializers.Serializer):
         user = self.user
         uid = urlsafe_base64_encode(force_bytes(user.id))
         token = PasswordResetTokenGenerator().make_token(user)
-        reset_link = f"http://127.0.0.1:5000/accounts/reset-password/{uid}/{token}/"
+        reset_link = f"http://127.0.0.1:5000/accounts/reset_password/?uid={uid}&token={token}"
 
         # Send email
         send_mail(

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}Verify OTP{% endblock title %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/verify_otp.css' %}">
+<div class="container">
+    <h2>Verify OTP</h2>
+    <form id="otpForm">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="otp">OTP:</label>
+            <input type="text" class="form-control" id="otp" name="otp" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Verify OTP</button>
+    </form>
+    <div id="responseMessage"></div>
+</div>
+
+<script>
+document.getElementById('otpForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const username = document.getElementById('username').value;
+    const otp = document.getElementById('otp').value;
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    fetch('{% url "verify-otp" %}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken
+        },
+        body: JSON.stringify({ username: username, otp: otp })
+    })
+    .then(response => response.json())
+    .then(data => {
+        const responseMessage = document.getElementById('responseMessage');
+        if (data.success) {
+            responseMessage.innerHTML = '<div class="alert alert-success">OTP verified successfully!</div>';
+        } else {
+            responseMessage.innerHTML = '<div class="alert alert-danger">OTP verification failed. Please try again.</div>';
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        document.getElementById('responseMessage').innerHTML = '<div class="alert alert-danger">An error occurred. Please try again later.</div>';
+    });
+});
+</script>
+{% endblock content %}

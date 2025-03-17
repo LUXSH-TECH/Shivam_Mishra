@@ -625,6 +625,7 @@ class ViewAccessUpdateView(APIView):
     permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def get_object(self):
+        # Get the view access object by ID from the request data
         view_accesss_id = self.request.data.get('id')
         return get_object_or_404(ViewAccess, id=view_accesss_id)
     
@@ -633,23 +634,28 @@ class ViewAccessUpdateView(APIView):
         ip_address = request.META.get('REMOTE_ADDR', '') 
 
         try:
+            # Fetch the view access object to be updated
             view_access = self.get_object()
 
+            # Get the updated data from the request
             view_name = request.data.get('view_name')
-            roles = request.data.data.get('roles')
+            roles = request.data.get('roles')
 
+            # Update the view access object with new data
             view_access.view_name = view_name
             view_access.roles = roles
 
+            # Save the updated view access object
             view_access.save()
             logger.info(f"User {auth_user.username} updated view access {view_access.view_name} from {ip_address}")
             UserActivity.objects.create(user=auth_user, action=f"Updated view access {view_access.view_name} details", ip_address=ip_address)            
 
+            # Serialize the updated view access object and return the response
             serializer = self.serializer_class(view_access)
-
             return Response({'message': 'view access rule updated successfully', 'updated_data': serializer.data}, status=status.HTTP_200_OK)
         
         except Exception as e:
+            # Handle any exceptions that occur and return an error response
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
 
@@ -679,7 +685,7 @@ class UserActivityListView(generics.ListAPIView):
     """
     serializer_class = UserActivitySerializer
     pagination_class = CustomPagination
-    filter_backends =  [OrderingFilter]
+    filter_backends =  [DjangoFilterBackend, OrderingFilter]
     permission_classes = [IsAuthenticated, IsAdminUser]
 
     ordering_fields = ['timestamp']  # sorting by timestamp
@@ -689,7 +695,7 @@ class UserActivityListView(generics.ListAPIView):
         queryset = UserActivity.objects.all()
         start_date = self.request.query_params.get('start_date')
         end_date = self.request.query_params.get('end_date')
-        user_id = self.request.query_params.get('user_id')
+        user_id = self.request.query_params.get('id')
         action = self.request.query_params.get('action')
 
         # Filter by date range

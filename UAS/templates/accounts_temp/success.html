@@ -6,4 +6,19 @@
 <h1>
     Login Successful
 </h1>
+<button id="logout-button">Logout</button>
+<script>
+    document.getElementById('logout-button').addEventListener('click', function() {
+        const accessToken = sessionStorage.getItem('access');
+        const refreshToken = sessionStorage.getItem('Refresh-Token');
+        
+        if (accessToken && refreshToken) {
+            // Redirect to logout page with tokens
+            window.location.href = "{% url 'logout' %}"
+        } else {
+            alert('Session expired. Please log in again.');
+            window.location.href = "{% url 'login' %}";
+        }
+    });
+</script>
 {% endblock content %}

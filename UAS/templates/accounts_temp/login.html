@@ -48,27 +48,43 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRFToken': getCookie('csrftoken'),  // Add CSRF token to the request
+                    'X-CSRFToken': getCookie('csrftoken'),  // Get CSRF token
                 },
                 body: JSON.stringify(data),
             });
 
-            const result = await response.json();
-
-            // Handle the response
-            if (result.access_token) {
-                document.getElementById('login-message').innerText = 'Login successful!';
-                // Store tokens in localStorage or cookies
-                localStorage.setItem('access_token', result.access_token);
-                localStorage.setItem('refresh_token', result.refresh_token);
-                // Redirect to success.html
-                window.location.href = "{% url 'success' %}";
+            const contentType = response.headers.get('Content-Type');
+            let result;
+            if (contentType && contentType.includes('application/json')) {
+                result = await response.json();
             } else {
-                document.getElementById('login-message').innerText = result.error || 'Login failed.';
+                throw new Error('Response is not JSON');
+            }
+
+            console.log("API Response:", result); // Debugging log
+
+            const messageElement = document.getElementById('login-message');
+
+            if (response.ok) {
+                if (result.message) {
+                    messageElement.innerText = 'OTP has been sent to your email.';
+                    // Redirect to OTP verification page
+                    setTimeout(() => {
+                        window.location.href = "{% url 'verify-otp' %}";
+                    }, 1000); // Redirect after 2 seconds
+                } else if (result.access) {
+                    // Redirect or store token if MFA is disabled
+                    localStorage.setItem("access_token", result.access);
+                    window.location.href = "/request-reset-password"; 
+                } else {
+                    messageElement.innerText = 'Unexpected response format.';
+                }
+            } else {
+                messageElement.innerText = result.error || 'Login failed.';
             }
         } catch (error) {
-            document.getElementById('login-message').innerText = 'Login failed.';
             console.error('Error:', error);
+            document.getElementById('login-message').innerText = 'Something went wrong. Please try again.';
         }
     });
 </script>

@@ -29,7 +29,7 @@ document.getElementById('otpForm').addEventListener('submit', function(event) {
     const otp = document.getElementById('otp').value;
     const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
-    fetch('{% url "verify-otp" %}', {
+    fetch('{% url "api-verify-otp" %}', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -37,11 +37,25 @@ document.getElementById('otpForm').addEventListener('submit', function(event) {
         },
         body: JSON.stringify({ username: username, otp: otp })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
     .then(data => {
         const responseMessage = document.getElementById('responseMessage');
         if (data.success) {
-            responseMessage.innerHTML = '<div class="alert alert-success">OTP verified successfully!</div>';
+            sessionStorage.setItem('access', data.access);
+            sessionStorage.setItem('Refresh-Token', data.refresh);
+
+            if (sessionStorage.getItem('access') && sessionStorage.getItem('Refresh-Token')) {
+                console.log(sessionStorage.getItem('access'));
+                console.log(sessionStorage.getItem('Refresh-Token'));
+            }
+
+            // Redirect to success.html
+            window.location.href = "{% url 'success' %}";
         } else {
             responseMessage.innerHTML = '<div class="alert alert-danger">OTP verification failed. Please try again.</div>';
         }

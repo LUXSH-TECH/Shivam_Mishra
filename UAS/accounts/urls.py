@@ -3,7 +3,7 @@ from accounts.views import *
 
 urlpatterns = [
     path('api/register/', RegisterView.as_view(), name ='api-register'),
-    path('api/confirm-email/<key>/', CustomConfirmEmailView.as_view(), name='account_confirm_email'),
+    path('api/confirm-email/<key>/', CustomConfirmEmailView.as_view(), name='account-confirm-email'),
     path('api/login/', LoginView.as_view(), name ='api-login'),
     path('api/verify_otp/', VerifyOTPView.as_view(), name='api-verify-otp'),
     path('api/logout/', LogoutView.as_view(), name ='api-logout'),

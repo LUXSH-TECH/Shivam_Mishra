@@ -20,6 +20,7 @@ from allauth.account.views import ConfirmEmailView
 from django.http import JsonResponse
 import logging
 from admin_dashboard.models import *
+from django.contrib.auth.decorators import login_required
 
 logger = logging.getLogger('user_activtiy')
 # Create your views here.
@@ -222,7 +223,8 @@ class VerifyOTPView(APIView):
 
         # Prepare the response with tokens
         response = Response(
-            {
+            {   
+                'success': True,
                 'status': 'OTP verified. Login successful',
                 'access': access_token,
                 'refresh': str(refresh),
@@ -231,6 +233,7 @@ class VerifyOTPView(APIView):
         )
         # Store refresh token in a custom header
         response["Refresh-Token"] = str(refresh)
+        print(response)
 
         return response
 
@@ -339,5 +342,6 @@ def reset_password_view(request):
 def logout_view(request):
     return render(request, 'accounts_temp/logout.html')
 
+@login_required
 def success(request):
     return render(request, 'accounts_temp/success.html')

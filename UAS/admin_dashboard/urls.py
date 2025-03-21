@@ -12,7 +12,7 @@ urlpatterns = [
     #             <----- permission urls -----> 
     path('api/create_permission/', CreatePermissionView.as_view(), name ='api-create-permission'),
     path('api/permission_list/', PermissionListView.as_view(), name ='api-permission-list'),
-    path('api/permission_details/<int:id>', GetPermissionDetailsView.as_view(), name ='api-permission-details'),
+    path('api/permission_details/<int:id>/', GetPermissionDetailsView.as_view(), name ='api-permission-details'),
     path('api/update_permission/', UpdatePermissionView.as_view(), name ='api-update-permission'),
     path('api/delete_permission/<int:id>/', DeletePermissionView.as_view(), name ='api-delete-permission'),
     #             <----- Role urls -----> 

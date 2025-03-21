@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block title %}User Details{% endblock title %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/user_css/user_details.css' %}">
+<h2>User Details</h2>
+<div id="user-details-container">
+    <p><strong>Username:</strong> <input type="text" id="username" /></p>
+    <p><strong>Full Name:</strong> <input type="text" id="full-name" /></p>
+    <p><strong>Email:</strong> <input type="email" id="email" /></p>
+    <p><strong>Status:</strong> 
+        <select id="status">
+            <option value="true">Active</option>
+            <option value="false">Inactive</option>
+        </select>
+    </p>
+    <p><strong>Inactive:</strong> 
+        <select id="inactive">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+    </p>
+    <p><strong>Locked:</strong> 
+        <select id="locked">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+    </p>
+</div>
+<button onclick="window.history.back()">Go Back</button>
+<button id="save-changes">Save Changes</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('id');
+        const accessToken = sessionStorage.getItem('access');
+
+        if (!accessToken) {
+            alert("Invalid request or session expired.");
+            window.location.href = "{% url 'login' %}";
+            return;
+        }
+        if (!userId) {
+            alert("Invalid user ID.");
+            window.history.back();
+            return;
+        }
+
+        // Fetch user details
+        fetch(`http://127.0.0.1:5000/uas_admin/api/user_details/${userId}/`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${accessToken}`,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to fetch user details");
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.message === 'user details fetched successfully') {
+                document.getElementById('username').value = data.user.username;
+                document.getElementById('full-name').value = data.user.full_name;
+                document.getElementById('email').value = data.user.email;
+                document.getElementById('status').value = data.user.is_active.toString();
+                document.getElementById('inactive').value = data.user.is_inactive.toString();
+                document.getElementById('locked').value = data.user.is_locked.toString();
+            } else {
+                alert("Failed to fetch user details.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("An error occurred while fetching user details.");
+        });
+
+        // Save changes
+        document.getElementById('save-changes').addEventListener('click', function () {
+            const updatedDetails = {
+                id: userId,
+                username: document.getElementById('username').value,
+                name: document.getElementById('full-name').value,
+                email: document.getElementById('email').value,
+                is_active: document.getElementById('status').value === 'true',
+                is_inactive: document.getElementById('inactive').value === 'true',
+                is_locked: document.getElementById('locked').value === 'true'
+            };
+
+            fetch(`http://127.0.0.1:5000/uas_admin/api/update_user/`, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedDetails)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to update user details");
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.message === 'user details updated successfully') {
+                    alert("User details updated successfully.");
+                } else {
+                    alert("Failed to update user details.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred while updating user details.");
+            });
+        });
+    });
+</script>
+
+{% endblock content %}

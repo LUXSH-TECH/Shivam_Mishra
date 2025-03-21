@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title  %} Create User {% endblock title %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/user_css/create_user.css' %}">
+<form id="create-user-form" method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="full_name">Full Name:</label>
+    <input type="text" id="full_name" name="full_name" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <button type="submit">Register</button>
+</form>
+<script>
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    
+    document.getElementById('create-user-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        
+        console.log('access', sessionStorage.getItem('access'));
+        console.log('Refresh-Token', sessionStorage.getItem('Refresh-Token'));
+
+        const accessToken = sessionStorage.getItem('access');
+        const refreshToken = sessionStorage.getItem('Refresh-Token');
+
+        if (!refreshToken) {
+            console.warn("No refresh token found in session storage.");
+            alert("Session expired. Please log in again.");
+            window.location.href = "{% url 'login' %}";
+            return;
+        }
+
+        const csrfToken = getCookie('csrftoken'); // Retrieve CSRF token from cookies
+
+        const data = {
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            full_name: document.getElementById('full_name').value, 
+            password: document.getElementById('password').value,
+        };
+
+        try {
+            const response = await fetch('http://127.0.0.1:5000/uas_admin/api/create_user/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + accessToken,
+                    'X-CSRFToken': csrfToken, // Include CSRF token in headers
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                alert('User created successfully: ' + result.message);
+                window.location.reload();
+            } else {
+                const error = await response.json();
+                alert('Error: ' + (error.error || 'Failed to create user.'));
+            }
+        } catch (err) {
+            console.error('Error:', err);
+            alert('An unexpected error occurred.');
+        }
+    });
+</script>
+{% endblock content %}

@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block title %}Permission Details{% endblock title %}
+
+{% block content %}
+{% load static %}
+{% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/permission_css/permission_details.css' %}"> {% endcomment %}
+<h2>Permission Details</h2>
+<div id="permission-details-container">
+    <p><strong>Name:</strong> <input type="text" id="name" /></p>
+    <p><strong>Codename:</strong> <input type="text" id="codename" /></p>
+</div>
+<button onclick="window.history.back()">Go Back</button>
+<button id="save-changes">Save Changes</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const permissionId = urlParams.get('id');
+        const accessToken = sessionStorage.getItem('access');
+
+        if (!accessToken) {
+            alert("Invalid request or session expired.");
+            window.location.href = "{% url 'login' %}";
+            return;
+        }
+        if (!permissionId) {
+            alert("Invalid permission ID.");
+            window.history.back();
+            return;
+        }
+
+        // Fetch permission details
+        fetch(`http://127.0.0.1:5000/uas_admin/api/permission_details/${permissionId}/`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${accessToken}`,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to fetch permission details");
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.message === 'permission details fetched successfully') {
+                document.getElementById('name').value = data.permission.name;
+                document.getElementById('codename').value = data.permission.codename;
+            } else {
+                alert("Failed to fetch permission details.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert(error.message || "An error occurred while fetching permission details.");
+        });
+
+        // Save changes
+        document.getElementById('save-changes').addEventListener('click', function () {
+            const updatedDetails = {
+                id: permissionId,
+                name: document.getElementById('name').value,
+                codename: document.getElementById('codename').value
+            };
+
+            fetch(`http://127.0.0.1:5000/uas_admin/api/update_permission/`, {
+                method: 'PUT',
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedDetails)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to update permission details");
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.message === 'updated successfully') {
+                    alert("Permission details updated successfully.");
+                } else {
+                    alert("Failed to update permission details.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred while updating permission details.");
+            });
+        });
+    });
+</script>
+
+{% endblock content %}

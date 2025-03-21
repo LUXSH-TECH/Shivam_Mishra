@@ -8,13 +8,23 @@
 </h1>
 <button id="logout-button">Logout</button>
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const accessToken = sessionStorage.getItem('access');
+
+        // Redirect to login if no valid access token is found
+        if (!accessToken) {
+            alert('Session expired. Please log in again.');
+            window.location.href = "{% url 'login' %}";
+        }
+    });
+
     document.getElementById('logout-button').addEventListener('click', function() {
         const accessToken = sessionStorage.getItem('access');
-        const refreshToken = sessionStorage.getItem('Refresh-Token');
+        const refreshToken = sessionStorage.getItem('Refresh-Token');  // Corrected key name
         
         if (accessToken && refreshToken) {
-            // Redirect to logout page with tokens
-            window.location.href = "{% url 'logout' %}"
+            // Redirect to logout page
+            window.location.href = "{% url 'logout' %}";
         } else {
             alert('Session expired. Please log in again.');
             window.location.href = "{% url 'login' %}";

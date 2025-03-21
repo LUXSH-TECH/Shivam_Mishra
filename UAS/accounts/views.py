@@ -20,7 +20,8 @@ from allauth.account.views import ConfirmEmailView
 from django.http import JsonResponse
 import logging
 from admin_dashboard.models import *
-from django.contrib.auth.decorators import login_required
+# from rest_framework_simplejwt.authentication import JWTAuthentication
+# from rest_framework.decorators import authentication_classes, permission_classes
 
 logger = logging.getLogger('user_activtiy')
 # Create your views here.
@@ -342,6 +343,5 @@ def reset_password_view(request):
 def logout_view(request):
     return render(request, 'accounts_temp/logout.html')
 
-@login_required
 def success(request):
     return render(request, 'accounts_temp/success.html')

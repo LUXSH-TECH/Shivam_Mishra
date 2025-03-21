@@ -1,0 +1,75 @@
+#permission-list-form {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#permission-list-form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#permission-list-form th, #permission-list-form td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#permission-list-form th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#permission-list-form tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#permission-list-form tr:hover {
+    background-color: #f1f1f1;
+}
+
+#permission-list-form .permission-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#permission-list-form .permission-link:hover {
+    text-decoration: underline;
+}
+
+/* Style for delete buttons */
+#permission-list-form .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#permission-list-form .delete-btn:hover {
+    background-color: #c82333;
+}
+
+#permission-list-form .delete-btn:disabled {
+    background-color: #e0e0e0;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Style for table rows */
+#permission-list-form tr td a.permission-link {
+    font-weight: bold;
+}
+
+#permission-list-form tr td {
+    vertical-align: middle;
+}

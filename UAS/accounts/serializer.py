@@ -46,7 +46,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
             user = User(
                 username=validated_data['username'],
                 email=validated_data['email'],
-                full_ame=validated_data['full_name'],
+                full_name=validated_data['full_name'],
                 is_active=validated_data['is_active'],
                 is_inactive=validated_data['is_inactive'],
                 is_locked=validated_data['is_locked'],
@@ -60,7 +60,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
      class Meta:
           model = User
-          fields = ['username', 'email', 'full_name', 'is_active', 'is_inactive', 'is_locked', 'created_at', 'updated_at', 'is_mfa_enabled']
+          fields = ['id', 'username', 'email', 'full_name', 'is_active', 'is_inactive', 'is_locked', 'created_at', 'updated_at', 'is_mfa_enabled']
 
 
 class ChangePasswordSerializer(serializers.Serializer):

@@ -1,0 +1,75 @@
+#user-list-form {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#user-list-form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#user-list-form th, #user-list-form td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#user-list-form th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#user-list-form tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#user-list-form tr:hover {
+    background-color: #f1f1f1;
+}
+
+#user-list-form .user-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#user-list-form .user-link:hover {
+    text-decoration: underline;
+}
+
+/* Style for delete buttons */
+#user-list-form .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#user-list-form .delete-btn:hover {
+    background-color: #c82333;
+}
+
+#user-list-form .delete-btn:disabled {
+    background-color: #e0e0e0;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Style for table rows */
+#user-list-form tr td a.user-link {
+    font-weight: bold;
+}
+
+#user-list-form tr td {
+    vertical-align: middle;
+}

@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} User Authentication System {% endblock title %}</title>
-    
 </head>
 <body>
     <header>
         <h1 style="text-align: center;">Welcome to UAS</h1>
+        {% comment %} {% if user.is_authenticated %}
+        <nav style="text-align: center; margin-top: 10px;">
+            <a href="{% url 'logout' %}" class="button">Logout</a>
+        </nav>
+        {% endif %} {% endcomment %}
     </header>
     <main>
         {% block content %}

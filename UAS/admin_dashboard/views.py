@@ -25,10 +25,9 @@ from django.utils.dateparse import parse_datetime
 logger = logging.getLogger('user_activity')
 
 class CreateUserView(APIView):
-    # permission_classes = [IsAuthenticated]
     queryset = User.objects.all()
     serializer_class = CreateUserSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
     
     def post(self, request):
         auth_user = request.user
@@ -37,7 +36,6 @@ class CreateUserView(APIView):
         serializer = self.serializer_class(data=request.data)
         
         if serializer.is_valid():
-            
             email = serializer.validated_data['email']
             if User.objects.filter(email=email).exists():
                 logger.warning(f"User {auth_user.username} attempted to create a user with an existing email {email} from {ip_address}")
@@ -45,7 +43,7 @@ class CreateUserView(APIView):
 
             new_user = serializer.save()
             logger.info(f"User {auth_user.username} created a new user {new_user.username} (user_id: {new_user.id}) from {ip_address}")
-            UserActivity.objects.create(user=auth_user, action=f"Created user {auth_user.username}", ip_address=ip_address)
+            UserActivity.objects.create(user=auth_user, action=f"Created user {new_user.username}", ip_address=ip_address)
 
             return Response({'message': 'User created successfully', 'user_id': new_user.id}, status=status.HTTP_201_CREATED)
         
@@ -71,7 +69,7 @@ class UserListView(generics.ListAPIView):
 class GetUserDetailView(APIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
     
     def get(self, request, id):
         auth_user = request.user
@@ -103,7 +101,7 @@ class GetUserDetailView(APIView):
 class UpdateUserDetailsView(APIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def put(self, request):
         auth_user = request.user
@@ -218,6 +216,21 @@ class CreatePermissionView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
+class PermissionListView(generics.ListAPIView):
+    queryset = Permission.objects.all()
+    serializer_class = PermissionSerializer
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
+
+    def get(self, request, *args, **kwargs):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
+        logger.info(f"User {auth_user.username} fetched the permission list from {ip_address}")
+        UserActivity.objects.create(user=auth_user, action="Fetched permission list", ip_address=ip_address)
+
+        return super().get(request, *args, **kwargs) 
+    
+
 class GetPermissionDetailsView(APIView):
     queryset = Permission.objects.all()
     serializer_class = PermissionSerializer
@@ -319,6 +332,21 @@ class CreateRoleView(APIView):
             return Response({'message': 'role created', 'role_id': role.id}, status=status.HTTP_201_CREATED)
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)            
+
+
+class RoleListView(generics.ListAPIView):
+    queryset = Role.objects.all()
+    serializer_class = RoleSerializer
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
+
+    def get(self, request, *args, **kwargs):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
+        logger.info(f"User {auth_user.username} fetched the role list from {ip_address}")
+        UserActivity.objects.create(user=auth_user, action="Fetched role list", ip_address=ip_address)
+
+        return super().get(request, *args, **kwargs) 
     
 
 class GetRoleDetailsView(APIView):
@@ -411,7 +439,7 @@ class DeleteRoleView(APIView):
 class CreateUserRoleView(APIView):
     queryset = UserRoles.objects.all()
     serializer_class = UserRoleSerialiser
-    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     # def post(self, request):
     #     serializer = self.serializer_class(data=request.data)
@@ -465,6 +493,21 @@ class CreateUserRoleView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         
 
+class UserRolesListView(generics.ListAPIView):
+    queryset = UserRoles.objects.all()
+    serializer_class = UserRoleSerialiser
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
+
+    def get(self, request, *args, **kwargs):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
+        logger.info(f"User {auth_user.username} fetched the user_role list from {ip_address}")
+        UserActivity.objects.create(user=auth_user, action="Fetched user_role list", ip_address=ip_address)
+
+        return super().get(request, *args, **kwargs) 
+    
+
 class GetUserRoleDetailsView(APIView):
     queryset = UserRoles.objects.all()
     serializer_class = UserRoleSerialiser
@@ -494,7 +537,7 @@ class GetUserRoleDetailsView(APIView):
 class UpdateUserRoleView(APIView):
     queryset = UserRoles.objects.all()
     serializer_class = UserRoleSerialiser
-    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def get_object(self):
         user_role_id = self.request.data.get('id')
@@ -545,7 +588,7 @@ class UpdateUserRoleView(APIView):
         
 
 class DeleteUserRoleView(APIView):
-    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def post(self, request):
         auth_user = request.user
@@ -569,7 +612,7 @@ class ViewAccessListCreateView(APIView):
     """
     queryset = ViewAccess.objects.all()
     serializer_class = ViewAccessSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def get(self, request):
         accesses = self.queryset()
@@ -594,7 +637,7 @@ class ViewAccessListCreateView(APIView):
 class GetViewAccessDetailsView(APIView):
     queryset = ViewAccess.objects.all()
     serializer_class = ViewAccessSerializer
-    permission_classes = [IsAuthenticated, IsAdminUser, DynamicRolePermission]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def get(self, request, id):
         auth_user = request.user
@@ -686,7 +729,7 @@ class UserActivityListView(generics.ListAPIView):
     serializer_class = UserActivitySerializer
     pagination_class = CustomPagination
     filter_backends =  [DjangoFilterBackend, OrderingFilter]
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     ordering_fields = ['timestamp']  # sorting by timestamp
     ordering = ['-timestamp']  #  newest first
@@ -720,7 +763,7 @@ class UserActivityListView(generics.ListAPIView):
 
 
 class UserActivityCSVReportView(UserActivityListView):
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def get(self, request, *args, **kwargs):
         queryset = self.get_queryset()
@@ -737,3 +780,74 @@ class UserActivityCSVReportView(UserActivityListView):
             write.writerow([activity.user.username, activity.action, activity.ip_address, activity.timestamp])
 
         return response
+    
+    
+#<-----     views to serve admin side user templates     ----->
+def create_user(request):
+    return render(request, 'admin_panel/user_management/create_user.html')
+
+def user_list(request):
+    return render(request, 'admin_panel/user_management/user_list.html')
+
+def user_detail(request):
+    return render(request, 'admin_panel/user_management/user_details.html')
+
+def toggle_mfa(request):
+    return render(request, 'admin_panel/user_management/toggle_mfa.html')
+
+def delete_user(request):
+    return render(request, 'admin_panel/user_management/delete_user.html')
+
+#<-----     views to serve admin side permission templates     ----->
+def create_permission(request):
+    return render(request, 'admin_panel/permissions/create_permission.html')
+
+def permission_list(request):
+    return render(request, 'admin_panel/permissions/permission_list.html')
+
+def permission_details(request):
+    return render(request, 'admin_panel/permissions/permission_details.html')
+
+def delete_permission(request):
+    return render(request, 'admin_panel/permissions/delete_permission.html')
+
+#<-----     views to serve admin side role templates     ----->
+def create_role(request):
+    return render(request, 'admin_panel/roles/create_role.html')
+
+def role_list(request):
+    return render(request, 'admin_panel/roles/role_list.html')
+
+def role_details(request):
+    return render(request, 'admin_panel/roles/role_details.html')
+
+def delete_role(request):    
+    return render(request, 'admin_panel/roles/delete_role.html')
+
+#<-----     views to serve admin side user_role templates     ----->
+
+def assign_user_role(request):
+    return render(request, 'admin_panel/userrole/assign_user_role.html')
+
+def user_role_list(request):
+    return render(request, 'admin_panel/userrole/user_role_list.html')
+
+def user_role_details(request):
+    return render(request, 'admin_panel/userrole/user_role_details.html')
+
+def delete_user_role(request):
+    return render(request, 'admin_panel/userrole/delete_user_role.html')
+
+#<-----     views to serve admin side view_access templates     ----->
+
+def create_view_access(request):
+    return render(request, 'admin_panel/viewaccess/create_view_access.html')
+
+def view_access_list(request):
+    return render(request, 'admin_panel/viewaccess/view_access_list.html')
+
+def view_access_details(request):
+    return render(request, 'admin_panel/viewaccess/view_access_details.html')
+
+def delete_view_access(request):
+    return render(request, 'admin_panel/viewaccess/delete_view_access.html')

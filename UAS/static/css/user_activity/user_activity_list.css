@@ -1,0 +1,36 @@
+#user-activity-list-form {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#user-activity-list-form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#user-activity-list-form th, #user-activity-list-form td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#user-activity-list-form th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+#user-activity-list-form tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#user-activity-list-form tr:hover {
+    background-color: #f1f1f1;
+}

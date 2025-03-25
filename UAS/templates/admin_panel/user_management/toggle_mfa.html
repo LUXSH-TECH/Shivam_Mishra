@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %} Toggle MFA {% endblock title %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/user_css/toggle_mfa.css' %}">
+<h1>Toggle MFA for User</h1>
+<form id="toggle-mfa-form" method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <select id="username" name="username" required>
+        {% for user in users %}
+        <option value="{{ user.id }}">{{ user.username }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <label for="is-mfa-enabled">Enable MFA:</label>
+    <select id="is-mfa-enabled" name="is_mfa_enabled" required>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<script>
+    function getCookie(name) {
+        const cookies = document.cookie.split(';').map(cookie => cookie.trim());
+        for (const cookie of cookies) {
+            if (cookie.startsWith(name + '=')) {
+                return decodeURIComponent(cookie.split('=')[1]);
+            }
+        }
+        return null;
+    }
+
+    document.getElementById('toggle-mfa-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const accessToken = sessionStorage.getItem('access');
+        if (!accessToken) {
+            alert("Session expired. Please log in again.");
+            window.location.href = "{% url 'login' %}";
+            return;
+        }
+
+        const csrfToken = getCookie('csrftoken');
+        const data = {
+            id: document.getElementById('username').value,
+            is_mfa_enabled: document.getElementById('is-mfa-enabled').value === 'true',
+        };
+
+        try {
+            const response = await fetch('http://127.0.0.1:5000/uas_admin/api/toggle_mfa/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${accessToken}`,
+                    'X-CSRFToken': csrfToken,
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert('MFA toggled successfully: ' + result.message);
+                window.location.reload();
+            } else {
+                alert('Error: ' + (result.error || 'Failed to toggle MFA.'));
+            }
+        } catch (err) {
+            console.error('Error:', err);
+            alert('An unexpected error occurred.');
+        }
+    });
+</script>
+{% endblock content %}

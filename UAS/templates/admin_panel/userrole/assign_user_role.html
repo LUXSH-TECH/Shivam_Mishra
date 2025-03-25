@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %} Assign User Role {% endblock title %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/user_roles/assign_user_role.css' %}">
+<form id="assign-user-role-form" method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <select id="username" name="username" required>
+        {% for user in users %}
+        <option value="{{ user.id }}">{{ user.username }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <label for="role_id">Role:</label>
+    <select id="role_id" name="role_id" required>
+        {% for role in roles %}
+        <option value="{{ role.id }}">{{ role.name }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <button type="submit">Assign Role</button>
+</form>
+<script>
+    function getCookie(name) {
+        const cookies = document.cookie.split(';').map(cookie => cookie.trim());
+        for (const cookie of cookies) {
+            if (cookie.startsWith(name + '=')) {
+                return decodeURIComponent(cookie.split('=')[1]);
+            }
+        }
+        return null;
+    }
+
+    document.getElementById('assign-user-role-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const accessToken = sessionStorage.getItem('access');
+        if (!accessToken) {
+            alert("Session expired. Please log in again.");
+            window.location.href = "{% url 'login' %}";
+            return;
+        }
+
+        const csrfToken = getCookie('csrftoken');
+        const data = {
+            user: document.getElementById('username').value,
+            role: document.getElementById('role_id').value,
+        };
+
+        try {
+            const response = await fetch('http://127.0.0.1:5000/uas_admin/api/create_user_role/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${accessToken}`,
+                    'X-CSRFToken': csrfToken,
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert('User role assigned successfully: ' + result.message);
+                window.location.reload();
+            } else {
+                alert('Error: ' + (result.error || 'Failed to assign user role.'));
+            }
+        } catch (err) {
+            console.error('Error:', err);
+            alert('An unexpected error occurred.');
+        }
+    });
+</script>
+{% endblock content %}

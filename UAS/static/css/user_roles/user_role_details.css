@@ -1,4 +1,4 @@
-#role-details-container {
+#user-role-details-container {
     margin: 20px;
     padding: 20px;
     border: 1px solid #ccc;
@@ -6,13 +6,12 @@
     background-color: #f9f9f9;
 }
 
-#role-details-container p {
+#user-role-details-container p {
     margin: 10px 0;
     font-size: 16px;
 }
 
-#role-details-container input[type="text"],
-#role-details-container select {
+#user-role-details-container select {
     width: 100%;
     padding: 8px;
     margin-top: 5px;

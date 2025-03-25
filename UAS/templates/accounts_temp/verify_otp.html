@@ -22,48 +22,63 @@
 </div>
 
 <script>
-document.getElementById('otpForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const username = document.getElementById('username').value;
-    const otp = document.getElementById('otp').value;
-    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-
-    fetch('{% url "api-verify-otp" %}', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': csrfToken
-        },
-        body: JSON.stringify({ username: username, otp: otp })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        const responseMessage = document.getElementById('responseMessage');
-        if (data.success) {
-            sessionStorage.setItem('access', data.access);
-            sessionStorage.setItem('Refresh-Token', data.refresh);
-
-            if (sessionStorage.getItem('access') && sessionStorage.getItem('Refresh-Token')) {
-                console.log(sessionStorage.getItem('access'));
-                console.log(sessionStorage.getItem('Refresh-Token'));
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
             }
-
-            // Redirect to success.html
-            window.location.href = "{% url 'success' %}";
-        } else {
-            responseMessage.innerHTML = '<div class="alert alert-danger">OTP verification failed. Please try again.</div>';
         }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        document.getElementById('responseMessage').innerHTML = '<div class="alert alert-danger">An error occurred. Please try again later.</div>';
+        return cookieValue;
+    }
+
+    document.getElementById('otpForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const otp = document.getElementById('otp').value;
+        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+        fetch('{% url "api-verify-otp" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken'),
+            },
+            body: JSON.stringify({ username: username, otp: otp })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const responseMessage = document.getElementById('responseMessage');
+            if (data.success) {
+                sessionStorage.setItem('access', data.access);
+                sessionStorage.setItem('Refresh-Token', data.refresh);
+
+                if (sessionStorage.getItem('access') && sessionStorage.getItem('Refresh-Token')) {
+                    console.log(sessionStorage.getItem('access'));
+                    console.log(sessionStorage.getItem('Refresh-Token'));
+                }
+
+                // Redirect to success.html
+                window.location.href = "{% url 'success' %}";
+            } else {
+                responseMessage.innerHTML = '<div class="alert alert-danger">OTP verification failed. Please try again.</div>';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('responseMessage').innerHTML = '<div class="alert alert-danger">An error occurred. Please try again later.</div>';
+        });
     });
-});
 </script>
 {% endblock content %}

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block title %}Update Role{% endblock title %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/role_css/update_role.css' %}">
+<form id="update-role-form">
+    <div>
+        <label for="role-name">Role Name:</label>
+        <input type="text" id="role-name" name="role-name">
+    </div>
+    <div>
+        <label for="permissions">Permissions:</label>
+        <select id="permissions" name="permissions" multiple>
+            <!-- Options will be dynamically populated -->
+        </select>
+    </div>
+    <button type="submit" id="update-role-btn">Update Role</button>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('Update Role page loaded.');
+        const accessToken = sessionStorage.getItem('access');
+        const roleId = new URLSearchParams(window.location.search).get('id');
+
+        if (!accessToken) {
+            alert('Session expired. Please log in again.');
+            window.location.href = "{% url 'login' %}";
+            return;
+        }
+
+        if (!roleId) {
+            alert('Role ID is missing.');
+            window.location.href = "{% url 'role-list' %}";
+            return;
+        }
+
+        // Fetch role details and permissions
+        fetch(`http://127.0.0.1:5000/uas_admin/api/role_details/${roleId}/`, {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + accessToken,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.text().then(err => { 
+                    throw new Error(err || "Failed to fetch role details"); 
+                });
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Fetched role details:", data);
+            document.getElementById('role-name').value = data.role_details.name;
+
+            const permissionsDropdown = document.getElementById('permissions');
+            fetch('http://127.0.0.1:5000/uas_admin/api/permission_list/', {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer ' + accessToken,
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(err => { 
+                        throw new Error(err || "Failed to fetch permissions"); 
+                    });
+                }
+                return response.json();
+            })
+            .then(permissions => {
+                permissions.forEach(permission => {
+                    const option = document.createElement('option');
+                    option.value = permission.id;
+                    option.textContent = permission.name;
+                    if (data.role_details.permission === permission.name) {
+                        option.selected = true;
+                    }
+                    permissionsDropdown.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching permissions:", error);
+                alert("Failed to load permissions. Please try again.");
+            });
+        })
+        .catch(error => {
+            console.error("Error fetching role details:", error);
+            alert("Failed to load role details. Please try again.");
+        });
+
+        // Handle form submission
+        document.getElementById('update-role-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const selectedPermissions = Array.from(document.getElementById('permissions').selectedOptions).map(option => option.value);
+
+            fetch('http://127.0.0.1:5000/uas_admin/api/update_role/', {
+                method: 'PUT',
+                headers: {
+                    'Authorization': 'Bearer ' + accessToken,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: roleId,
+                    name: document.getElementById('role-name').value,
+                    permissions: selectedPermissions
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(err => { 
+                        throw new Error(err || "Failed to update role"); 
+                    });
+                }
+                return response.json();
+            })
+            .then(() => {
+                alert('Role updated successfully.');
+                window.location.href = "{% url 'role-list' %}";
+            })
+            .catch(error => {
+                console.error("Error updating role:", error);
+                alert("Failed to update role. Please try again.");
+            });
+        });
+    });
+</script>
+{% endblock content %}

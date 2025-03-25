@@ -1,4 +1,4 @@
-#role-details-container {
+#view-access-update-form {
     margin: 20px;
     padding: 20px;
     border: 1px solid #ccc;
@@ -6,13 +6,14 @@
     background-color: #f9f9f9;
 }
 
-#role-details-container p {
-    margin: 10px 0;
+#view-access-update-form label {
+    display: block;
+    margin: 10px 0 5px;
     font-size: 16px;
 }
 
-#role-details-container input[type="text"],
-#role-details-container select {
+#view-access-update-form input[type="text"],
+#view-access-update-form select {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
@@ -21,7 +22,7 @@
     box-sizing: border-box;
 }
 
-button {
+#view-access-update-form button {
     margin: 10px 5px;
     padding: 10px 15px;
     font-size: 16px;
@@ -32,6 +33,6 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+#view-access-update-form button:hover {
     background-color: #0056b3;
 }

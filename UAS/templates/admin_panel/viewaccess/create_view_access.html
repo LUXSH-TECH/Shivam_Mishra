@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% block title %} Create View Access {% endblock title %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/view_access/create_view_access.css' %}">
+<form id="create-view-access-form">
+    <label for="view_name">View Name:</label>
+    <input type="text" id="view_name" name="view_name" required>
+    <br>
+    <label for="roles">Role:</label>
+    <select id="roles" name="roles" required>
+        {% for role in roles %}
+        <option value="{{ role.id }}">{{ role.name }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <button type="submit">Create View Access</button>
+</form>
+<script>
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    document.getElementById('create-view-access-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const accessToken = sessionStorage.getItem('access');
+
+        if (!accessToken) {
+            console.warn("No access token found in session storage.");
+            alert("Session expired. Please log in again.");
+            window.location.href = "{% url 'login' %}";
+            return;
+        }
+
+        const data = {
+            view_name: document.getElementById('view_name').value,
+            roles: document.getElementById('roles').value, 
+        };
+
+        try {
+            const response = await fetch('http://127.0.0.1:5000/uas_admin/api/create_view_access/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + accessToken,
+                    'X-CSRFToken': getCookie('csrftoken'),
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                const contentType = response.headers.get('Content-Type');
+                if (contentType && contentType.includes('application/json')) {
+                    const result = await response.json();
+                    alert('View Access created successfully: ' + result.message);
+                    window.location.reload();
+                } else {
+                    alert('Unexpected response format from the server.');
+                }
+            } else {
+                const contentType = response.headers.get('Content-Type');
+                if (contentType && contentType.includes('application/json')) {
+                    const error = await response.json();
+                    alert('Error: ' + (error.error || 'Failed to create view access.'));
+                } else {
+                    alert('Error: Unexpected response format from the server.');
+                }
+            }
+        } catch (err) {
+            console.error('Error:', err);
+            alert('An unexpected error occurred.');
+        }
+    });
+</script>
+{% endblock content %}

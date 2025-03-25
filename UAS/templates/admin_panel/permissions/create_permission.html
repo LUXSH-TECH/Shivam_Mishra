@@ -34,11 +34,9 @@
 
         const accessToken = sessionStorage.getItem('access');
 
-        if (!refreshToken) {
-            console.warn("No refresh token found in session storage.");
-            alert("Session expired. Please log in again.");
+        if (!accessToken) {
+            alert('Session expired. Please log in again.');
             window.location.href = "{% url 'login' %}";
-            return;
         }
 
         const data = {
@@ -47,7 +45,7 @@
         };
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/uas_admin/create_permission/', {
+            const response = await fetch('http://127.0.0.1:5000/uas_admin/api/create_permission/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -58,22 +56,12 @@
             });
 
             if (response.ok) {
-                const contentType = response.headers.get('Content-Type');
-                if (contentType && contentType.includes('application/json')) {
-                    const result = await response.json();
-                    alert('Permission created successfully: ' + result.message);
-                    window.location.reload();
-                } else {
-                    alert('Unexpected response format from the server.');
-                }
+                const result = await response.json();
+                alert('Permission created successfully: ' + result.message);
+                window.location.reload();
             } else {
-                const contentType = response.headers.get('Content-Type');
-                if (contentType && contentType.includes('application/json')) {
-                    const error = await response.json();
-                    alert('Error: ' + (error.error || 'Failed to create permission.'));
-                } else {
-                    alert('Error: Unexpected response format from the server.');
-                }
+                const error = await response.json();
+                alert('Error: ' + (error.error || 'Failed to create permission.'));
             }
         } catch (err) {
             console.error('Error:', err);

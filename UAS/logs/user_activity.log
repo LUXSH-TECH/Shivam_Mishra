@@ -3727,3 +3727,1784 @@ INFO 2025-03-21 18:57:18,299 basehttp "GET /uas_admin/permission_details/?id=5 H
 INFO 2025-03-21 18:57:18,337 basehttp "GET /static/css/permission_css/permission_details.css HTTP/1.1" 304 0
 INFO 2025-03-21 18:57:18,361 views User shivam fetched the details of permission can read getuserroledetailsview from 127.0.0.1
 INFO 2025-03-21 18:57:18,439 basehttp "GET /uas_admin/api/permission_details/5/ HTTP/1.1" 200 189
+INFO 2025-03-21 20:09:41,789 autoreload Watching for file changes with StatReloader
+INFO 2025-03-21 20:09:44,418 basehttp "GET /admin/ HTTP/1.1" 200 19156
+INFO 2025-03-21 20:09:49,926 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 21018
+INFO 2025-03-21 20:09:49,984 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 20:10:23,115 basehttp "GET /admin/admin_dashboard/viewaccess/18/change/ HTTP/1.1" 200 16740
+INFO 2025-03-21 20:10:23,159 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 20:10:25,611 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 21018
+INFO 2025-03-21 21:02:21,091 basehttp "GET /admin/admin_dashboard/viewaccess/17/change/ HTTP/1.1" 200 16740
+INFO 2025-03-21 21:02:21,143 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:02:26,801 basehttp "GET /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 200 16372
+INFO 2025-03-21 21:02:26,867 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:02:44,101 basehttp "POST /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 302 0
+INFO 2025-03-21 21:02:44,147 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 21631
+INFO 2025-03-21 21:02:44,184 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:02:46,028 basehttp "GET /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 200 16372
+INFO 2025-03-21 21:02:46,076 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:03:11,270 basehttp "POST /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 302 0
+INFO 2025-03-21 21:03:11,290 basehttp "GET /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 200 16668
+INFO 2025-03-21 21:03:11,343 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:03:28,343 basehttp "POST /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 302 0
+INFO 2025-03-21 21:03:28,490 basehttp "GET /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 200 16664
+INFO 2025-03-21 21:03:28,682 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:03:47,282 basehttp "POST /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 302 0
+INFO 2025-03-21 21:03:47,315 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 22679
+INFO 2025-03-21 21:03:47,351 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:03:48,974 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 20474
+INFO 2025-03-21 21:03:49,017 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:03:52,986 basehttp "GET /admin/accounts/permission/add/ HTTP/1.1" 200 16707
+INFO 2025-03-21 21:03:53,028 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:04:49,588 basehttp "POST /admin/accounts/permission/add/ HTTP/1.1" 302 0
+INFO 2025-03-21 21:04:49,613 basehttp "GET /admin/accounts/permission/add/ HTTP/1.1" 200 16981
+INFO 2025-03-21 21:04:49,686 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:06:04,622 basehttp "POST /admin/accounts/permission/add/ HTTP/1.1" 302 0
+INFO 2025-03-21 21:06:04,652 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 21359
+INFO 2025-03-21 21:06:04,695 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:06:14,401 basehttp "GET /admin/accounts/permission/add/ HTTP/1.1" 200 16707
+INFO 2025-03-21 21:06:14,443 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:06:58,251 basehttp "POST /admin/accounts/permission/add/ HTTP/1.1" 302 0
+INFO 2025-03-21 21:06:58,282 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 21681
+INFO 2025-03-21 21:06:58,327 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:07:26,788 basehttp "GET /admin/accounts/permission/add/ HTTP/1.1" 200 16707
+INFO 2025-03-21 21:07:26,832 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:07:55,567 basehttp "POST /admin/accounts/permission/add/ HTTP/1.1" 302 0
+INFO 2025-03-21 21:07:55,600 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 21995
+INFO 2025-03-21 21:07:55,640 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 21:26:25,539 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 22426
+INFO 2025-03-21 21:26:25,700 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 22:33:40,113 basehttp "GET /uas_admin/permission_details/?id=7 HTTP/1.1" 200 3845
+INFO 2025-03-21 22:33:40,138 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-03-21 22:33:40,146 basehttp "GET /static/css/permission_css/permission_details.css HTTP/1.1" 304 0
+INFO 2025-03-21 22:33:40,227 views User shivam fetched the details of permission can delete getuserroledetailsview from 127.0.0.1
+INFO 2025-03-21 22:33:40,316 basehttp "GET /uas_admin/api/permission_details/7/ HTTP/1.1" 200 193
+INFO 2025-03-21 22:33:47,457 basehttp "GET /uas_admin/create_permission/ HTTP/1.1" 200 3594
+INFO 2025-03-21 22:33:47,558 basehttp "GET /static/css/permission_css/create_permission.css HTTP/1.1" 200 872
+INFO 2025-03-21 22:34:46,456 basehttp "GET /uas_admin/create_permission/ HTTP/1.1" 200 3594
+INFO 2025-03-21 22:34:53,267 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 21762
+INFO 2025-03-21 22:34:53,364 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 22:34:56,582 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 21762
+INFO 2025-03-21 22:34:56,628 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 22:34:57,378 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 21762
+INFO 2025-03-21 22:34:57,412 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 22:34:58,073 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 21762
+INFO 2025-03-21 22:34:58,104 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 22:34:58,682 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 21762
+INFO 2025-03-21 22:34:58,737 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 22:43:52,947 basehttp "POST /admin/logout/ HTTP/1.1" 200 3555
+INFO 2025-03-21 22:43:54,547 basehttp "GET /uas_admin/create_permission/ HTTP/1.1" 200 3027
+INFO 2025-03-21 22:44:04,622 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2130
+INFO 2025-03-21 22:44:09,140 basehttp "POST /accounts/api/logout/ HTTP/1.1" 200 37
+INFO 2025-03-21 22:44:09,181 basehttp "GET /accounts/login/ HTTP/1.1" 200 3849
+INFO 2025-03-21 22:44:16,150 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-21 22:44:17,215 basehttp "GET /accounts/verify_otp/ HTTP/1.1" 200 2944
+INFO 2025-03-21 22:44:27,181 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 540
+INFO 2025-03-21 22:44:27,216 basehttp "GET /accounts/success/ HTTP/1.1" 200 1437
+INFO 2025-03-21 22:57:50,345 basehttp "GET /uas_admin/create_permission/ HTTP/1.1" 200 2938
+WARNING 2025-03-21 23:06:20,501 log Forbidden: /uas_admin/api/create_permission/
+WARNING 2025-03-21 23:06:20,501 basehttp "POST /uas_admin/api/create_permission/ HTTP/1.1" 403 63
+INFO 2025-03-21 23:06:42,443 basehttp "GET /admin/ HTTP/1.1" 200 19219
+INFO 2025-03-21 23:06:45,906 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 22426
+INFO 2025-03-21 23:06:45,960 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 23:06:59,624 basehttp "GET /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 200 16372
+INFO 2025-03-21 23:06:59,668 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 23:07:05,149 basehttp "POST /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 302 0
+INFO 2025-03-21 23:07:05,181 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 23027
+INFO 2025-03-21 23:07:05,241 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 23:07:08,167 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 21762
+INFO 2025-03-21 23:07:08,201 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 23:07:10,497 views User shivam created a new permission test permission  from 127.0.0.1
+INFO 2025-03-21 23:07:10,547 basehttp "POST /uas_admin/api/create_permission/ HTTP/1.1" 201 51
+INFO 2025-03-21 23:07:14,916 basehttp "GET /uas_admin/create_permission/ HTTP/1.1" 200 2938
+INFO 2025-03-21 23:07:27,748 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 4814
+INFO 2025-03-21 23:07:27,815 basehttp "GET /static/css/permission_css/permission_list.css HTTP/1.1" 304 0
+INFO 2025-03-21 23:07:27,858 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:07:27,950 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:07:35,795 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 4814
+INFO 2025-03-21 23:07:35,852 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:07:35,900 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:08:27,081 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 4814
+INFO 2025-03-21 23:08:27,142 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:08:27,227 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:08:36,890 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 4814
+INFO 2025-03-21 23:08:36,945 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:08:37,024 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:09:08,256 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 4814
+INFO 2025-03-21 23:09:08,309 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:09:08,542 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:09:09,077 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 4814
+INFO 2025-03-21 23:09:09,126 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:09:09,163 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:09:09,635 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 4814
+INFO 2025-03-21 23:09:09,681 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:09:09,736 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:09:09,958 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 4814
+INFO 2025-03-21 23:09:10,003 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:09:10,039 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:09:10,212 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 4814
+INFO 2025-03-21 23:09:10,252 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:09:10,296 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:09:10,449 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 4814
+INFO 2025-03-21 23:09:10,497 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:09:10,595 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:09:10,665 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 4814
+INFO 2025-03-21 23:09:10,766 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:09:10,869 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:09:10,958 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 4814
+INFO 2025-03-21 23:09:11,008 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:09:11,060 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:14:04,563 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:14:04,613 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:14:04,663 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:14:13,783 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:14:13,836 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:14:13,987 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:15:42,890 basehttp "POST /admin/logout/ HTTP/1.1" 200 3555
+INFO 2025-03-21 23:15:51,804 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2130
+INFO 2025-03-21 23:15:54,544 basehttp "GET /accounts/login/ HTTP/1.1" 200 3849
+INFO 2025-03-21 23:16:00,847 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-21 23:16:01,880 basehttp "GET /accounts/verify_otp/ HTTP/1.1" 200 2944
+INFO 2025-03-21 23:16:14,452 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 540
+INFO 2025-03-21 23:16:14,510 basehttp "GET /accounts/success/ HTTP/1.1" 200 1437
+INFO 2025-03-21 23:16:26,045 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:16:26,160 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:16:26,234 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:23:02,874 basehttp "GET /uas_admin/create_permission/ HTTP/1.1" 200 2938
+INFO 2025-03-21 23:23:22,808 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 6963
+INFO 2025-03-21 23:23:22,895 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:23:22,961 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:23:28,017 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 6963
+INFO 2025-03-21 23:23:28,079 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:23:28,116 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:24:16,218 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:24:16,296 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:24:16,348 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:28:52,884 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:28:52,944 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:28:53,020 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:29:23,001 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:29:23,050 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:29:23,118 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:29:23,587 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:29:23,634 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:29:23,676 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:29:23,801 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:29:23,848 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:29:23,974 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:29:23,983 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:29:24,097 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:29:24,168 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:29:24,170 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:29:24,175 basehttp - Broken pipe from ('127.0.0.1', 62691)
+INFO 2025-03-21 23:29:24,357 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:29:24,408 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:29:24,511 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:29:24,586 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:29:24,612 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:29:24,732 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:29:24,753 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:29:24,770 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:29:24,852 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:29:26,629 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:29:26,704 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:42:57,618 basehttp "GET /uas_admin/create_permission/ HTTP/1.1" 200 6033
+INFO 2025-03-21 23:43:00,666 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:43:00,717 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:43:00,767 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:43:01,548 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:43:01,593 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:43:01,629 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:43:02,553 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:43:02,599 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:43:02,637 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:43:03,485 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:43:03,532 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:43:03,569 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:44:47,063 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:44:47,114 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:44:47,150 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:44:48,731 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:44:48,778 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:44:48,844 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:44:50,461 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:44:50,506 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:44:50,586 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:44:51,634 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:44:51,686 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:44:51,742 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:44:51,922 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:44:51,972 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:44:52,020 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:44:52,174 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:44:52,263 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:44:52,317 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:44:52,416 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:44:52,472 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:44:52,535 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:44:52,702 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:44:52,765 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:44:52,850 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:44:52,908 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:44:52,972 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:44:53,044 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:44:53,198 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:44:53,247 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:44:53,391 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:44:53,446 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:44:53,502 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:44:53,617 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:44:53,674 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:44:53,746 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:44:53,863 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:44:53,931 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:44:53,988 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:44:54,084 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:53:58,585 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 7971
+INFO 2025-03-21 23:53:58,633 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:53:58,685 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:54:09,105 basehttp "GET /admin/ HTTP/1.1" 200 19225
+INFO 2025-03-21 23:54:10,914 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22049
+INFO 2025-03-21 23:54:10,951 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 23:54:12,941 basehttp "GET /admin/accounts/permission/26/change/ HTTP/1.1" 200 16993
+INFO 2025-03-21 23:54:12,994 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 23:54:14,497 basehttp "GET /admin/accounts/permission/26/delete/ HTTP/1.1" 200 14155
+INFO 2025-03-21 23:54:15,887 basehttp "POST /admin/accounts/permission/26/delete/ HTTP/1.1" 302 0
+INFO 2025-03-21 23:54:15,915 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 21930
+INFO 2025-03-21 23:54:15,954 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 23:54:21,950 views User shivam created a new permission test permission  from 127.0.0.1
+INFO 2025-03-21 23:54:21,999 basehttp "POST /uas_admin/api/create_permission/ HTTP/1.1" 201 51
+INFO 2025-03-21 23:54:44,899 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22049
+INFO 2025-03-21 23:54:44,937 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-21 23:54:56,105 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:54:56,202 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:54:56,257 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:54:57,283 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:54:57,382 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:54:57,422 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:54:57,470 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:54:57,581 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:54:57,663 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:54:57,674 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:54:57,863 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:54:57,901 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:54:57,949 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:54:58,132 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:54:58,132 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:54:58,196 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:55:00,205 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:55:00,212 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:55:00,297 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:55:00,951 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:55:00,951 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:55:00,995 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:55:02,170 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:55:02,210 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-21 23:55:03,642 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-21 23:55:03,763 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-21 23:55:03,812 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-24 16:09:58,811 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 16:10:02,610 basehttp "GET /admin/accounts/permission/27/change/ HTTP/1.1" 200 16993
+INFO 2025-03-24 16:10:02,775 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:02,777 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:02,777 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:02,778 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:02,787 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:02,788 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:02,848 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:02,861 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:02,866 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:02,867 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:02,868 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:02,871 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:02,871 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:03,009 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:03,021 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:03,023 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:03,024 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:03,077 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:10:03,233 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:03,269 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:03,285 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:03,345 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:03,534 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:03,534 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:18,851 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22049
+INFO 2025-03-24 16:10:18,890 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:18,895 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:10:18,910 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:18,931 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:22,103 basehttp "GET /admin/accounts/permission/27/change/ HTTP/1.1" 200 16993
+INFO 2025-03-24 16:10:22,147 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:10:23,602 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15947
+INFO 2025-03-24 16:10:23,637 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:10:32,474 basehttp "GET /admin/accounts/role/1/change/ HTTP/1.1" 200 19033
+INFO 2025-03-24 16:10:32,508 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:10:45,312 basehttp "POST /admin/accounts/role/1/change/ HTTP/1.1" 302 0
+INFO 2025-03-24 16:10:45,336 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 16152
+INFO 2025-03-24 16:10:45,378 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:10:45,393 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-03-24 16:10:48,467 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 22774
+INFO 2025-03-24 16:10:48,516 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:10:50,844 basehttp "GET /admin/admin_dashboard/viewaccess/23/change/ HTTP/1.1" 200 16764
+INFO 2025-03-24 16:10:50,885 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:10:55,850 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 22774
+INFO 2025-03-24 16:10:55,886 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:10:59,264 basehttp "GET /admin/admin_dashboard/viewaccess/22/change/ HTTP/1.1" 200 16764
+INFO 2025-03-24 16:10:59,309 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:11:01,779 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 22774
+INFO 2025-03-24 16:11:02,859 basehttp "GET /admin/admin_dashboard/viewaccess/21/change/ HTTP/1.1" 200 16764
+INFO 2025-03-24 16:11:02,896 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:11:04,411 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 22774
+INFO 2025-03-24 16:11:05,550 basehttp "GET /admin/admin_dashboard/viewaccess/20/change/ HTTP/1.1" 200 16780
+INFO 2025-03-24 16:11:05,584 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:11:07,114 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 22774
+INFO 2025-03-24 16:11:10,011 basehttp "GET /admin/admin_dashboard/viewaccess/19/change/ HTTP/1.1" 200 16780
+INFO 2025-03-24 16:11:10,059 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:11:11,632 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 22774
+INFO 2025-03-24 16:11:18,465 basehttp "GET /admin/auth/group/ HTTP/1.1" 200 14477
+INFO 2025-03-24 16:11:18,514 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:11:18,525 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-03-24 16:11:20,084 basehttp "GET /admin/auth/group/add/ HTTP/1.1" 200 22766
+INFO 2025-03-24 16:11:20,119 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:11:20,129 basehttp "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:11:20,130 basehttp "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2025-03-24 16:11:20,207 basehttp "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 304 0
+INFO 2025-03-24 16:11:20,211 basehttp "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 304 0
+INFO 2025-03-24 16:11:20,211 basehttp "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+INFO 2025-03-24 16:12:00,137 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16726
+INFO 2025-03-24 16:12:00,182 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:12:03,146 basehttp "GET /admin/accounts/user/7/change/ HTTP/1.1" 200 22725
+INFO 2025-03-24 16:12:03,189 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:12:05,548 basehttp "GET /admin/accounts/userroles/ HTTP/1.1" 200 15782
+INFO 2025-03-24 16:12:05,584 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:12:08,567 basehttp "GET /admin/account/emailaddress/ HTTP/1.1" 200 19034
+INFO 2025-03-24 16:12:08,602 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:12:08,612 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2025-03-24 16:12:08,625 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-03-24 16:13:15,845 basehttp "GET /admin/admin_dashboard/useractivity/ HTTP/1.1" 200 56216
+INFO 2025-03-24 16:13:15,894 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 16:13:26,574 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 22774
+INFO 2025-03-24 16:13:26,607 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 17:41:07,293 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 17:41:10,008 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 17:41:16,817 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 17:41:18,037 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 17:41:37,192 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 17:41:43,303 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 17:41:44,504 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 17:42:43,373 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 17:42:44,960 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 17:42:47,170 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 17:42:48,392 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 21:21:47,010 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 21:22:09,621 basehttp "GET /uas_admin/permission_details/?id=5 HTTP/1.1" 200 3845
+INFO 2025-03-24 21:22:09,685 basehttp "GET /static/css/base.css HTTP/1.1" 304 0
+INFO 2025-03-24 21:22:09,689 basehttp "GET /static/css/permission_css/permission_details.css HTTP/1.1" 304 0
+WARNING 2025-03-24 21:22:09,743 log Unauthorized: /uas_admin/api/permission_details/5/
+WARNING 2025-03-24 21:22:09,749 basehttp "GET /uas_admin/api/permission_details/5/ HTTP/1.1" 401 183
+INFO 2025-03-24 21:22:15,492 basehttp "GET /static/css/permission_css/permission_list.css HTTP/1.1" 304 0
+INFO 2025-03-24 21:22:21,050 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+WARNING 2025-03-24 21:22:21,108 log Unauthorized: /uas_admin/api/permission_list/
+WARNING 2025-03-24 21:22:21,109 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 401 183
+INFO 2025-03-24 21:22:24,613 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+WARNING 2025-03-24 21:22:24,672 log Unauthorized: /uas_admin/api/permission_list/
+WARNING 2025-03-24 21:22:24,672 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 401 183
+INFO 2025-03-24 21:22:32,691 basehttp "GET /accounts/success/ HTTP/1.1" 200 1437
+INFO 2025-03-24 21:22:36,706 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2130
+INFO 2025-03-24 21:22:36,759 basehttp "GET /static/css/logout.css HTTP/1.1" 304 0
+WARNING 2025-03-24 21:22:37,841 log Unauthorized: /accounts/api/logout/
+WARNING 2025-03-24 21:22:37,842 basehttp "POST /accounts/api/logout/ HTTP/1.1" 401 183
+WARNING 2025-03-24 21:22:40,890 log Unauthorized: /accounts/api/logout/
+WARNING 2025-03-24 21:22:40,890 basehttp "POST /accounts/api/logout/ HTTP/1.1" 401 183
+INFO 2025-03-24 21:22:51,676 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 22774
+INFO 2025-03-24 21:22:51,740 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:22:54,447 basehttp "POST /admin/logout/ HTTP/1.1" 200 3555
+WARNING 2025-03-24 21:22:56,775 log Unauthorized: /accounts/api/logout/
+WARNING 2025-03-24 21:22:56,776 basehttp "POST /accounts/api/logout/ HTTP/1.1" 401 183
+INFO 2025-03-24 21:22:58,772 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2130
+INFO 2025-03-24 21:22:59,405 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2130
+INFO 2025-03-24 21:22:59,863 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2130
+INFO 2025-03-24 21:23:00,040 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2130
+INFO 2025-03-24 21:23:00,223 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2130
+INFO 2025-03-24 21:23:00,418 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2130
+WARNING 2025-03-24 21:23:05,568 log Unauthorized: /accounts/api/logout/
+WARNING 2025-03-24 21:23:05,568 basehttp "POST /accounts/api/logout/ HTTP/1.1" 401 183
+INFO 2025-03-24 21:23:23,307 basehttp "GET /accounts/login/ HTTP/1.1" 200 3849
+INFO 2025-03-24 21:23:23,393 basehttp "GET /static/css/login.css HTTP/1.1" 304 0
+INFO 2025-03-24 21:23:34,150 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-24 21:23:35,204 basehttp "GET /accounts/verify_otp/ HTTP/1.1" 200 2944
+INFO 2025-03-24 21:23:35,272 basehttp "GET /static/css/verify_otp.css HTTP/1.1" 304 0
+INFO 2025-03-24 21:23:44,738 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 540
+INFO 2025-03-24 21:23:44,773 basehttp "GET /accounts/success/ HTTP/1.1" 200 1437
+INFO 2025-03-24 21:23:52,373 basehttp "GET /uas_admin/user_list/ HTTP/1.1" 200 4933
+INFO 2025-03-24 21:23:52,420 basehttp "GET /static/css/user_css/user_list.css HTTP/1.1" 304 0
+INFO 2025-03-24 21:23:52,476 views User shivam fetched the user list from 127.0.0.1
+INFO 2025-03-24 21:23:52,533 basehttp "GET /uas_admin/api/user_list/ HTTP/1.1" 200 1234
+INFO 2025-03-24 21:23:54,233 basehttp "GET /uas_admin/user_details/?id=7 HTTP/1.1" 200 5041
+INFO 2025-03-24 21:23:54,273 basehttp "GET /static/css/user_css/user_details.css HTTP/1.1" 304 0
+INFO 2025-03-24 21:23:54,403 views User shivam fetched the details of user Tomz from 127.0.0.1
+INFO 2025-03-24 21:23:54,464 basehttp "GET /uas_admin/api/user_details/7/ HTTP/1.1" 200 265
+INFO 2025-03-24 21:24:02,664 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-24 21:24:02,794 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-24 21:24:02,844 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-24 21:24:05,377 basehttp "GET /uas_admin/permission_details/?id=5 HTTP/1.1" 200 3845
+INFO 2025-03-24 21:24:05,508 views User shivam fetched the details of permission can read getuserroledetailsview from 127.0.0.1
+INFO 2025-03-24 21:24:05,576 basehttp "GET /uas_admin/api/permission_details/5/ HTTP/1.1" 200 189
+INFO 2025-03-24 21:24:09,614 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-24 21:24:09,774 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-24 21:24:09,837 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-24 21:24:10,634 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5198
+INFO 2025-03-24 21:24:10,717 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-24 21:24:10,765 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-24 21:24:29,352 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5131
+INFO 2025-03-24 21:24:29,404 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-24 21:24:29,494 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+INFO 2025-03-24 21:24:40,326 basehttp "GET /uas_admin/permission_details/?id=27 HTTP/1.1" 200 3778
+INFO 2025-03-24 21:24:40,504 views User shivam fetched the details of permission test permission from 127.0.0.1
+INFO 2025-03-24 21:24:40,596 basehttp "GET /uas_admin/api/permission_details/27/ HTTP/1.1" 200 164
+WARNING 2025-03-24 21:24:44,524 log Forbidden: /uas_admin/api/delete_permission/27/
+WARNING 2025-03-24 21:24:44,524 basehttp "DELETE /uas_admin/api/delete_permission/27/ HTTP/1.1" 403 63
+INFO 2025-03-24 21:24:50,013 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5131
+INFO 2025-03-24 21:24:50,093 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-24 21:24:50,145 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3693
+WARNING 2025-03-24 21:24:56,944 log Forbidden: /uas_admin/api/delete_permission/27/
+WARNING 2025-03-24 21:24:56,946 basehttp "DELETE /uas_admin/api/delete_permission/27/ HTTP/1.1" 403 63
+INFO 2025-03-24 21:25:10,324 basehttp "GET /admin/ HTTP/1.1" 200 19106
+INFO 2025-03-24 21:25:10,398 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-03-24 21:25:10,403 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-03-24 21:25:10,406 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2025-03-24 21:25:22,118 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 22774
+INFO 2025-03-24 21:25:22,172 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:25:34,260 basehttp "GET /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 200 16372
+INFO 2025-03-24 21:25:34,309 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:25:43,871 basehttp "POST /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 302 0
+INFO 2025-03-24 21:25:43,901 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 23375
+INFO 2025-03-24 21:25:43,951 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:25:48,530 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22049
+INFO 2025-03-24 21:25:48,567 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-24 21:25:55,761 log Forbidden: /uas_admin/api/delete_permission/27/
+WARNING 2025-03-24 21:25:55,763 basehttp "DELETE /uas_admin/api/delete_permission/27/ HTTP/1.1" 403 63
+INFO 2025-03-24 21:26:14,836 basehttp "GET /admin/accounts/permission/add/ HTTP/1.1" 200 16707
+INFO 2025-03-24 21:26:14,894 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:26:25,217 basehttp "POST /admin/accounts/permission/add/ HTTP/1.1" 302 0
+INFO 2025-03-24 21:26:25,249 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22602
+INFO 2025-03-24 21:26:25,300 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:26:27,998 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5131
+INFO 2025-03-24 21:26:28,075 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-24 21:26:28,132 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3868
+WARNING 2025-03-24 21:26:38,300 log Forbidden: /uas_admin/api/delete_permission/27/
+WARNING 2025-03-24 21:26:38,300 basehttp "DELETE /uas_admin/api/delete_permission/27/ HTTP/1.1" 403 63
+INFO 2025-03-24 21:26:50,132 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15947
+INFO 2025-03-24 21:26:50,186 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:26:51,106 basehttp "GET /admin/accounts/role/1/change/ HTTP/1.1" 200 19132
+INFO 2025-03-24 21:26:51,153 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:26:54,856 basehttp "POST /admin/accounts/role/1/change/ HTTP/1.1" 302 0
+INFO 2025-03-24 21:26:54,883 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 16152
+INFO 2025-03-24 21:26:54,933 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:26:57,639 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5131
+INFO 2025-03-24 21:26:57,718 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-24 21:26:57,767 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3868
+INFO 2025-03-24 21:27:01,867 views User shivam deleted permission test permission from 127.0.0.1
+INFO 2025-03-24 21:27:01,909 basehttp "DELETE /uas_admin/api/delete_permission/27/ HTTP/1.1" 202 32
+INFO 2025-03-24 21:27:03,539 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-24 21:27:03,634 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3718
+INFO 2025-03-24 21:28:08,727 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3157
+WARNING 2025-03-24 21:28:08,814 basehttp "GET /static/css/userrole/assign_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-24 21:39:54,224 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3203
+WARNING 2025-03-24 21:39:54,311 basehttp "GET /static/css/userrole/assign_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-24 21:41:28,442 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 21:41:29,695 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 21:44:15,792 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 21:44:17,254 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 21:44:23,486 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3467
+WARNING 2025-03-24 21:44:23,529 basehttp "GET /static/css/userrole/assign_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-24 21:45:40,556 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 21:45:42,106 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 21:48:06,191 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 21:48:07,603 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 21:48:09,741 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3664
+WARNING 2025-03-24 21:48:09,780 basehttp "GET /static/css/userrole/assign_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-24 21:51:12,051 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4619
+WARNING 2025-03-24 21:51:12,112 basehttp "GET /static/css/userrole_css/user_role_list.css HTTP/1.1" 404 1919
+WARNING 2025-03-24 21:51:12,278 log Not Found: /uas_admin/api/user_role_list/
+WARNING 2025-03-24 21:51:12,278 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 404 15373
+INFO 2025-03-24 21:51:55,283 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4529
+WARNING 2025-03-24 21:51:55,370 log Not Found: /uas_admin/api/user_role_list/
+WARNING 2025-03-24 21:51:55,371 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 404 15373
+INFO 2025-03-24 21:52:56,522 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\urls.py changed, reloading.
+INFO 2025-03-24 21:52:57,868 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 21:52:59,811 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\urls.py changed, reloading.
+INFO 2025-03-24 21:53:01,425 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 21:53:54,961 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 21:53:57,720 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4529
+WARNING 2025-03-24 21:53:57,818 log Forbidden: /uas_admin/api/user_role_list/
+WARNING 2025-03-24 21:53:57,820 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 403 63
+INFO 2025-03-24 21:54:14,245 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 23122
+INFO 2025-03-24 21:54:14,298 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:54:43,038 basehttp "GET /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 200 16372
+INFO 2025-03-24 21:54:43,142 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:54:47,843 basehttp "POST /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 302 0
+INFO 2025-03-24 21:54:47,875 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 23714
+INFO 2025-03-24 21:54:47,924 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:54:52,008 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4529
+WARNING 2025-03-24 21:54:52,123 log Forbidden: /uas_admin/api/user_role_list/
+WARNING 2025-03-24 21:54:52,124 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 403 63
+INFO 2025-03-24 21:55:08,254 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22081
+INFO 2025-03-24 21:55:08,307 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:55:22,262 basehttp "GET /admin/accounts/permission/add/ HTTP/1.1" 200 16707
+INFO 2025-03-24 21:55:22,304 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:55:31,671 basehttp "POST /admin/accounts/permission/add/ HTTP/1.1" 302 0
+INFO 2025-03-24 21:55:31,702 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22619
+INFO 2025-03-24 21:55:31,757 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:55:33,194 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15947
+INFO 2025-03-24 21:55:33,231 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:55:34,244 basehttp "GET /admin/accounts/role/1/change/ HTTP/1.1" 200 19152
+INFO 2025-03-24 21:55:34,307 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:55:37,112 basehttp "POST /admin/accounts/role/1/change/ HTTP/1.1" 302 0
+INFO 2025-03-24 21:55:37,143 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 16152
+INFO 2025-03-24 21:55:37,189 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 21:55:40,610 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4529
+INFO 2025-03-24 21:55:40,688 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 21:55:40,742 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 55
+INFO 2025-03-24 21:55:45,073 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4529
+INFO 2025-03-24 21:55:45,140 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 21:55:45,193 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 55
+WARNING 2025-03-24 21:56:30,800 basehttp "GET /static/css/userrole/assign_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-24 22:00:35,078 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4596
+INFO 2025-03-24 22:00:35,189 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:00:35,235 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 55
+INFO 2025-03-24 22:00:36,766 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4596
+INFO 2025-03-24 22:00:36,845 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:00:36,943 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 55
+INFO 2025-03-24 22:01:00,387 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 22:01:04,595 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4596
+INFO 2025-03-24 22:01:04,692 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:01:04,737 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 55
+INFO 2025-03-24 22:01:05,695 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4596
+INFO 2025-03-24 22:01:05,787 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:01:05,829 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 55
+INFO 2025-03-24 22:01:39,759 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 22:01:41,154 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 22:01:44,065 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 22:01:45,322 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 22:02:07,201 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 22:02:09,520 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4596
+INFO 2025-03-24 22:02:09,701 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:02:09,870 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 55
+INFO 2025-03-24 22:02:11,065 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4596
+INFO 2025-03-24 22:02:11,143 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:02:11,245 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 55
+INFO 2025-03-24 22:03:20,979 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4596
+INFO 2025-03-24 22:03:21,040 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:03:21,098 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 55
+INFO 2025-03-24 22:05:20,626 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 22:05:22,177 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 22:06:58,379 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 22:06:59,675 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 22:07:22,637 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4636
+INFO 2025-03-24 22:07:22,694 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:07:22,745 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 55
+INFO 2025-03-24 22:07:23,396 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4636
+INFO 2025-03-24 22:07:23,459 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:07:23,546 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 55
+INFO 2025-03-24 22:15:42,574 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3787
+INFO 2025-03-24 22:15:43,726 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3787
+INFO 2025-03-24 22:15:53,570 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3875
+WARNING 2025-03-24 22:15:53,620 basehttp "GET /static/css/userrole/assign_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-24 22:15:54,425 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3875
+WARNING 2025-03-24 22:15:54,473 basehttp "GET /static/css/userrole/assign_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-24 22:16:10,930 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3876
+WARNING 2025-03-24 22:16:11,012 basehttp "GET /static/css/user_role/assign_user_role.css HTTP/1.1" 404 1916
+INFO 2025-03-24 22:16:44,951 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3877
+WARNING 2025-03-24 22:16:45,023 basehttp "GET /static/css/user_roles/assign_user_role.css HTTP/1.1" 404 1919
+INFO 2025-03-24 22:16:45,843 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3877
+WARNING 2025-03-24 22:16:45,897 basehttp "GET /static/css/user_roles/assign_user_role.css HTTP/1.1" 404 1919
+INFO 2025-03-24 22:18:11,040 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3877
+INFO 2025-03-24 22:18:11,143 basehttp "GET /static/css/user_roles/assign_user_role.css HTTP/1.1" 200 855
+INFO 2025-03-24 22:25:13,368 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 22:25:14,865 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 22:25:53,820 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+WARNING 2025-03-24 22:25:53,861 basehttp "GET /static/css/user_roles/user_role_list.css HTTP/1.1" 404 1913
+INFO 2025-03-24 22:25:54,077 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:25:54,162 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 55
+INFO 2025-03-24 22:25:59,197 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+WARNING 2025-03-24 22:25:59,249 basehttp "GET /static/css/user_roles/user_role_list.css HTTP/1.1" 404 1913
+INFO 2025-03-24 22:25:59,372 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:25:59,436 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 55
+INFO 2025-03-24 22:27:26,038 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 22:27:27,357 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 22:28:24,501 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 22:28:26,199 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 22:29:23,445 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+WARNING 2025-03-24 22:29:23,483 basehttp "GET /static/css/user_roles/user_role_list.css HTTP/1.1" 404 1913
+INFO 2025-03-24 22:29:23,611 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:29:23,699 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-24 22:29:24,757 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+WARNING 2025-03-24 22:29:24,815 basehttp "GET /static/css/user_roles/user_role_list.css HTTP/1.1" 404 1913
+INFO 2025-03-24 22:29:24,949 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:29:24,987 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-24 22:32:34,779 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-24 22:32:34,885 basehttp "GET /static/css/user_roles/user_role_list.css HTTP/1.1" 200 1541
+INFO 2025-03-24 22:32:34,930 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 22:32:35,047 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-24 22:34:17,042 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\urls.py changed, reloading.
+INFO 2025-03-24 22:34:18,802 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 22:43:00,948 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 22:43:04,162 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 7158
+INFO 2025-03-24 22:43:04,266 basehttp "GET /static/css/user_roles/user_role_details.css HTTP/1.1" 200 682
+INFO 2025-03-24 22:43:04,427 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-24 22:43:04,519 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+WARNING 2025-03-24 22:43:04,554 log Not Found: /uas_admin/api/role_list/
+WARNING 2025-03-24 22:43:04,555 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 404 15386
+INFO 2025-03-24 22:43:04,564 views User shivam fetched the user list from 127.0.0.1
+INFO 2025-03-24 22:43:04,666 basehttp "GET /uas_admin/api/user_list/ HTTP/1.1" 200 1234
+INFO 2025-03-24 22:43:32,329 basehttp "GET /static/css/user_roles/user_role_list.css HTTP/1.1" 304 0
+INFO 2025-03-24 22:43:33,966 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 7158
+INFO 2025-03-24 22:43:34,031 basehttp "GET /static/css/user_roles/user_role_details.css HTTP/1.1" 304 0
+INFO 2025-03-24 22:43:34,130 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-24 22:43:34,195 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+WARNING 2025-03-24 22:43:34,260 log Not Found: /uas_admin/api/role_list/
+WARNING 2025-03-24 22:43:34,261 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 404 15386
+INFO 2025-03-24 22:43:34,275 views User shivam fetched the user list from 127.0.0.1
+INFO 2025-03-24 22:43:34,380 basehttp "GET /uas_admin/api/user_list/ HTTP/1.1" 200 1234
+INFO 2025-03-24 22:45:20,688 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 7158
+INFO 2025-03-24 22:45:20,747 basehttp "GET /static/css/user_roles/user_role_details.css HTTP/1.1" 304 0
+INFO 2025-03-24 22:45:20,915 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-24 22:45:20,960 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+WARNING 2025-03-24 22:45:20,976 log Not Found: /uas_admin/api/role_list/
+WARNING 2025-03-24 22:45:20,976 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 404 15386
+INFO 2025-03-24 22:45:21,012 views User shivam fetched the user list from 127.0.0.1
+INFO 2025-03-24 22:45:21,089 basehttp "GET /uas_admin/api/user_list/ HTTP/1.1" 200 1234
+INFO 2025-03-24 22:49:01,700 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 7635
+INFO 2025-03-24 22:49:01,764 basehttp "GET /static/css/user_roles/user_role_details.css HTTP/1.1" 304 0
+INFO 2025-03-24 22:49:01,844 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-24 22:49:01,884 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+WARNING 2025-03-24 22:49:01,900 log Not Found: /uas_admin/api/roles/
+WARNING 2025-03-24 22:49:01,900 basehttp "GET /uas_admin/api/roles/ HTTP/1.1" 404 15374
+INFO 2025-03-24 22:49:01,910 views User shivam fetched the user list from 127.0.0.1
+INFO 2025-03-24 22:49:01,953 basehttp "GET /uas_admin/api/user_list/ HTTP/1.1" 200 1234
+INFO 2025-03-24 23:43:06,666 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 23:43:13,952 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 7635
+INFO 2025-03-24 23:43:13,993 basehttp "GET /static/css/user_roles/user_role_details.css HTTP/1.1" 304 0
+INFO 2025-03-24 23:43:14,049 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-24 23:43:14,110 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+WARNING 2025-03-24 23:43:14,128 log Not Found: /uas_admin/api/roles/
+WARNING 2025-03-24 23:43:14,129 basehttp "GET /uas_admin/api/roles/ HTTP/1.1" 404 15374
+INFO 2025-03-24 23:43:14,166 views User shivam fetched the user list from 127.0.0.1
+INFO 2025-03-24 23:43:14,231 basehttp "GET /uas_admin/api/user_list/ HTTP/1.1" 200 1234
+WARNING 2025-03-24 23:43:42,059 log Not Found: /uas_admin/create_
+WARNING 2025-03-24 23:43:42,059 basehttp "GET /uas_admin/create_ HTTP/1.1" 404 15365
+WARNING 2025-03-24 23:43:52,459 log Not Found: /uas_admin/create_view-access/
+WARNING 2025-03-24 23:43:52,460 basehttp "GET /uas_admin/create_view-access/ HTTP/1.1" 404 15401
+INFO 2025-03-24 23:43:59,494 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3539
+WARNING 2025-03-24 23:43:59,582 basehttp "GET /static/css/viewaccess_css/create_view_access.css HTTP/1.1" 404 1937
+INFO 2025-03-24 23:44:24,087 basehttp "GET /uas_admin/list_view_access/ HTTP/1.1" 200 4695
+WARNING 2025-03-24 23:44:24,166 basehttp "GET /static/css/viewaccess_css/view_access_list.css HTTP/1.1" 404 1931
+ERROR 2025-03-24 23:44:24,515 log Internal Server Error: /uas_admin/api/list_create_view_access/
+Traceback (most recent call last):
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py", line 596, in get
+    accesses = self.queryset()
+               ^^^^^^^^^^^^^^^
+TypeError: 'QuerySet' object is not callable
+ERROR 2025-03-24 23:44:24,517 basehttp "GET /uas_admin/api/list_create_view_access/ HTTP/1.1" 500 99984
+INFO 2025-03-24 23:45:29,848 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3177
+INFO 2025-03-24 23:45:29,907 basehttp "GET /static/css/user_roles/assign_user_role.css HTTP/1.1" 304 0
+INFO 2025-03-24 23:46:58,618 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-24 23:46:58,675 basehttp "GET /static/css/user_roles/user_role_list.css HTTP/1.1" 304 0
+INFO 2025-03-24 23:46:58,821 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-24 23:46:58,904 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-24 23:47:26,304 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3539
+WARNING 2025-03-24 23:47:26,409 basehttp "GET /static/css/viewaccess_css/create_view_access.css HTTP/1.1" 404 1937
+WARNING 2025-03-24 23:47:44,456 log Not Found: /uas_admin/list_create_view_access/
+WARNING 2025-03-24 23:47:44,456 basehttp "POST /uas_admin/list_create_view_access/ HTTP/1.1" 404 15417
+WARNING 2025-03-24 23:48:09,006 log Not Found: /uas_admin/list_create_view_access/
+WARNING 2025-03-24 23:48:09,006 basehttp "POST /uas_admin/list_create_view_access/ HTTP/1.1" 404 15417
+INFO 2025-03-24 23:48:12,511 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3539
+WARNING 2025-03-24 23:48:12,566 basehttp "GET /static/css/viewaccess_css/create_view_access.css HTTP/1.1" 404 1937
+WARNING 2025-03-24 23:48:18,131 log Not Found: /uas_admin/list_create_view_access/
+WARNING 2025-03-24 23:48:18,132 basehttp "POST /uas_admin/list_create_view_access/ HTTP/1.1" 404 15417
+WARNING 2025-03-24 23:51:30,454 log Not Found: /uas_admin/list_create_view_access/
+WARNING 2025-03-24 23:51:30,454 basehttp "POST /uas_admin/list_create_view_access/ HTTP/1.1" 404 15417
+INFO 2025-03-24 23:51:34,351 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3543
+WARNING 2025-03-24 23:51:34,411 basehttp "GET /static/css/viewaccess_css/create_view_access.css HTTP/1.1" 404 1937
+WARNING 2025-03-24 23:51:43,879 log Bad Request: /uas_admin/api/list_create_view_access/
+WARNING 2025-03-24 23:51:43,879 basehttp "POST /uas_admin/api/list_create_view_access/ HTTP/1.1" 400 60
+INFO 2025-03-24 23:52:40,101 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 23464
+INFO 2025-03-24 23:52:40,159 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-24 23:52:46,141 log Bad Request: /uas_admin/api/list_create_view_access/
+WARNING 2025-03-24 23:52:46,141 basehttp "POST /uas_admin/api/list_create_view_access/ HTTP/1.1" 400 60
+INFO 2025-03-24 23:56:31,132 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 23:56:35,806 basehttp "GET /admin/admin_dashboard/viewaccess/19/change/ HTTP/1.1" 200 16780
+INFO 2025-03-24 23:56:35,863 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 23:56:42,602 basehttp "POST /admin/admin_dashboard/viewaccess/19/change/ HTTP/1.1" 302 0
+INFO 2025-03-24 23:56:42,650 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 23711
+INFO 2025-03-24 23:56:42,683 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 23:57:52,886 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 23:57:54,241 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 23:58:03,356 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-24 23:58:04,715 autoreload Watching for file changes with StatReloader
+INFO 2025-03-24 23:59:24,914 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22390
+INFO 2025-03-24 23:59:24,955 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 23:59:29,002 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3538
+WARNING 2025-03-24 23:59:29,039 basehttp "GET /static/css/viewaccess_css/create_view_access.css HTTP/1.1" 404 1937
+INFO 2025-03-24 23:59:54,596 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3538
+WARNING 2025-03-24 23:59:54,638 basehttp "GET /static/css/viewaccess_css/create_view_access.css HTTP/1.1" 404 1937
+WARNING 2025-03-25 00:00:02,899 log Forbidden: /uas_admin/api/create_view_access/
+WARNING 2025-03-25 00:00:02,899 basehttp "POST /uas_admin/api/create_view_access/ HTTP/1.1" 403 63
+INFO 2025-03-25 00:00:11,896 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22390
+INFO 2025-03-25 00:00:11,938 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 00:00:20,652 basehttp "GET /admin/accounts/permission/22/change/ HTTP/1.1" 200 17083
+INFO 2025-03-25 00:00:20,689 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 00:00:22,184 basehttp "GET /admin/accounts/permission/22/delete/ HTTP/1.1" 200 14344
+INFO 2025-03-25 00:00:22,223 basehttp "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2025-03-25 00:00:23,645 basehttp "POST /admin/accounts/permission/22/delete/ HTTP/1.1" 302 0
+INFO 2025-03-25 00:00:23,677 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22253
+INFO 2025-03-25 00:00:23,715 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 00:00:25,097 basehttp "GET /admin/accounts/permission/23/change/ HTTP/1.1" 200 17088
+INFO 2025-03-25 00:00:25,152 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 00:00:39,615 basehttp "POST /admin/accounts/permission/23/change/ HTTP/1.1" 302 0
+INFO 2025-03-25 00:00:39,647 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22294
+INFO 2025-03-25 00:00:39,693 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 00:00:41,881 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15947
+INFO 2025-03-25 00:00:41,972 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 00:00:43,452 basehttp "GET /admin/accounts/role/1/change/ HTTP/1.1" 200 19083
+INFO 2025-03-25 00:00:43,495 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 00:00:50,426 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15947
+INFO 2025-03-25 00:00:50,765 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22059
+INFO 2025-03-25 00:01:00,401 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15947
+INFO 2025-03-25 00:01:00,447 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 00:01:01,550 basehttp "GET /admin/accounts/role/1/change/ HTTP/1.1" 200 19083
+INFO 2025-03-25 00:01:01,584 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-25 00:01:15,367 log Bad Request: /uas_admin/api/create_view_access/
+WARNING 2025-03-25 00:01:15,367 basehttp "POST /uas_admin/api/create_view_access/ HTTP/1.1" 400 60
+WARNING 2025-03-25 00:01:41,909 log Not Found: /uas_admin/view_access_list/
+WARNING 2025-03-25 00:01:41,910 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 404 15390
+INFO 2025-03-25 00:02:01,872 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\urls.py changed, reloading.
+INFO 2025-03-25 00:02:03,532 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-25 00:02:07,635 log Not Found: /uas_admin/list_view_access/
+WARNING 2025-03-25 00:02:07,636 basehttp "GET /uas_admin/list_view_access/ HTTP/1.1" 404 15375
+WARNING 2025-03-25 00:02:20,401 log Not Found: /uas_admin/list_view_access/
+WARNING 2025-03-25 00:02:20,401 basehttp "GET /uas_admin/list_view_access/ HTTP/1.1" 404 15375
+INFO 2025-03-25 00:02:42,801 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\urls.py changed, reloading.
+INFO 2025-03-25 00:02:44,100 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 00:02:48,500 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\urls.py changed, reloading.
+INFO 2025-03-25 00:02:49,804 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-25 00:03:16,999 log Not Found: /uas_admin/list_view_access/
+WARNING 2025-03-25 00:03:16,999 basehttp "GET /uas_admin/list_view_access/ HTTP/1.1" 404 15390
+WARNING 2025-03-25 00:03:18,018 log Not Found: /uas_admin/list_view_access/
+WARNING 2025-03-25 00:03:18,018 basehttp "GET /uas_admin/list_view_access/ HTTP/1.1" 404 15390
+INFO 2025-03-25 00:03:46,604 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4688
+WARNING 2025-03-25 00:03:46,669 basehttp "GET /static/css/viewaccess_css/view_access_list.css HTTP/1.1" 404 1931
+WARNING 2025-03-25 00:03:46,736 log Not Found: /uas_admin/api/view_access_list/
+WARNING 2025-03-25 00:03:46,737 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 404 15402
+INFO 2025-03-25 00:04:34,782 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 00:04:36,261 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 00:08:09,810 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 00:08:11,606 autoreload Watching for file changes with StatReloader
+WARNING 2025-03-25 00:08:42,060 log Not Found: /uas_admin/list_view_access/
+WARNING 2025-03-25 00:08:42,061 basehttp "GET /uas_admin/list_view_access/ HTTP/1.1" 404 15390
+INFO 2025-03-25 00:08:53,113 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4688
+WARNING 2025-03-25 00:08:53,192 basehttp "GET /static/css/viewaccess_css/view_access_list.css HTTP/1.1" 404 1931
+WARNING 2025-03-25 00:08:53,229 log Not Found: /uas_admin/api/view_access_list/
+WARNING 2025-03-25 00:08:53,232 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 404 15402
+INFO 2025-03-25 00:09:06,726 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4688
+WARNING 2025-03-25 00:09:06,777 basehttp "GET /static/css/viewaccess_css/view_access_list.css HTTP/1.1" 404 1931
+WARNING 2025-03-25 00:09:06,800 log Not Found: /uas_admin/api/view_access_list/
+WARNING 2025-03-25 00:09:06,800 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 404 15402
+INFO 2025-03-25 00:09:07,424 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4688
+WARNING 2025-03-25 00:09:07,473 basehttp "GET /static/css/viewaccess_css/view_access_list.css HTTP/1.1" 404 1931
+WARNING 2025-03-25 00:09:07,496 log Not Found: /uas_admin/api/view_access_list/
+WARNING 2025-03-25 00:09:07,497 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 404 15402
+INFO 2025-03-25 00:09:38,479 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 00:09:39,731 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 00:10:41,379 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 00:10:43,123 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 00:13:21,981 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 00:13:23,493 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 00:13:34,916 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4688
+WARNING 2025-03-25 00:13:34,949 basehttp "GET /static/css/viewaccess_css/view_access_list.css HTTP/1.1" 404 1931
+WARNING 2025-03-25 00:13:35,079 log Not Found: /uas_admin/api/view_access_list/
+WARNING 2025-03-25 00:13:35,080 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 404 15402
+INFO 2025-03-25 00:15:56,237 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 5002
+WARNING 2025-03-25 00:15:56,285 basehttp "GET /static/css/viewaccess_css/view_access_list.css HTTP/1.1" 404 1931
+WARNING 2025-03-25 00:15:56,328 log Not Found: /uas_admin/api/view_access_list/
+WARNING 2025-03-25 00:15:56,328 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 404 15402
+INFO 2025-03-25 15:35:19,631 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 15:35:24,680 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 5214
+WARNING 2025-03-25 15:35:24,730 basehttp "GET /static/css/viewaccess_css/view_access_list.css HTTP/1.1" 404 1931
+WARNING 2025-03-25 15:35:24,765 log Not Found: /uas_admin/api/view_access_list/
+WARNING 2025-03-25 15:35:24,766 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 404 15402
+INFO 2025-03-25 15:38:17,147 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\urls.py changed, reloading.
+INFO 2025-03-25 15:38:18,867 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 15:38:49,765 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 15:38:52,290 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 5214
+WARNING 2025-03-25 15:38:52,326 basehttp "GET /static/css/viewaccess_css/view_access_list.css HTTP/1.1" 404 1931
+WARNING 2025-03-25 15:38:52,469 log Forbidden: /uas_admin/api/view_access_list/
+WARNING 2025-03-25 15:38:52,470 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 403 63
+INFO 2025-03-25 15:39:13,144 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 23456
+INFO 2025-03-25 15:39:13,386 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 15:39:15,441 basehttp "GET /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 200 16372
+INFO 2025-03-25 15:39:15,497 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 15:39:19,376 basehttp "POST /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 302 0
+INFO 2025-03-25 15:39:19,476 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 24051
+INFO 2025-03-25 15:39:19,511 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 15:39:25,759 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 5214
+WARNING 2025-03-25 15:39:25,805 basehttp "GET /static/css/viewaccess_css/view_access_list.css HTTP/1.1" 404 1931
+WARNING 2025-03-25 15:39:25,861 log Forbidden: /uas_admin/api/view_access_list/
+WARNING 2025-03-25 15:39:25,862 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 403 63
+INFO 2025-03-25 15:39:36,243 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22059
+INFO 2025-03-25 15:39:36,696 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 15:39:48,162 basehttp "GET /admin/accounts/permission/add/ HTTP/1.1" 200 16707
+INFO 2025-03-25 15:39:48,197 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 15:40:00,511 basehttp "POST /admin/accounts/permission/add/ HTTP/1.1" 302 0
+INFO 2025-03-25 15:40:00,544 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22600
+INFO 2025-03-25 15:40:00,597 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 15:40:01,085 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15947
+INFO 2025-03-25 15:40:01,164 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 15:40:01,920 basehttp "GET /admin/accounts/role/1/change/ HTTP/1.1" 200 19142
+INFO 2025-03-25 15:40:01,965 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 15:40:05,267 basehttp "POST /admin/accounts/role/1/change/ HTTP/1.1" 302 0
+INFO 2025-03-25 15:40:05,307 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 16152
+INFO 2025-03-25 15:40:05,518 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 15:40:07,357 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 5214
+WARNING 2025-03-25 15:40:07,407 basehttp "GET /static/css/viewaccess_css/view_access_list.css HTTP/1.1" 404 1931
+INFO 2025-03-25 15:40:07,639 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 15:40:07,833 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 1920
+INFO 2025-03-25 15:43:35,250 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3693
+WARNING 2025-03-25 15:43:35,316 basehttp "GET /static/css/viewaccess_css/create_view_access.css HTTP/1.1" 404 1937
+INFO 2025-03-25 15:43:53,738 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3690
+INFO 2025-03-25 15:43:53,851 basehttp "GET /static/css/view_access/create_view_access.css HTTP/1.1" 200 693
+INFO 2025-03-25 15:44:20,501 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 23800
+INFO 2025-03-25 15:44:20,551 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 15:44:21,690 basehttp "GET /admin/admin_dashboard/viewaccess/26/change/ HTTP/1.1" 200 16756
+INFO 2025-03-25 15:44:21,732 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 15:46:12,546 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 15:46:16,222 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 15:48:58,272 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 15:48:59,586 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 15:49:04,693 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3868
+INFO 2025-03-25 15:49:04,734 basehttp "GET /static/css/view_access/create_view_access.css HTTP/1.1" 304 0
+INFO 2025-03-25 15:50:33,200 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3868
+INFO 2025-03-25 15:50:33,571 basehttp "GET /static/css/view_access/create_view_access.css HTTP/1.1" 304 0
+INFO 2025-03-25 15:50:34,671 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3868
+INFO 2025-03-25 15:51:40,960 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3868
+INFO 2025-03-25 15:51:41,063 basehttp "GET /static/css/view_access/create_view_access.css HTTP/1.1" 200 760
+INFO 2025-03-25 15:53:33,990 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3945
+INFO 2025-03-25 15:53:34,038 basehttp "GET /static/css/view_access/create_view_access.css HTTP/1.1" 304 0
+INFO 2025-03-25 15:53:35,041 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3945
+INFO 2025-03-25 15:53:49,396 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3945
+INFO 2025-03-25 15:53:49,462 basehttp "GET /static/css/view_access/create_view_access.css HTTP/1.1" 304 0
+INFO 2025-03-25 15:53:50,107 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3945
+INFO 2025-03-25 15:53:57,266 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3868
+INFO 2025-03-25 16:03:56,775 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3677
+INFO 2025-03-25 16:03:56,823 basehttp "GET /static/css/view_access/create_view_access.css HTTP/1.1" 200 0
+INFO 2025-03-25 16:08:38,733 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3677
+INFO 2025-03-25 16:08:38,773 basehttp "GET /static/css/view_access/create_view_access.css HTTP/1.1" 200 911
+INFO 2025-03-25 16:09:14,390 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 2723
+INFO 2025-03-25 16:09:16,659 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 2723
+INFO 2025-03-25 16:10:22,240 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 2807
+INFO 2025-03-25 16:10:22,323 basehttp "GET /static/css/user_css/toggle_mfa.css HTTP/1.1" 200 1495
+INFO 2025-03-25 16:10:23,495 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 2807
+INFO 2025-03-25 16:12:45,552 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 16:12:47,308 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 16:13:30,610 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 16:13:32,434 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 16:13:34,022 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 2816
+INFO 2025-03-25 16:15:15,778 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 2816
+INFO 2025-03-25 16:16:10,105 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 16:16:11,373 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 16:17:41,132 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 16:17:42,603 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 16:18:17,759 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 3158
+WARNING 2025-03-25 16:18:26,147 log Not Found: /api/toggle_mfa/
+WARNING 2025-03-25 16:18:26,147 basehttp "POST /api/toggle_mfa/ HTTP/1.1" 404 3328
+WARNING 2025-03-25 16:19:12,580 log Not Found: /api/toggle_mfa/
+WARNING 2025-03-25 16:19:12,580 basehttp "POST /api/toggle_mfa/ HTTP/1.1" 404 3328
+INFO 2025-03-25 16:19:21,833 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 3189
+WARNING 2025-03-25 16:19:27,510 log Bad Request: /uas_admin/api/toggle_mfa/
+WARNING 2025-03-25 16:19:27,511 basehttp "POST /uas_admin/api/toggle_mfa/ HTTP/1.1" 400 47
+INFO 2025-03-25 16:31:50,203 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 3121
+INFO 2025-03-25 16:31:55,312 basehttp "POST /uas_admin/api/toggle_mfa/ HTTP/1.1" 200 53
+INFO 2025-03-25 16:31:58,472 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 3121
+INFO 2025-03-25 16:32:05,890 basehttp "POST /uas_admin/api/toggle_mfa/ HTTP/1.1" 200 56
+INFO 2025-03-25 16:32:10,240 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 3121
+INFO 2025-03-25 16:32:18,001 basehttp "POST /uas_admin/api/toggle_mfa/ HTTP/1.1" 200 55
+INFO 2025-03-25 16:32:19,468 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 3121
+INFO 2025-03-25 16:32:21,888 basehttp "POST /uas_admin/api/toggle_mfa/ HTTP/1.1" 200 53
+INFO 2025-03-25 16:32:23,566 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 3121
+INFO 2025-03-25 16:32:37,804 basehttp "POST /uas_admin/api/toggle_mfa/ HTTP/1.1" 200 56
+INFO 2025-03-25 16:32:39,791 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 3121
+INFO 2025-03-25 16:34:06,678 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 5222
+WARNING 2025-03-25 16:34:06,736 basehttp "GET /static/css/viewaccess_css/view_access_list.css HTTP/1.1" 404 1931
+INFO 2025-03-25 16:34:06,831 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 16:34:06,915 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 1920
+INFO 2025-03-25 16:34:08,508 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 5222
+WARNING 2025-03-25 16:34:08,553 basehttp "GET /static/css/viewaccess_css/view_access_list.css HTTP/1.1" 404 1931
+INFO 2025-03-25 16:34:08,584 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 16:34:08,711 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 1920
+INFO 2025-03-25 16:34:20,060 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 5211
+INFO 2025-03-25 16:34:20,159 basehttp "GET /static/css/view_access/view_access_list.css HTTP/1.1" 200 0
+INFO 2025-03-25 16:34:20,185 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 16:34:20,279 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 1920
+INFO 2025-03-25 16:36:10,804 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 200 3825
+WARNING 2025-03-25 16:36:10,892 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 16:36:11,047 views User shivam fetched the details of view accessadmin_dashboard.views.CreatePermissionView from 127.0.0.1
+INFO 2025-03-25 16:36:11,090 basehttp "GET /uas_admin/api/view_access_details/23/ HTTP/1.1" 200 95
+INFO 2025-03-25 16:41:56,873 basehttp "GET /uas_admin/view_access_details/?id=14 HTTP/1.1" 200 3825
+WARNING 2025-03-25 16:41:56,934 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 16:41:57,116 views User shivam fetched the details of view accessadmin_dashboard.views.CreateRoleView from 127.0.0.1
+INFO 2025-03-25 16:41:57,177 basehttp "GET /uas_admin/api/view_access_details/14/ HTTP/1.1" 200 89
+INFO 2025-03-25 16:43:29,837 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 16:43:31,248 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 16:52:53,211 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 16:52:59,125 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 200 5145
+WARNING 2025-03-25 16:52:59,208 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 16:52:59,284 views User shivam fetched the details of view accessadmin_dashboard.views.CreatePermissionView from 127.0.0.1
+INFO 2025-03-25 16:52:59,368 basehttp "GET /uas_admin/api/view_access_details/23/ HTTP/1.1" 200 95
+INFO 2025-03-25 16:52:59,440 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 16:52:59,696 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 17:07:34,355 basehttp "GET /uas_admin/view_access_details/?id=14 HTTP/1.1" 200 5058
+WARNING 2025-03-25 17:07:34,427 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 17:07:34,495 views User shivam fetched the details of view accessadmin_dashboard.views.CreateRoleView from 127.0.0.1
+INFO 2025-03-25 17:07:34,533 basehttp "GET /uas_admin/api/view_access_details/14/ HTTP/1.1" 200 89
+INFO 2025-03-25 17:07:34,553 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 17:07:34,611 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 17:12:12,676 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 17:12:14,559 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 17:12:16,843 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 17:21:03,770 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 17:21:06,060 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 5212
+INFO 2025-03-25 17:21:06,157 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 17:21:06,244 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 1920
+INFO 2025-03-25 17:21:07,254 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 5212
+INFO 2025-03-25 17:21:07,344 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 17:21:07,424 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 1920
+INFO 2025-03-25 17:21:41,356 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-25 17:21:41,424 basehttp "GET /static/css/user_roles/user_role_list.css HTTP/1.1" 304 0
+INFO 2025-03-25 17:21:41,493 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-25 17:21:41,588 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-25 17:24:43,076 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-25 17:24:43,146 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-25 17:24:43,219 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-25 17:24:45,992 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-25 17:24:46,085 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-25 17:24:46,132 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-25 17:24:52,614 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-25 17:24:52,741 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-25 17:24:52,785 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-25 17:24:53,107 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-25 17:24:53,277 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-25 17:24:53,363 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-25 17:24:53,475 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-25 17:24:53,573 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-25 17:24:53,645 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-25 17:25:04,070 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4562
+INFO 2025-03-25 17:25:04,204 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 17:25:04,287 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 1920
+INFO 2025-03-25 17:25:05,765 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4562
+INFO 2025-03-25 17:25:05,844 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 17:25:05,915 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 1920
+INFO 2025-03-25 17:25:06,559 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4562
+INFO 2025-03-25 17:25:06,664 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 17:25:06,745 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 1920
+INFO 2025-03-25 17:30:33,123 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4767
+INFO 2025-03-25 17:30:33,215 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 17:30:33,284 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 1920
+INFO 2025-03-25 17:30:34,634 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 200 5058
+WARNING 2025-03-25 17:30:34,692 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 17:30:34,743 views User shivam fetched the details of view accessadmin_dashboard.views.CreatePermissionView from 127.0.0.1
+INFO 2025-03-25 17:30:34,809 basehttp "GET /uas_admin/api/view_access_details/23/ HTTP/1.1" 200 95
+INFO 2025-03-25 17:30:34,947 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 17:30:35,026 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 17:33:32,630 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4863
+INFO 2025-03-25 17:33:32,863 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 17:33:32,948 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 1920
+INFO 2025-03-25 17:40:11,681 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 17:40:12,143 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4863
+INFO 2025-03-25 17:40:12,276 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 17:40:12,342 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 17:40:12,964 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4863
+INFO 2025-03-25 17:40:13,047 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 17:40:13,108 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 17:40:13,877 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4863
+INFO 2025-03-25 17:40:13,956 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 17:40:13,997 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 17:40:17,371 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4863
+INFO 2025-03-25 17:40:17,543 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 17:40:17,683 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 17:43:00,592 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4840
+INFO 2025-03-25 17:43:00,678 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 17:43:00,745 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 17:43:06,144 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 200 5058
+WARNING 2025-03-25 17:43:06,212 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 17:43:06,431 views User shivam fetched the details of view accessadmin_dashboard.views.CreatePermissionView from 127.0.0.1
+INFO 2025-03-25 17:43:06,521 basehttp "GET /uas_admin/api/view_access_details/23/ HTTP/1.1" 200 95
+INFO 2025-03-25 17:43:06,555 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 17:43:06,627 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 17:52:33,690 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4840
+INFO 2025-03-25 17:52:33,790 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 17:52:33,884 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 17:52:35,294 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 200 5058
+WARNING 2025-03-25 17:52:35,375 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 17:52:35,453 views User shivam fetched the details of view accessadmin_dashboard.views.CreatePermissionView from 127.0.0.1
+INFO 2025-03-25 17:52:35,547 basehttp "GET /uas_admin/api/view_access_details/23/ HTTP/1.1" 200 95
+INFO 2025-03-25 17:52:35,611 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 17:52:35,689 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 17:52:46,824 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-25 17:52:46,964 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-25 17:52:47,004 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-25 17:52:48,541 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 7635
+INFO 2025-03-25 17:52:48,599 basehttp "GET /static/css/user_roles/user_role_details.css HTTP/1.1" 304 0
+INFO 2025-03-25 17:52:48,671 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-25 17:52:48,721 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+WARNING 2025-03-25 17:52:48,736 log Not Found: /uas_admin/api/roles/
+WARNING 2025-03-25 17:52:48,737 basehttp "GET /uas_admin/api/roles/ HTTP/1.1" 404 15934
+INFO 2025-03-25 17:52:48,751 views User shivam fetched the user list from 127.0.0.1
+INFO 2025-03-25 17:52:48,921 basehttp "GET /uas_admin/api/user_list/ HTTP/1.1" 200 1235
+INFO 2025-03-25 17:53:45,428 basehttp "GET /uas_admin/user_list/ HTTP/1.1" 200 4866
+INFO 2025-03-25 17:53:45,498 basehttp "GET /static/css/user_css/user_list.css HTTP/1.1" 304 0
+INFO 2025-03-25 17:53:45,541 views User shivam fetched the user list from 127.0.0.1
+INFO 2025-03-25 17:53:45,584 basehttp "GET /uas_admin/api/user_list/ HTTP/1.1" 200 1235
+INFO 2025-03-25 17:53:47,412 basehttp "GET /uas_admin/user_details/?id=2 HTTP/1.1" 200 4974
+INFO 2025-03-25 17:53:47,468 basehttp "GET /static/css/user_css/user_details.css HTTP/1.1" 304 0
+INFO 2025-03-25 17:53:47,531 views User shivam fetched the details of user shivam from 127.0.0.1
+INFO 2025-03-25 17:53:47,599 basehttp "GET /uas_admin/api/user_details/2/ HTTP/1.1" 200 265
+INFO 2025-03-25 17:57:10,694 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 4868
+INFO 2025-03-25 17:57:10,815 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-25 17:57:10,943 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+WARNING 2025-03-25 17:57:10,956 log Not Found: /uas_admin/api/roles/
+WARNING 2025-03-25 17:57:10,957 basehttp "GET /uas_admin/api/roles/ HTTP/1.1" 404 15934
+INFO 2025-03-25 17:57:36,130 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 4868
+INFO 2025-03-25 17:57:36,242 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-25 17:57:36,286 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+WARNING 2025-03-25 17:57:36,307 log Not Found: /uas_admin/api/roles/
+WARNING 2025-03-25 17:57:36,308 basehttp "GET /uas_admin/api/roles/ HTTP/1.1" 404 15934
+INFO 2025-03-25 18:00:17,999 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22370
+INFO 2025-03-25 18:00:18,206 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 18:03:39,612 basehttp "GET /admin/accounts/permission/19/change/ HTTP/1.1" 200 17053
+INFO 2025-03-25 18:03:39,668 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 18:03:40,974 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22370
+INFO 2025-03-25 18:03:44,180 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 5024
+INFO 2025-03-25 18:03:44,275 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-25 18:03:44,332 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+WARNING 2025-03-25 18:03:44,357 log Not Found: /uas_admin/api/roles/
+WARNING 2025-03-25 18:03:44,357 basehttp "GET /uas_admin/api/roles/ HTTP/1.1" 404 15934
+INFO 2025-03-25 18:05:36,515 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 5024
+INFO 2025-03-25 18:05:36,600 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-25 18:05:36,695 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+WARNING 2025-03-25 18:05:36,709 log Not Found: /uas_admin/api/roles/
+WARNING 2025-03-25 18:05:36,709 basehttp "GET /uas_admin/api/roles/ HTTP/1.1" 404 15934
+INFO 2025-03-25 18:06:25,555 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-25 18:06:25,630 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-25 18:06:25,692 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-25 18:06:27,181 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 5028
+INFO 2025-03-25 18:06:27,333 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-25 18:06:27,439 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+INFO 2025-03-25 18:06:27,540 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 18:06:27,605 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+WARNING 2025-03-25 18:07:09,914 log Not Found: /uas_admin/
+WARNING 2025-03-25 18:07:09,915 basehttp "GET /uas_admin/ HTTP/1.1" 404 15904
+INFO 2025-03-25 18:07:22,210 basehttp "GET /uas_admin/role_list/ HTTP/1.1" 200 4589
+INFO 2025-03-25 18:07:22,341 basehttp "GET /static/css/role_css/role_list.css HTTP/1.1" 200 1456
+INFO 2025-03-25 18:07:22,397 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 18:07:22,490 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 18:07:32,705 basehttp "GET /uas_admin/role_details/?id=1 HTTP/1.1" 200 6037
+INFO 2025-03-25 18:07:32,769 basehttp "GET /static/css/role_css/role_details.css HTTP/1.1" 200 712
+INFO 2025-03-25 18:07:32,831 views User shivam fetched the details of role administrator from 127.0.0.1
+INFO 2025-03-25 18:07:32,882 basehttp "GET /uas_admin/api/role_details/1/ HTTP/1.1" 200 138
+INFO 2025-03-25 18:07:32,924 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-25 18:07:32,973 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3863
+INFO 2025-03-25 18:14:01,412 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 5155
+WARNING 2025-03-25 18:14:01,458 basehttp "GET /static/css/user_css/update_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-25 18:14:01,517 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-25 18:14:01,649 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+INFO 2025-03-25 18:14:01,682 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 18:14:01,815 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 18:14:12,584 basehttp "GET /uas_admin/user_role_details/?id=1 HTTP/1.1" 200 5155
+WARNING 2025-03-25 18:14:12,650 basehttp "GET /static/css/user_css/update_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-25 18:14:12,749 views User shivam fetched the details of user role of user shivam from 127.0.0.1
+INFO 2025-03-25 18:14:12,790 basehttp "GET /uas_admin/api/user_role_details/1/ HTTP/1.1" 200 62
+INFO 2025-03-25 18:14:12,810 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 18:14:12,939 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 18:16:14,168 basehttp "GET /uas_admin/role_list/ HTTP/1.1" 200 4589
+INFO 2025-03-25 18:16:14,284 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 18:16:14,373 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 18:16:15,665 basehttp "GET /uas_admin/role_details/?id=1 HTTP/1.1" 200 6037
+INFO 2025-03-25 18:16:15,925 views User shivam fetched the details of role administrator from 127.0.0.1
+INFO 2025-03-25 18:16:15,984 basehttp "GET /uas_admin/api/role_details/1/ HTTP/1.1" 200 138
+INFO 2025-03-25 18:16:16,000 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-25 18:16:16,087 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3863
+INFO 2025-03-25 18:17:00,859 basehttp "GET /uas_admin/role_details/?id=1 HTTP/1.1" 200 6037
+INFO 2025-03-25 18:17:01,025 views User shivam fetched the details of role administrator from 127.0.0.1
+INFO 2025-03-25 18:17:01,124 basehttp "GET /uas_admin/api/role_details/1/ HTTP/1.1" 200 138
+INFO 2025-03-25 18:17:01,205 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-25 18:17:01,302 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3863
+INFO 2025-03-25 18:23:07,623 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 5155
+WARNING 2025-03-25 18:23:07,683 basehttp "GET /static/css/user_css/update_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-25 18:23:07,758 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-25 18:23:07,871 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+INFO 2025-03-25 18:23:08,001 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 18:23:08,051 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 18:23:17,397 basehttp "GET /uas_admin/role_list/ HTTP/1.1" 200 4589
+INFO 2025-03-25 18:23:17,525 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 18:23:17,576 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 18:23:18,980 basehttp "GET /uas_admin/role_details/?id=1 HTTP/1.1" 200 2748
+INFO 2025-03-25 18:28:51,853 basehttp "GET /uas_admin/role_details/?id=2 HTTP/1.1" 200 2886
+INFO 2025-03-25 18:28:55,250 basehttp "GET /uas_admin/role_details/?id=3 HTTP/1.1" 200 2886
+INFO 2025-03-25 18:31:29,662 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 18:31:31,447 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 18:32:05,793 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 18:32:07,080 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 18:33:01,234 basehttp "GET /uas_admin/role_details/?id=3 HTTP/1.1" 200 2886
+INFO 2025-03-25 18:33:02,873 basehttp "GET /uas_admin/role_details/?id=2 HTTP/1.1" 200 2886
+INFO 2025-03-25 18:33:15,122 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 18:33:16,382 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 18:36:00,893 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 18:36:03,560 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 18:36:06,150 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 18:36:07,979 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 18:36:38,612 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22370
+INFO 2025-03-25 18:36:38,652 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 18:36:38,868 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22370
+INFO 2025-03-25 18:36:38,970 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 18:36:39,937 basehttp "GET /admin/accounts/permission/30/change/ HTTP/1.1" 200 17053
+INFO 2025-03-25 18:36:39,983 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 18:36:42,847 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15947
+INFO 2025-03-25 18:36:42,895 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 18:36:43,698 basehttp "GET /admin/accounts/role/3/change/ HTTP/1.1" 200 18947
+INFO 2025-03-25 18:36:43,736 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-25 18:36:52,321 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15947
+INFO 2025-03-25 18:36:56,366 basehttp "GET /uas_admin/role_list/ HTTP/1.1" 200 4589
+INFO 2025-03-25 18:36:56,446 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 18:36:56,502 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 18:36:57,331 basehttp "GET /uas_admin/role_details/?id=2 HTTP/1.1" 200 2886
+INFO 2025-03-25 18:37:59,840 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-25 18:38:00,248 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-25 18:38:00,300 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-25 18:38:01,418 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 5155
+WARNING 2025-03-25 18:38:01,481 basehttp "GET /static/css/user_css/update_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-25 18:38:01,519 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-25 18:38:01,564 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+INFO 2025-03-25 18:38:01,615 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 18:38:01,661 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 18:45:19,112 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 5155
+WARNING 2025-03-25 18:45:19,171 basehttp "GET /static/css/user_css/update_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-25 18:45:19,387 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-25 18:45:19,493 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+INFO 2025-03-25 18:45:19,514 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 18:45:19,595 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 18:45:24,297 basehttp "GET /uas_admin/role_list/ HTTP/1.1" 200 4589
+INFO 2025-03-25 18:45:24,421 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 18:45:24,482 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 18:45:25,748 basehttp "GET /uas_admin/role_details/?id=2 HTTP/1.1" 200 5260
+WARNING 2025-03-25 18:45:25,874 basehttp "GET /static/css/role_css/update_role.css HTTP/1.1" 404 1898
+INFO 2025-03-25 18:45:26,036 views User shivam fetched the details of role employee from 127.0.0.1
+INFO 2025-03-25 18:45:26,112 basehttp "GET /uas_admin/api/role_details/2/ HTTP/1.1" 200 133
+INFO 2025-03-25 18:45:26,128 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-25 18:45:26,219 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3863
+INFO 2025-03-25 18:45:38,090 basehttp "GET /uas_admin/role_details/?id=2 HTTP/1.1" 200 5260
+WARNING 2025-03-25 18:45:38,159 basehttp "GET /static/css/role_css/update_role.css HTTP/1.1" 404 1898
+INFO 2025-03-25 18:45:38,251 views User shivam fetched the details of role employee from 127.0.0.1
+INFO 2025-03-25 18:45:38,366 basehttp "GET /uas_admin/api/role_details/2/ HTTP/1.1" 200 133
+INFO 2025-03-25 18:45:38,386 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-25 18:45:38,432 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3863
+INFO 2025-03-25 18:47:34,964 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4840
+INFO 2025-03-25 18:47:35,033 basehttp "GET /static/css/view_access/view_access_list.css HTTP/1.1" 304 0
+INFO 2025-03-25 18:47:35,182 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 18:47:35,298 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 18:47:50,882 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 200 5058
+WARNING 2025-03-25 18:47:50,954 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 18:47:51,023 views User shivam fetched the details of view accessadmin_dashboard.views.CreatePermissionView from 127.0.0.1
+INFO 2025-03-25 18:47:51,091 basehttp "GET /uas_admin/api/view_access_details/23/ HTTP/1.1" 200 95
+INFO 2025-03-25 18:47:51,149 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 18:47:51,292 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 18:53:27,470 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 200 5176
+WARNING 2025-03-25 18:53:27,543 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 18:53:27,630 views User shivam fetched the details of view accessadmin_dashboard.views.CreatePermissionView from 127.0.0.1
+INFO 2025-03-25 18:53:27,732 basehttp "GET /uas_admin/api/view_access_details/23/ HTTP/1.1" 200 95
+INFO 2025-03-25 18:53:27,857 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 18:53:27,922 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 19:37:02,187 basehttp "GET /uas_admin/view_access_details/?id=14 HTTP/1.1" 200 5124
+WARNING 2025-03-25 19:37:02,264 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 19:37:02,354 views User shivam fetched the details of view accessadmin_dashboard.views.CreateRoleView from 127.0.0.1
+INFO 2025-03-25 19:37:02,432 basehttp "GET /uas_admin/api/view_access_details/14/ HTTP/1.1" 200 89
+INFO 2025-03-25 19:37:02,588 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 19:37:02,790 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 19:37:16,114 basehttp "GET /uas_admin/view_access_details/?id=2 HTTP/1.1" 200 5124
+WARNING 2025-03-25 19:37:16,244 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 19:37:16,366 views User shivam fetched the details of view accessadmin_dashboard.views.CreateUserRoleView from 127.0.0.1
+INFO 2025-03-25 19:37:16,445 basehttp "GET /uas_admin/api/view_access_details/2/ HTTP/1.1" 200 93
+INFO 2025-03-25 19:37:16,463 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 19:37:16,637 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 19:39:58,599 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\urls.py changed, reloading.
+INFO 2025-03-25 19:40:01,157 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 19:40:50,454 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 19:40:51,867 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 19:41:34,932 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 19:41:36,236 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 19:41:38,420 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\urls.py changed, reloading.
+INFO 2025-03-25 19:41:39,761 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 19:51:06,204 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4840
+INFO 2025-03-25 19:51:06,305 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 19:51:06,441 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 19:51:30,239 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4840
+INFO 2025-03-25 19:51:30,313 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 19:51:30,368 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 19:51:30,973 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4840
+INFO 2025-03-25 19:51:31,052 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 19:51:31,159 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 19:51:58,040 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4840
+INFO 2025-03-25 19:51:58,153 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 19:51:58,208 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 19:51:58,610 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4840
+INFO 2025-03-25 19:51:58,689 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 19:51:58,809 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+ERROR 2025-03-25 19:52:26,536 log Internal Server Error: /uas_admin/view_access_details/
+Traceback (most recent call last):
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py", line 862, in view_access_details
+    return render(request, 'admin_panel/viewaccess/view_access_details.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'ViewAccessListView' not found. 'ViewAccessListView' is not a valid view function or pattern name.
+ERROR 2025-03-25 19:52:26,549 basehttp "GET /uas_admin/view_access_details/?id=2 HTTP/1.1" 500 168324
+ERROR 2025-03-25 19:52:30,939 log Internal Server Error: /uas_admin/view_access_details/
+Traceback (most recent call last):
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py", line 862, in view_access_details
+    return render(request, 'admin_panel/viewaccess/view_access_details.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'ViewAccessListView' not found. 'ViewAccessListView' is not a valid view function or pattern name.
+ERROR 2025-03-25 19:52:30,941 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 500 168334
+ERROR 2025-03-25 19:55:37,529 log Internal Server Error: /uas_admin/view_access_details/
+Traceback (most recent call last):
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py", line 862, in view_access_details
+    return render(request, 'admin_panel/viewaccess/view_access_details.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'ViewAccessUpdateView' not found. 'ViewAccessUpdateView' is not a valid view function or pattern name.
+ERROR 2025-03-25 19:55:37,532 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 500 168337
+ERROR 2025-03-25 19:55:39,592 log Internal Server Error: /uas_admin/view_access_details/
+Traceback (most recent call last):
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py", line 862, in view_access_details
+    return render(request, 'admin_panel/viewaccess/view_access_details.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 1008, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\shivam\LUXSH-MAK-TD\AWOL\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'ViewAccessUpdateView' not found. 'ViewAccessUpdateView' is not a valid view function or pattern name.
+ERROR 2025-03-25 19:55:39,596 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 500 168200
+INFO 2025-03-25 19:56:23,304 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 200 4458
+WARNING 2025-03-25 19:56:23,349 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 19:56:23,456 views User shivam fetched the details of view accessadmin_dashboard.views.CreatePermissionView from 127.0.0.1
+INFO 2025-03-25 19:56:23,569 basehttp "GET /uas_admin/api/view_access_details/23/ HTTP/1.1" 200 95
+INFO 2025-03-25 19:56:30,097 basehttp "GET /uas_admin/view_access_details/?id=2 HTTP/1.1" 200 4458
+WARNING 2025-03-25 19:56:30,146 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 19:56:30,190 views User shivam fetched the details of view accessadmin_dashboard.views.CreateUserRoleView from 127.0.0.1
+INFO 2025-03-25 19:56:30,292 basehttp "GET /uas_admin/api/view_access_details/2/ HTTP/1.1" 200 93
+INFO 2025-03-25 19:57:44,799 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 200 4458
+WARNING 2025-03-25 19:57:44,863 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 19:57:44,939 views User shivam fetched the details of view accessadmin_dashboard.views.CreatePermissionView from 127.0.0.1
+INFO 2025-03-25 19:57:44,979 basehttp "GET /uas_admin/api/view_access_details/23/ HTTP/1.1" 200 95
+INFO 2025-03-25 19:58:32,343 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-25 19:58:32,416 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3863
+INFO 2025-03-25 20:02:12,493 basehttp "GET /uas_admin/view_access_details/?id=10 HTTP/1.1" 200 4555
+WARNING 2025-03-25 20:02:12,553 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 20:02:12,628 views User shivam fetched the details of view accessadmin_dashboard.views.ToggleMFAView from 127.0.0.1
+INFO 2025-03-25 20:02:12,754 basehttp "GET /uas_admin/api/view_access_details/10/ HTTP/1.1" 200 88
+INFO 2025-03-25 20:10:59,605 basehttp "GET /uas_admin/view_access_details/?id=10 HTTP/1.1" 200 4555
+WARNING 2025-03-25 20:10:59,667 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 20:10:59,713 views User shivam fetched the details of view accessadmin_dashboard.views.ToggleMFAView from 127.0.0.1
+INFO 2025-03-25 20:10:59,790 basehttp "GET /uas_admin/api/view_access_details/10/ HTTP/1.1" 200 88
+INFO 2025-03-25 20:14:21,688 basehttp "GET /uas_admin/view_access_details/?id=10 HTTP/1.1" 200 4792
+WARNING 2025-03-25 20:14:21,754 basehttp "GET /static/css/viewaccess_css/view_access_details.css HTTP/1.1" 404 1940
+INFO 2025-03-25 20:14:21,798 views User shivam fetched the details of view accessadmin_dashboard.views.ToggleMFAView from 127.0.0.1
+INFO 2025-03-25 20:14:21,883 basehttp "GET /uas_admin/api/view_access_details/10/ HTTP/1.1" 200 88
+INFO 2025-03-25 20:21:17,523 basehttp "GET /uas_admin/view_access_details/?id=10 HTTP/1.1" 200 4632
+WARNING 2025-03-25 20:21:17,585 basehttp "GET /static/css/view_access/view_access_update.css HTTP/1.1" 404 1928
+INFO 2025-03-25 20:21:17,626 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 20:21:17,718 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 20:21:17,794 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 20:21:17,941 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 20:25:16,757 basehttp "GET /uas_admin/view_access_details/?id=10 HTTP/1.1" 200 4802
+WARNING 2025-03-25 20:25:16,794 basehttp "GET /static/css/view_access/view_access_update.css HTTP/1.1" 404 1928
+INFO 2025-03-25 20:25:16,825 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 20:25:16,939 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 20:25:16,956 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 20:25:17,012 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 20:25:48,634 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-25 20:25:48,708 basehttp "GET /static/css/user_roles/user_role_list.css HTTP/1.1" 304 0
+INFO 2025-03-25 20:25:48,763 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-25 20:25:48,843 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-25 20:25:50,624 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 5155
+WARNING 2025-03-25 20:25:50,732 basehttp "GET /static/css/user_css/update_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-25 20:25:50,894 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-25 20:25:50,957 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+INFO 2025-03-25 20:25:51,042 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 20:25:51,127 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 20:25:55,970 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5131
+INFO 2025-03-25 20:25:56,041 basehttp "GET /static/css/permission_css/permission_list.css HTTP/1.1" 304 0
+INFO 2025-03-25 20:25:56,088 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-25 20:25:56,174 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3863
+INFO 2025-03-25 20:25:57,551 basehttp "GET /uas_admin/permission_details/?id=5 HTTP/1.1" 200 3778
+INFO 2025-03-25 20:25:57,618 basehttp "GET /static/css/permission_css/permission_details.css HTTP/1.1" 304 0
+INFO 2025-03-25 20:25:57,651 views User shivam fetched the details of permission can read getuserroledetailsview from 127.0.0.1
+INFO 2025-03-25 20:25:57,731 basehttp "GET /uas_admin/api/permission_details/5/ HTTP/1.1" 200 189
+INFO 2025-03-25 21:58:30,061 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 21:58:31,979 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4840
+INFO 2025-03-25 21:58:32,124 basehttp "GET /static/css/view_access/view_access_list.css HTTP/1.1" 200 1575
+WARNING 2025-03-25 21:58:32,145 log Unauthorized: /uas_admin/api/view_access_list/
+WARNING 2025-03-25 21:58:32,146 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 401 183
+INFO 2025-03-25 21:58:46,209 basehttp "GET /accounts/success/ HTTP/1.1" 200 1370
+INFO 2025-03-25 21:58:47,983 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2063
+INFO 2025-03-25 21:58:48,043 basehttp "GET /static/css/logout.css HTTP/1.1" 304 0
+WARNING 2025-03-25 21:58:48,768 log Unauthorized: /accounts/api/logout/
+WARNING 2025-03-25 21:58:48,768 basehttp "POST /accounts/api/logout/ HTTP/1.1" 401 183
+INFO 2025-03-25 21:59:01,176 basehttp "GET /accounts/login/ HTTP/1.1" 200 3782
+INFO 2025-03-25 21:59:01,260 basehttp "GET /static/css/login.css HTTP/1.1" 304 0
+INFO 2025-03-25 21:59:06,974 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 526
+INFO 2025-03-25 22:02:50,462 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 22:02:53,132 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-25 22:02:54,245 basehttp "GET /accounts/verify_otp/ HTTP/1.1" 200 2877
+INFO 2025-03-25 22:02:54,335 basehttp "GET /static/css/verify_otp.css HTTP/1.1" 304 0
+WARNING 2025-03-25 22:03:01,260 log Bad Request: /accounts/api/verify_otp/
+WARNING 2025-03-25 22:03:01,261 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 400 34
+WARNING 2025-03-25 22:03:19,663 log Bad Request: /accounts/api/verify_otp/
+WARNING 2025-03-25 22:03:19,664 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 400 34
+WARNING 2025-03-25 22:03:35,926 log Bad Request: /accounts/api/verify_otp/
+WARNING 2025-03-25 22:03:35,926 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 400 34
+WARNING 2025-03-25 22:10:47,607 log Bad Request: /accounts/api/verify_otp/
+WARNING 2025-03-25 22:10:47,607 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 400 34
+WARNING 2025-03-25 22:10:49,675 log Bad Request: /accounts/api/verify_otp/
+WARNING 2025-03-25 22:10:49,675 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 400 34
+INFO 2025-03-25 22:11:30,647 basehttp "GET /accounts/login/ HTTP/1.1" 200 3782
+INFO 2025-03-25 22:11:37,391 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-25 22:11:38,430 basehttp "GET /accounts/verify_otp/ HTTP/1.1" 200 2891
+INFO 2025-03-25 22:13:23,244 basehttp "GET /accounts/verify_otp/ HTTP/1.1" 200 3602
+INFO 2025-03-25 22:13:36,600 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 540
+INFO 2025-03-25 22:13:36,636 basehttp "GET /accounts/success/ HTTP/1.1" 200 1370
+INFO 2025-03-25 22:13:49,014 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4840
+INFO 2025-03-25 22:13:49,082 basehttp "GET /static/css/view_access/view_access_list.css HTTP/1.1" 304 0
+INFO 2025-03-25 22:13:49,184 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 22:13:49,241 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 22:14:52,245 basehttp "GET /uas_admin/create_user/ HTTP/1.1" 200 3717
+INFO 2025-03-25 22:14:52,399 basehttp "GET /static/css/user_css/create_user.css HTTP/1.1" 200 1099
+INFO 2025-03-25 22:14:59,068 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4840
+INFO 2025-03-25 22:14:59,208 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 22:14:59,276 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 22:15:06,009 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 200 4802
+WARNING 2025-03-25 22:15:06,082 basehttp "GET /static/css/view_access/view_access_update.css HTTP/1.1" 404 1928
+INFO 2025-03-25 22:15:06,130 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 22:15:06,201 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 22:15:06,332 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 22:15:06,380 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 22:16:09,074 basehttp "GET /uas_admin/view_access_details/?id=23 HTTP/1.1" 200 4803
+INFO 2025-03-25 22:16:09,141 basehttp "GET /static/css/view_access/view_access_details.css HTTP/1.1" 200 795
+INFO 2025-03-25 22:16:09,194 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-25 22:16:09,267 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-25 22:16:09,284 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-25 22:16:09,409 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-25 22:20:48,029 basehttp "GET /uas_admin/create_user/ HTTP/1.1" 200 3717
+INFO 2025-03-25 22:21:08,096 basehttp "GET /uas_admin/toggle_mfa/ HTTP/1.1" 200 3121
+INFO 2025-03-25 22:21:08,153 basehttp "GET /static/css/user_css/toggle_mfa.css HTTP/1.1" 304 0
+INFO 2025-03-25 22:21:27,072 basehttp "GET /uas_admin/user_list/ HTTP/1.1" 200 4866
+INFO 2025-03-25 22:21:27,236 views User shivam fetched the user list from 127.0.0.1
+INFO 2025-03-25 22:21:27,317 basehttp "GET /uas_admin/api/user_list/ HTTP/1.1" 200 1234
+INFO 2025-03-25 22:21:34,333 views User shivam deleted user Tomz (user_id: 7) from 127.0.0.1
+INFO 2025-03-25 22:21:34,392 basehttp "DELETE /uas_admin/api/delete_user/7/ HTTP/1.1" 202 26
+INFO 2025-03-25 22:21:43,709 basehttp "GET /uas_admin/user_details/?id=6 HTTP/1.1" 200 4974
+INFO 2025-03-25 22:21:43,846 views User shivam fetched the details of user webapptesting201 from 127.0.0.1
+INFO 2025-03-25 22:21:43,905 basehttp "GET /uas_admin/api/user_details/6/ HTTP/1.1" 200 279
+INFO 2025-03-25 22:22:07,683 basehttp "GET /uas_admin/create_user/ HTTP/1.1" 200 3717
+INFO 2025-03-25 22:22:14,764 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 3222
+WARNING 2025-03-25 22:22:14,836 basehttp "GET /static/css/roles/create_role.css HTTP/1.1" 404 1889
+WARNING 2025-03-25 22:22:36,843 log Not Found: /uas_admin/create_user_role/
+WARNING 2025-03-25 22:22:36,843 basehttp "GET /uas_admin/create_user_role/ HTTP/1.1" 404 15955
+INFO 2025-03-25 22:22:53,852 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3128
+INFO 2025-03-25 22:22:53,930 basehttp "GET /static/css/user_roles/assign_user_role.css HTTP/1.1" 304 0
+INFO 2025-03-25 22:23:08,397 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 3222
+WARNING 2025-03-25 22:23:08,492 basehttp "GET /static/css/roles/create_role.css HTTP/1.1" 404 1889
+INFO 2025-03-25 22:27:10,314 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 3229
+WARNING 2025-03-25 22:27:10,369 basehttp "GET /static/css/roles/create_role.css HTTP/1.1" 404 1889
+INFO 2025-03-25 22:27:11,695 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 3229
+WARNING 2025-03-25 22:27:11,745 basehttp "GET /static/css/roles/create_role.css HTTP/1.1" 404 1889
+INFO 2025-03-25 22:30:48,553 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 3345
+WARNING 2025-03-25 22:30:48,595 basehttp "GET /static/css/roles/create_role.css HTTP/1.1" 404 1889
+WARNING 2025-03-25 22:39:49,633 basehttp "GET /static/css/roles/create_role.css HTTP/1.1" 404 1889
+INFO 2025-03-25 22:39:52,967 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 2864
+WARNING 2025-03-25 22:39:53,014 basehttp "GET /static/css/roles/create_role.css HTTP/1.1" 404 1889
+INFO 2025-03-25 22:40:27,471 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 2784
+INFO 2025-03-25 22:40:28,188 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 2784
+INFO 2025-03-25 22:40:28,477 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 2784
+INFO 2025-03-25 22:40:28,639 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 2784
+INFO 2025-03-25 22:41:03,988 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 2784
+INFO 2025-03-25 22:41:04,637 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 2784
+INFO 2025-03-25 22:43:50,114 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\views.py changed, reloading.
+INFO 2025-03-25 22:43:51,701 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 22:46:58,203 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 2784
+INFO 2025-03-25 22:46:58,887 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 2784
+INFO 2025-03-25 23:42:42,890 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 3236
+WARNING 2025-03-25 23:42:42,991 basehttp "GET /static/css/roles/create_role.css HTTP/1.1" 404 1889
+INFO 2025-03-25 23:43:35,419 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\admin_dashboard\urls.py changed, reloading.
+INFO 2025-03-25 23:43:38,493 autoreload Watching for file changes with StatReloader
+INFO 2025-03-25 23:46:48,041 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 3236
+WARNING 2025-03-25 23:46:48,102 basehttp "GET /static/css/roles/create_role.css HTTP/1.1" 404 1889
+INFO 2025-03-25 23:46:49,390 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 3236
+WARNING 2025-03-25 23:46:49,432 basehttp "GET /static/css/roles/create_role.css HTTP/1.1" 404 1889
+INFO 2025-03-25 23:46:59,490 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 3156
+INFO 2025-03-25 23:54:30,957 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 4224
+WARNING 2025-03-25 23:54:31,031 basehttp "GET /static/css/roles/create_role.css HTTP/1.1" 404 1889
+INFO 2025-03-25 23:54:31,087 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-25 23:54:31,239 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3863
+INFO 2025-03-26 00:00:45,818 basehttp "GET /uas_admin/role_list/ HTTP/1.1" 200 4589
+INFO 2025-03-26 00:00:45,967 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-26 00:00:46,082 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-26 00:00:47,507 basehttp "GET /uas_admin/role_details/?id=3 HTTP/1.1" 200 5260
+WARNING 2025-03-26 00:00:47,562 basehttp "GET /static/css/role_css/update_role.css HTTP/1.1" 404 1898
+INFO 2025-03-26 00:00:47,648 views User shivam fetched the details of role manager from 127.0.0.1
+INFO 2025-03-26 00:00:47,728 basehttp "GET /uas_admin/api/role_details/3/ HTTP/1.1" 200 132
+INFO 2025-03-26 00:00:47,750 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-26 00:00:47,823 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3863
+INFO 2025-03-26 00:00:59,993 basehttp "GET /uas_admin/create_permission/ HTTP/1.1" 200 2871
+INFO 2025-03-26 00:01:00,086 basehttp "GET /static/css/permission_css/create_permission.css HTTP/1.1" 304 0
+INFO 2025-03-26 00:01:07,034 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5131
+INFO 2025-03-26 00:01:07,185 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-26 00:01:07,253 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 3863
+INFO 2025-03-26 00:01:19,384 basehttp "GET /uas_admin/permission_details/?id=12 HTTP/1.1" 200 3778
+INFO 2025-03-26 00:01:19,543 views User shivam fetched the details of permission can write togglemfaview from 127.0.0.1
+INFO 2025-03-26 00:01:19,597 basehttp "GET /uas_admin/api/permission_details/12/ HTTP/1.1" 200 173
+INFO 2025-03-26 00:01:39,391 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 3128
+INFO 2025-03-26 00:01:56,277 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-26 00:01:56,404 basehttp "GET /static/css/user_roles/user_role_list.css HTTP/1.1" 304 0
+INFO 2025-03-26 00:01:56,643 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-26 00:01:56,734 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 92
+INFO 2025-03-26 00:01:57,934 basehttp "GET /uas_admin/user_role_details/?id=2 HTTP/1.1" 200 5155
+WARNING 2025-03-26 00:01:57,997 basehttp "GET /static/css/user_css/update_user_role.css HTTP/1.1" 404 1913
+INFO 2025-03-26 00:01:58,048 views User shivam fetched the details of user role of user shubham from 127.0.0.1
+INFO 2025-03-26 00:01:58,141 basehttp "GET /uas_admin/api/user_role_details/2/ HTTP/1.1" 200 57
+INFO 2025-03-26 00:01:58,225 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-26 00:01:58,303 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-26 00:02:19,059 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 3677
+INFO 2025-03-26 00:02:19,127 basehttp "GET /static/css/view_access/create_view_access.css HTTP/1.1" 304 0
+WARNING 2025-03-26 00:02:35,727 log Not Found: /uas_admin/list_view_access/
+WARNING 2025-03-26 00:02:35,729 basehttp "GET /uas_admin/list_view_access/ HTTP/1.1" 404 15959
+INFO 2025-03-26 00:02:46,337 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4840
+INFO 2025-03-26 00:02:46,402 basehttp "GET /static/css/view_access/view_access_list.css HTTP/1.1" 304 0
+INFO 2025-03-26 00:02:46,459 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-26 00:02:46,568 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-26 00:02:51,687 basehttp "GET /uas_admin/view_access_details/?id=10 HTTP/1.1" 200 4803
+INFO 2025-03-26 00:02:51,760 basehttp "GET /static/css/view_access/view_access_details.css HTTP/1.1" 304 0
+INFO 2025-03-26 00:02:51,804 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-26 00:02:51,853 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2312
+INFO 2025-03-26 00:02:51,932 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-26 00:02:51,986 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 439
+INFO 2025-03-26 00:16:13,656 autoreload Watching for file changes with StatReloader
+INFO 2025-03-26 00:17:46,172 autoreload Watching for file changes with StatReloader
+INFO 2025-03-26 00:18:03,333 basehttp "GET /uas_admin/user_activity_list/ HTTP/1.1" 200 2923
+WARNING 2025-03-26 00:18:03,389 basehttp "GET /static/css/user_activity_css/user_activity_list.css HTTP/1.1" 404 1946
+WARNING 2025-03-26 00:18:03,447 log Forbidden: /uas_admin/api/user_activity_list/
+WARNING 2025-03-26 00:18:03,448 basehttp "GET /uas_admin/api/user_activity_list/ HTTP/1.1" 403 63
+INFO 2025-03-26 00:18:30,681 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 23939
+INFO 2025-03-26 00:18:31,084 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-26 00:18:32,531 basehttp "GET /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 200 16372
+INFO 2025-03-26 00:18:32,625 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-26 00:18:36,019 basehttp "POST /admin/admin_dashboard/viewaccess/add/ HTTP/1.1" 302 0
+INFO 2025-03-26 00:18:36,056 basehttp "GET /admin/admin_dashboard/viewaccess/ HTTP/1.1" 200 24401
+INFO 2025-03-26 00:18:36,095 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-26 00:18:39,311 basehttp "GET /uas_admin/user_activity_list/ HTTP/1.1" 200 2923
+WARNING 2025-03-26 00:18:39,366 basehttp "GET /static/css/user_activity_css/user_activity_list.css HTTP/1.1" 404 1946
+WARNING 2025-03-26 00:18:39,412 log Forbidden: /uas_admin/api/user_activity_list/
+WARNING 2025-03-26 00:18:39,412 basehttp "GET /uas_admin/api/user_activity_list/ HTTP/1.1" 403 63
+INFO 2025-03-26 00:18:51,916 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22370
+INFO 2025-03-26 00:18:52,005 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-26 00:18:53,560 basehttp "GET /admin/accounts/permission/add/ HTTP/1.1" 200 16707
+INFO 2025-03-26 00:18:53,619 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-26 00:19:02,611 basehttp "POST /admin/accounts/permission/add/ HTTP/1.1" 302 0
+INFO 2025-03-26 00:19:02,643 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 22917
+INFO 2025-03-26 00:19:02,699 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-26 00:19:03,241 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 15947
+INFO 2025-03-26 00:19:03,304 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-26 00:19:04,256 basehttp "GET /admin/accounts/role/1/change/ HTTP/1.1" 200 19212
+INFO 2025-03-26 00:19:04,301 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-26 00:19:06,687 basehttp "POST /admin/accounts/role/1/change/ HTTP/1.1" 302 0
+INFO 2025-03-26 00:19:06,711 basehttp "GET /admin/accounts/role/ HTTP/1.1" 200 16152
+INFO 2025-03-26 00:19:06,750 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-26 00:19:08,759 basehttp "GET /uas_admin/user_activity_list/ HTTP/1.1" 200 2923
+WARNING 2025-03-26 00:19:08,811 basehttp "GET /static/css/user_activity_css/user_activity_list.css HTTP/1.1" 404 1946
+INFO 2025-03-26 00:19:08,854 basehttp "GET /uas_admin/api/user_activity_list/ HTTP/1.1" 200 1365

@@ -16,7 +16,7 @@ from rest_framework.filters import OrderingFilter
 import csv
 from django.http import HttpResponse
 from django.db.models import Q
-from django.utils.dateparse import parse_datetime
+from django.utils.dateparse import parse_date
 # from django.utils.decorators import method_decorator
 # from accounts.helper import role_required
 
@@ -35,7 +35,7 @@ class CreateUserView(APIView):
        
         serializer = self.serializer_class(data=request.data)
         
-        if serializer.is_valid():
+        if (serializer.is_valid()):
             email = serializer.validated_data['email']
             if User.objects.filter(email=email).exists():
                 logger.warning(f"User {auth_user.username} attempted to create a user with an existing email {email} from {ip_address}")
@@ -319,19 +319,36 @@ class CreateRoleView(APIView):
     permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def post(self, request):
+        serializer = self.serializer_class(data=request.data)
         auth_user = request.user
         ip_address = request.META.get('REMOTE_ADDR', '')
 
-        serializer = self.serializer_class(data=request.data)
-
         if serializer.is_valid():
-            role = serializer.save()
-            logger.info(f"User {auth_user.username} created a new role {role.name}  from {ip_address}")
-            UserActivity.objects.create(user=auth_user, action=f"Created role {role.name}", ip_address=ip_address)
+            name = serializer.validated_data.get('name')
+            permissions = serializer.validated_data.get('permissions', [])
 
-            return Response({'message': 'role created', 'role_id': role.id}, status=status.HTTP_201_CREATED)
-        
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)            
+            try:
+                # Validate permissions
+                permission_instances = Permission.objects.filter(id__in=permissions)
+                if len(permission_instances) != len(permissions):
+                    raise ValidationError({"permissions": "One or more permissions do not exist"})
+
+                # Create the role
+                role = Role.objects.create(name=name)
+                role.permission.set(permission_instances)
+
+                logger.info(f"User {auth_user.username} created a new role '{role.name}' with permissions from {ip_address}")
+                UserActivity.objects.create(user=auth_user, action=f"Created role '{role.name}'", ip_address=ip_address)
+
+                serializer = self.serializer_class(role)
+                return Response({'message': 'role created', 'role_id': role.id, 'data': serializer.data}, status=status.HTTP_201_CREATED)
+
+            except ValidationError as e:
+                logger.warning(f"User {auth_user.username} failed to create role due to {e.detail}")
+                return Response(e.detail, status=status.HTTP_400_BAD_REQUEST)
+
+        logger.warning(f"User {auth_user.username} failed to create role due to {serializer.errors}")
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class RoleListView(generics.ListAPIView):
@@ -378,42 +395,44 @@ class GetRoleDetailsView(APIView):
 
 class UpdateRoleView(APIView):
     queryset = Role.objects.all()
-    serializers = RoleSerializer 
+    serializer_class = RoleSerializer
     permission_classes = [IsAuthenticated, DynamicRolePermission]
+
+    def get_object(self):
+        return get_object_or_404(Role, id=self.request.data.get('id'))
 
     def put(self, request):
         auth_user = request.user
         ip_address = request.META.get('REMOTE_ADDR', '')
 
-        role_id = request.data.get('id')
+        try:
+            role = self.get_object()
+            name = request.data.get('name')
+            permission_ids = request.data.get('permissions', [])
 
-        if not role_id:
-            return Response({'error': 'Role ID is required'}, status=status.HTTP_400_BAD_REQUEST)
+            if name and Role.objects.filter(name=name).exclude(id=role.id).exists():
+                return Response({'error': 'Role with this name already exists'}, status=status.HTTP_400_BAD_REQUEST)
 
-        role = get_object_or_404(Role, id=role_id)
+            if name:
+                role.name = name
 
-        name = request.data.get('name')
-        permission_id = request.data.get('permission')
+            if permission_ids:
+                try:
+                    permissions = Permission.objects.filter(id__in=permission_ids)
+                    if len(permissions) != len(permission_ids):
+                        raise Permission.DoesNotExist
+                    role.permission.set(permissions)
+                except Permission.DoesNotExist:
+                    return Response({'error': 'One or more permissions do not exist'}, status=status.HTTP_400_BAD_REQUEST)
 
-        if Role.objects.filter(name=name).exclude(id=role.id).exists():
-            return Response({'error': 'Role with this name already exists'}, status=status.HTTP_400_BAD_REQUEST)
+            role.save()
+            logger.info(f"User {auth_user.username} updated role {role.name} from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Updated role {role.name} details", ip_address=ip_address)
 
-        if name:
-            role.name = name  
-
-        if permission_id:
-            try:
-                permission_instance = Permission.objects.get(id=permission_id)
-                role.permission = permission_instance  
-            except Permission.DoesNotExist:
-                return Response({'error': 'Permission does not exist'}, status=status.HTTP_400_BAD_REQUEST)
-
-        role.save()
-        logger.info(f"User {auth_user.username} updated role {role.name}  from {ip_address}")
-        UserActivity.objects.create(user=auth_user, action=f"Updated role {role.name} details", ip_address=ip_address)
-
-        serializer = RoleSerializer(role)
-        return Response({'message': 'Role updated successfully', 'updated_data': serializer.data}, status=status.HTTP_200_OK)
+            serializer = self.serializer_class(role)
+            return Response({'message': 'Role updated successfully', 'updated_data': serializer.data}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class DeleteRoleView(APIView):
@@ -472,11 +491,6 @@ class CreateUserRoleView(APIView):
                 user_instance = User.objects.get(id=user)
             except User.DoesNotExist:
                 raise ValidationError({"user": "User does not exist"})
-            
-            if role_instance.name == 'administrator':
-                user_instance.is_admin = True
-
-                user_instance.save()
                 
             user_role = UserRoles.objects.create(
                 role = role_instance,
@@ -505,7 +519,16 @@ class UserRolesListView(generics.ListAPIView):
         logger.info(f"User {auth_user.username} fetched the user_role list from {ip_address}")
         UserActivity.objects.create(user=auth_user, action="Fetched user_role list", ip_address=ip_address)
 
-        return super().get(request, *args, **kwargs) 
+        user_roles = self.queryset.select_related('user', 'role')  # Fetch related user and role data
+        data = [
+            {
+                'id': user_role.id,
+                'user': user_role.user.username,  # Return username
+                'role': user_role.role.name      # Return role name
+            }
+            for user_role in user_roles
+        ]
+        return Response(data, status=status.HTTP_200_OK)
     
 
 class GetUserRoleDetailsView(APIView):
@@ -532,7 +555,7 @@ class GetUserRoleDetailsView(APIView):
         
         except UserRoles.DoesNotExist:
             return Response({'status': 'failed', 'reason': 'user role not found'}, status=status.HTTP_400_BAD_REQUEST)
-        
+    
 
 class UpdateUserRoleView(APIView):
     queryset = UserRoles.objects.all()
@@ -540,49 +563,23 @@ class UpdateUserRoleView(APIView):
     permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def get_object(self):
-        user_role_id = self.request.data.get('id')
-        return get_object_or_404(UserRoles, id=user_role_id)
+        return get_object_or_404(UserRoles, id=self.request.data.get('id'))
     
     def put(self, request):
         auth_user = request.user
-        ip_address = request.META.get('REMOTE_ADDR', '') 
+        ip_address = request.META.get('REMOTE_ADDR', '')
 
         try:
-            user_role = self.get_object()       
-            user = request.data.get('user')
-            role = request.data.get('role')
-            
-            #validating role id
-            try:
-                role_instance = Role.objects.get(id=role)
-            except Role.DoesNotExist:
-                raise ValidationError(f"Role with ID {role} does not exist")
-                
-            #validating user id    
-            try:
-                user_instance = User.objects.get(id=user)
-            except User.DoesNotExist:
-                raise ValidationError(f"User with ID {user} does not exist")
-            
-            #if the role is 'administrator' set is_admin flag
-            if role_instance.name == 'administrator':
-                user_instance.is_admin = True
-            else:
-                user_instance.is_admin = False
-            
-            user_role.user = user_instance
-            user_role.role = role_instance
+            user_role = self.get_object()
+            role_instance = get_object_or_404(Role, id=request.data.get('role'))
 
-            #save user role
+            user_role.role = role_instance
             user_role.save()
 
-            logger.info(f"User {auth_user.username} updated user role of user {user_role.user.username} from {ip_address}")
-            UserActivity.objects.create(user=auth_user, action=f"Updated user role of user {user_role.user.username} details", ip_address=ip_address)
+            logger.info(f"User {auth_user.username} updated role for user {user_role.user.username} to {role_instance.name} from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Updated role for user {user_role.user.username} to {role_instance.name}", ip_address=ip_address)
 
-            serializer = self.serializer_class(user_role)
-
-            return Response({'message': 'user role updated successfully', 'updated_data': serializer.data}, status=status.HTTP_200_OK)
-        
+            return Response({'message': 'User role updated successfully', 'updated_data': self.serializer_class(user_role).data}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
@@ -606,32 +603,42 @@ class DeleteUserRoleView(APIView):
         return Response({'message': 'user role deleted'}, status=status.HTTP_202_ACCEPTED)
 
 
-class ViewAccessListCreateView(APIView):
+class ViewAccessCreateView(APIView):
     """
-    API to list and create view access rules.
+    API to create view access rules.
     """
     queryset = ViewAccess.objects.all()
     serializer_class = ViewAccessSerializer
     permission_classes = [IsAuthenticated, DynamicRolePermission]
 
-    def get(self, request):
-        accesses = self.queryset()
-        serializer = self.serializer_class(accesses, many=True)
-        return Response(serializer.data)
-
     def post(self, request):
         auth_user = request.user
-        ip_address = request.META.get('REMOTE_ADDR', '') 
+        ip_address = request.META.get('REMOTE_ADDR', '')
 
-        serializer = self.serializer_class(data=request.data)
-        if serializer.is_valid():
-            view_access = serializer.save()
+        data = request.data
+        roles = data.get('roles', [])
 
-            logger.info(f"User {auth_user.username} created view access '{view_access.view_name}' from {ip_address}")
-            UserActivity.objects.create(user=auth_user, action=f"create view access '{view_access.view_name}'", ip_address=ip_address)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        if not isinstance(roles, list):
+            return Response({'error': 'Roles must be a list of role IDs.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            role_instances = Role.objects.filter(id__in=roles)
+            if len(role_instances) != len(roles):
+                return Response({'error': 'Some roles do not exist.'}, status=status.HTTP_400_BAD_REQUEST)
+
+            data['roles'] = role_instances  # Replace role IDs with actual role instances
+            serializer = self.serializer_class(data=data)
+
+            if serializer.is_valid():
+                view_access = serializer.save()
+                logger.info(f"User {auth_user.username} created view access '{view_access.view_name}' from {ip_address}")
+                UserActivity.objects.create(user=auth_user, action=f"Created view access '{view_access.view_name}'", ip_address=ip_address)
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            logger.error(f"Error creating view access: {str(e)}")
+            return Response({'error': 'An unexpected error occurred.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class GetViewAccessDetailsView(APIView):
@@ -659,6 +666,30 @@ class GetViewAccessDetailsView(APIView):
             return Response({'status': 'failed', 'reason': 'view access rule not found'}, status=status.HTTP_400_BAD_REQUEST)   
 
 
+class ViewAccessListView(generics.ListAPIView):
+    queryset = ViewAccess.objects.all()
+    serializer_class = ViewAccessSerializer
+    permission_classes = [IsAuthenticated, DynamicRolePermission]
+
+    def get(self, request, *args, **kwargs):
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
+
+        logger.info(f"User {auth_user.username} fetched the view access list from {ip_address}")
+        UserActivity.objects.create(user=auth_user, action="Fetched view access list", ip_address=ip_address)
+
+        view_access_list = self.queryset.prefetch_related('roles')  # Fetch related roles data
+        data = [
+            {
+                'id': view_access.id,
+                'view_name': view_access.view_name,  # Return view name
+                'roles': [role.name for role in view_access.roles.all()]  # Return list of role names
+            }
+            for view_access in view_access_list
+        ]
+        return Response(data, status=status.HTTP_200_OK)
+
+
 class ViewAccessUpdateView(APIView):
     """
     API to update the View Access rules
@@ -680,20 +711,14 @@ class ViewAccessUpdateView(APIView):
             # Fetch the view access object to be updated
             view_access = self.get_object()
 
-            # Get the updated data from the request
-            view_name = request.data.get('view_name')
-            roles = request.data.get('roles')
-
-            # Update the view access object with new data
-            view_access.view_name = view_name
-            view_access.roles = roles
+            role_instance  = get_object_or_404(Role, id=request.data.get('role')) 
+            view_access.roles = role_instance
 
             # Save the updated view access object
             view_access.save()
             logger.info(f"User {auth_user.username} updated view access {view_access.view_name} from {ip_address}")
             UserActivity.objects.create(user=auth_user, action=f"Updated view access {view_access.view_name} details", ip_address=ip_address)            
 
-            # Serialize the updated view access object and return the response
             serializer = self.serializer_class(view_access)
             return Response({'message': 'view access rule updated successfully', 'updated_data': serializer.data}, status=status.HTTP_200_OK)
         
@@ -724,40 +749,43 @@ class ViewAccessDeleteView(APIView):
 class UserActivityListView(generics.ListAPIView):
     """
     API for filtering audit logs.
-    Supports filters: user_id, start_date, end_date, action_type.
+    Supports filters: user_id, start_date, end_date, action.
     """
     serializer_class = UserActivitySerializer
     pagination_class = CustomPagination
-    filter_backends =  [DjangoFilterBackend, OrderingFilter]
+    filter_backends = [DjangoFilterBackend, OrderingFilter]
     permission_classes = [IsAuthenticated, DynamicRolePermission]
 
-    ordering_fields = ['timestamp']  # sorting by timestamp
-    ordering = ['-timestamp']  #  newest first
+    ordering_fields = ['timestamp']  # Allow sorting by timestamp
+    ordering = ['-timestamp']  # Default: Newest first
 
     def get_queryset(self):
         queryset = UserActivity.objects.all()
-        start_date = self.request.query_params.get('start_date')
-        end_date = self.request.query_params.get('end_date')
-        user_id = self.request.query_params.get('id')
-        action = self.request.query_params.get('action')
+        params = self.request.query_params
+
+        # Extract parameters
+        start_date = params.get('start_date')
+        end_date = params.get('end_date')
+        user_id = params.get('user_id')  
+        action = params.get('action')
 
         # Filter by date range
         if start_date:
-            start_date = parse_datetime(start_date)
-            if start_date:
-                queryset = queryset.filter(timestamp__gte=start_date) #greater than equal to the value
+            parsed_start_date = parse_date(start_date)
+            if parsed_start_date:
+                queryset = queryset.filter(timestamp__date__gte=parsed_start_date)
 
         if end_date:
-            end_date = parse_datetime(end_date)
-            if end_date:
-                queryset = queryset.filter(timestamp__lte=end_date)#less than and equat to the value
+            parsed_end_date = parse_date(end_date)
+            if parsed_end_date:
+                queryset = queryset.filter(timestamp__date__lte=parsed_end_date)
 
         if user_id:
-            queryset = queryset.filter(user_id=user_id)
+            queryset = queryset.filter(user__id=user_id) 
 
         # Filter by action keyword
         if action:
-            queryset = queryset.filter(action__icontains=action)# keyword lookups
+            queryset = queryset.filter(action__icontains=action)
 
         return queryset
 
@@ -781,7 +809,7 @@ class UserActivityCSVReportView(UserActivityListView):
 
         return response
     
-    
+
 #<-----     views to serve admin side user templates     ----->
 def create_user(request):
     return render(request, 'admin_panel/user_management/create_user.html')
@@ -793,7 +821,8 @@ def user_detail(request):
     return render(request, 'admin_panel/user_management/user_details.html')
 
 def toggle_mfa(request):
-    return render(request, 'admin_panel/user_management/toggle_mfa.html')
+    users = User.objects.filter(is_superuser=False, is_user=True)  # Fetch non-superuser users
+    return render(request, 'admin_panel/user_management/toggle_mfa.html', {'users': users})
 
 def delete_user(request):
     return render(request, 'admin_panel/user_management/delete_user.html')
@@ -825,9 +854,10 @@ def delete_role(request):
     return render(request, 'admin_panel/roles/delete_role.html')
 
 #<-----     views to serve admin side user_role templates     ----->
-
 def assign_user_role(request):
-    return render(request, 'admin_panel/userrole/assign_user_role.html')
+    users = User.objects.filter(is_superuser=False, is_user=True)  # Fetch non-superuser users
+    roles = Role.objects.all()  # Fetch all roles
+    return render(request, 'admin_panel/userrole/assign_user_role.html', {'users': users, 'roles': roles})
 
 def user_role_list(request):
     return render(request, 'admin_panel/userrole/user_role_list.html')
@@ -841,13 +871,18 @@ def delete_user_role(request):
 #<-----     views to serve admin side view_access templates     ----->
 
 def create_view_access(request):
-    return render(request, 'admin_panel/viewaccess/create_view_access.html')
+    roles = Role.objects.all()  # Fetch all roles
+    return render(request, 'admin_panel/viewaccess/create_view_access.html', {'roles': roles})
 
 def view_access_list(request):
-    return render(request, 'admin_panel/viewaccess/view_access_list.html')
+    # roles = Role.objects.all()
+    return render(request, 'admin_panel/viewaccess/view_access_list.html')# {'roles': roles})
 
 def view_access_details(request):
     return render(request, 'admin_panel/viewaccess/view_access_details.html')
 
 def delete_view_access(request):
     return render(request, 'admin_panel/viewaccess/delete_view_access.html')
+
+def user_activity_list(requset):
+    return render(requset, 'admin_panel/useractivity/user_activity_list.html')

@@ -30,36 +30,46 @@
             return;
         }
 
-        fetch('http://127.0.0.1:5000/uas_admin/api/permission_list/', {
-            method: 'GET',
-            headers: {
-                'Authorization': 'Bearer ' + accessToken,
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => {
-            if (!response.ok) {
-                return response.text().then(err => { 
-                    throw new Error(err || "Failed to fetch permission list"); 
+        function fetchPermissionList() {
+            fetch('http://127.0.0.1:5000/uas_admin/api/permission_list/', {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer ' + accessToken,
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(err => { 
+                        throw new Error(err || "Failed to fetch permission list"); 
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Fetched permission list:", data);
+                const tableBody = document.getElementById('permission-table-body');
+                tableBody.innerHTML = ''; // Clear existing rows
+                data.forEach(permission => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><a href="/uas_admin/permission_details/?id=${permission.id}" class="permission-link">${permission.name}</a></td>
+                        <td>${permission.codename}</td>
+                        <td><button class="delete-btn" data-id="${permission.id}">Delete</button></td>
+                    `;
+                    tableBody.appendChild(row);
                 });
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log("Fetched permission list:", data);
-            const tableBody = document.getElementById('permission-table-body');
-            tableBody.innerHTML = ''; // Clear existing rows
-            data.forEach(permission => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td><a href="/uas_admin/permission_details/?id=${permission.id}" class="permission-link">${permission.name}</a></td>
-                    <td>${permission.codename}</td>
-                    <td><button class="delete-btn" data-id="${permission.id}">Delete</button></td>
-                `;
-                tableBody.appendChild(row);
-            });
 
-            // Add event listeners to delete buttons
+                // Add event listeners to delete buttons
+                addDeleteEventListeners();
+            })
+            .catch(error => {
+                console.error("Error fetching permission list:", error);
+                alert("Failed to load permission list. Please try again.");
+            });
+        }
+
+        function addDeleteEventListeners() {
             document.querySelectorAll('.delete-btn').forEach(button => {
                 button.addEventListener('click', function () {
                     const permissionId = this.getAttribute('data-id');
@@ -84,7 +94,7 @@
                         })
                         .then(() => {
                             alert('Permission deleted successfully.');
-                            deleteButton.closest('tr').remove();
+                            fetchPermissionList(); // Refresh the table after deletion
                         })
                         .catch(error => {
                             console.error("Error deleting permission:", error);
@@ -97,11 +107,10 @@
                     }
                 });
             });
-        })
-        .catch(error => {
-            console.error("Error fetching permission list:", error);
-            alert("Failed to load permission list. Please try again.");
-        });
+        }
+
+        // Initial fetch of permission list
+        fetchPermissionList();
     });
 </script>
 

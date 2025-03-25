@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}User Activity List{% endblock title %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/user_activity_css/user_activity_list.css' %}">
+<form id="user-activity-list-form">
+    <table>
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Action</th>
+                <th>IP Address</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody id="user-activity-table-body">
+            <!-- Rows will be dynamically populated here -->
+        </tbody>
+    </table>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('User activity list loaded.');
+        const accessToken = sessionStorage.getItem('access');
+
+        if (!accessToken) {
+            alert('Session expired. Please log in again.');
+            window.location.href = "{% url 'login' %}";
+            return;
+        }
+
+        function fetchUserActivityList() {
+            fetch('http://127.0.0.1:5000/uas_admin/api/user_activity_list/', {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer ' + accessToken,
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(err => { 
+                        throw new Error(err || "Failed to fetch user activity list"); 
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Fetched user activity list:", data);
+                const tableBody = document.getElementById('user-activity-table-body');
+                tableBody.innerHTML = ''; // Clear existing rows
+                data.results.forEach(activity => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${activity.user}</td>
+                        <td>${activity.action}</td>
+                        <td>${activity.ip_address}</td>
+                        <td>${activity.timestamp}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching user activity list:", error);
+                alert("Failed to load user activity list. Please try again.");
+            });
+        }
+
+        // Initial fetch of user activity list
+        fetchUserActivityList();
+    });
+</script>
+
+{% endblock content %}

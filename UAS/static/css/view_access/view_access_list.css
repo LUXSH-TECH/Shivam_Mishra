@@ -1,4 +1,4 @@
-#role-list-form {
+#view-access-list-form {
     font-family: Arial, sans-serif;
     font-size: 14px;
     color: #333;
@@ -10,42 +10,42 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#role-list-form table {
+#view-access-list-form table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
 
-#role-list-form th, #role-list-form td {
+#view-access-list-form th, #view-access-list-form td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
 }
 
-#role-list-form th {
+#view-access-list-form th {
     background-color: #f2f2f2;
     font-weight: bold;
 }
 
-#role-list-form tr:nth-child(even) {
+#view-access-list-form tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-#role-list-form tr:hover {
+#view-access-list-form tr:hover {
     background-color: #f1f1f1;
 }
 
-#role-list-form .role-link {
+#view-access-list-form .view-access-link {
     color: #007bff;
     text-decoration: none;
 }
 
-#role-list-form .role-link:hover {
+#view-access-list-form .view-access-link:hover {
     text-decoration: underline;
 }
 
 /* Style for delete buttons */
-#role-list-form .delete-btn {
+#view-access-list-form .delete-btn {
     background-color: #dc3545;
     color: #fff;
     border: none;
@@ -55,21 +55,21 @@
     font-size: 14px;
 }
 
-#role-list-form .delete-btn:hover {
+#view-access-list-form .delete-btn:hover {
     background-color: #c82333;
 }
 
-#role-list-form .delete-btn:disabled {
+#view-access-list-form .delete-btn:disabled {
     background-color: #e0e0e0;
     color: #6c757d;
     cursor: not-allowed;
 }
 
 /* Style for table rows */
-#role-list-form tr td a.role-link {
+#view-access-list-form tr td a.view-access-link {
     font-weight: bold;
 }
 
-#role-list-form tr td {
+#view-access-list-form tr td {
     vertical-align: middle;
 }

@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block title %}Update View Access{% endblock title %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/view_access/view_access_details.css' %}">
+
+<h2>Update View Access</h2>
+
+<form id="view-access-update-form">
+    <label for="view_name">View Name:</label>
+    <input type="text" id="view_name" name="view_name" disabled>
+    
+    <label for="roles">Select Roles:</label>
+    <select id="roles" name="roles" multiple>
+        <!-- Roles will be dynamically populated here -->
+    </select>
+
+    <button type="submit">Update</button>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', async function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const viewAccessId = urlParams.get('id');
+
+        if (!viewAccessId) {
+            alert("Invalid View Access ID.");
+            window.location.href = "{% url 'view-access-list' %}";
+            return;
+        }
+
+        const accessToken = sessionStorage.getItem('access');
+        if (!accessToken) {
+            alert('Session expired. Please log in again.');
+            window.location.href = "{% url 'login' %}";
+            return;
+        }
+
+        try {
+            // Fetch view access details
+            const response = await fetch('http://127.0.0.1:5000/uas_admin/api/view_access_list/', {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer ' + accessToken,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to fetch view access details");
+            }
+
+            const data = await response.json();
+            const viewAccess = data.find(item => item.id == viewAccessId);
+
+            if (!viewAccess) {
+                alert("View Access not found.");
+                window.location.href = "{% url 'view-access-list' %}";
+                return;
+            }
+
+            document.getElementById('view_name').value = viewAccess.view_name;
+
+            // Fetch roles list
+            const rolesResponse = await fetch('http://127.0.0.1:5000/uas_admin/api/role_list/', {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer ' + accessToken,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!rolesResponse.ok) {
+                throw new Error("Failed to fetch roles");
+            }
+
+            const rolesData = await rolesResponse.json();
+            const rolesDropdown = document.getElementById('roles');
+
+            rolesData.forEach(role => {
+                const option = document.createElement('option');
+                option.value = role.id;
+                option.textContent = role.name;
+                
+                // Highlight the assigned roles
+                if (viewAccess.roles.includes(role.name)) {
+                    option.selected = true;
+                }
+
+                rolesDropdown.appendChild(option);
+            });
+
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            alert("An error occurred while fetching data.");
+        }
+
+        // Handle form submission
+        document.getElementById('view-access-update-form').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const selectedRoles = Array.from(document.getElementById('roles').selectedOptions).map(option => option.value);
+
+            try {
+                const updateResponse = await fetch('http://127.0.0.1:5000/uas_admin/api/update_view_access/', {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': 'Bearer ' + accessToken,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id: viewAccessId, roles: selectedRoles })
+                });
+
+                if (!updateResponse.ok) {
+                    throw new Error("Failed to update view access rule");
+                }
+
+                alert("View access updated successfully!");
+                window.location.href = "{% url 'view-access-list' %}";
+            } catch (error) {
+                console.error("Error updating view access:", error);
+                alert("Failed to update view access. Please try again.");
+            }
+        });
+    });
+</script>
+
+{% endblock content %}

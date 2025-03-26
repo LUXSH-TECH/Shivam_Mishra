@@ -50,7 +50,7 @@
             const tableBody = document.getElementById('view-access-table-body');
             tableBody.innerHTML = ''; // Clear existing rows
             data.forEach(viewAccess => {
-                const roles = viewAccess.roles.join(', ');
+                const roles = viewAccess.roles.join(', '); // Ensure roles are directly joined as strings
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td><a href="/uas_admin/view_access_details/?id=${viewAccess.id}" class="view-access-link">${viewAccess.view_name}</a></td>

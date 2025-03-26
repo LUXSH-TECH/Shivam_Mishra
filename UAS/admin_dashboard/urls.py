@@ -20,13 +20,13 @@ urlpatterns = [
     path('api/role_list/', RoleListView.as_view(), name='role-list'),
     path('api/role_details/<int:id>/', GetRoleDetailsView.as_view(), name ='api-role-details'),
     path('api/update_role/', UpdateRoleView.as_view(), name = 'api-udpate-role'),
-    path('api/delete_role/<int:id>', DeleteRoleView.as_view(), name ='api-delete-role'),
+    path('api/delete_role/<int:id>/', DeleteRoleView.as_view(), name ='api-delete-role'),
     #             <----- UserRole urls ----->
     path('api/create_user_role/', CreateUserRoleView.as_view(), name='api-create-user-role'),
     path('api/user_role_list/', UserRolesListView.as_view(), name='user-role-list'),
     path('api/user_role_details/<int:id>/', GetUserRoleDetailsView.as_view(), name='api-user-role-details'),
     path('api/update_user_role/', UpdateUserRoleView.as_view(), name='api-update-role'),
-    path('api/delete_role/<int:id>', DeleteUserRoleView.as_view(), name='api-delete_role'),
+    path('api/delete_role/<int:id>/', DeleteUserRoleView.as_view(), name='api-delete_role'),
     #             <----- ViewAccess urls ----->
     path('api/create_view_access/', ViewAccessCreateView.as_view(), name='api-list-create-view-access'),
     path('api/view_access_list/', ViewAccessListView.as_view(), name='view-acccess-list'),

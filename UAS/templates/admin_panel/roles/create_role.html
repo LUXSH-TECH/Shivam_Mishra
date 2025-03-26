@@ -3,16 +3,15 @@
 
 {% block content %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/roles/create_role.css' %}">
-<form id="create-role-form" method="post">
-    {% csrf_token %}
 
-    <label for="roleName">Role Name:</label>
-    <input type="text" id="roleName" name="name" required>
+<form id="create-role-form">
+    <label for="role-name">Role Name:</label>
+    <input type="text" id="role-name" name="name" required>
     <br>
 
     <label for="permissions">Select Permissions:</label>
     <select id="permissions" name="permissions" multiple required>
+        <!-- Options will be dynamically populated -->
     </select>
     <br>
 
@@ -20,93 +19,82 @@
 </form>
 
 <script>
-    function getCookie(name) {
-        const cookies = document.cookie.split(';').map(cookie => cookie.trim());
-        for (const cookie of cookies) {
-            if (cookie.startsWith(name + '=')) {
-                return decodeURIComponent(cookie.split('=')[1]);
-            }
-        }
-        return null;
-    }
-
-    async function fetchPermissions() {
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('Create Role page loaded.');
         const accessToken = sessionStorage.getItem('access');
+
         if (!accessToken) {
             alert("Session expired. Please log in again.");
             window.location.href = "{% url 'login' %}";
             return;
         }
 
-        try {
-            const response = await fetch('http://127.0.0.1:5000/uas_admin/api/permission_list/', {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${accessToken}`,
-                },
-            });
-
-            if (response.ok) {
-                const permissions = await response.json();
-                const permissionsSelect = document.getElementById('permissions');
-                permissions.forEach(permission => {
-                    const option = document.createElement('option');
-                    option.value = permission.id;
-                    option.textContent = permission.name;
-                    permissionsSelect.appendChild(option);
+        // Fetch permissions list
+        fetch('http://127.0.0.1:5000/uas_admin/api/permission_list/', {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + accessToken,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.text().then(err => { 
+                    throw new Error(err || "Failed to fetch permissions"); 
                 });
-            } else {
-                alert('Failed to fetch permissions.');
             }
-        } catch (err) {
-            console.error('Error:', err);
-            alert('An unexpected error occurred while fetching permissions.');
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', fetchPermissions);
-
-    document.getElementById('create-role-form').addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        const accessToken = sessionStorage.getItem('access');
-        if (!accessToken) {
-            alert("Session expired. Please log in again.");
-            window.location.href = "{% url 'login' %}";
-            return;
-        }
-
-        const csrfToken = getCookie('csrftoken');
-        const roleName = document.getElementById('roleName').value;
-        const selectedPermissions = Array.from(document.getElementById('permissions').selectedOptions).map(option => option.value);
-
-        const data = {
-            name: roleName,
-            permissions: selectedPermissions
-        };
-
-        try {
-            const response = await fetch('http://127.0.0.1:5000/uas_admin/api/create_role/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${accessToken}`,
-                    'X-CSRFToken': csrfToken,
-                },
-                body: JSON.stringify(data),
+            return response.json();
+        })
+        .then(permissions => {
+            console.log("Fetched permissions:", permissions);
+            const permissionSelect = document.getElementById('permissions');
+            permissions.forEach(permission => {
+                const option = document.createElement('option');
+                option.value = permission.id; // Ensure the value is the numeric ID
+                option.textContent = permission.name;
+                permissionSelect.appendChild(option);
             });
+        })
+        .catch(error => {
+            console.error("Error fetching permissions:", error);
+            alert("Failed to load permissions. Please try again.");
+        });
 
-            const result = await response.json();
-            if (response.ok) {
-                alert('Role created successfully: ' + result.message);
-                window.location.reload();
-            } else {
-                alert('Error: ' + (result.error || 'Failed to create role.'));
+        // Handle form submission
+        document.getElementById('create-role-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            console.log("Submitting create role form...");
+
+            const roleName = document.getElementById('role-name').value;
+            const selectedPermissions = Array.from(document.getElementById('permissions').selectedOptions).map(option => parseInt(option.value));
+
+            try {
+                const body = JSON.stringify({
+                    name: roleName,
+                    permissions: selectedPermissions
+                });
+
+                const response = await fetch('http://127.0.0.1:5000/uas_admin/api/create_role/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${accessToken}`
+                    },
+                    body: body
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert('Role created successfully.');
+                    window.location.href = "{% url 'role-list' %}";
+                } else {
+                    alert('Error: ' + JSON.stringify(result));
+                }
+            } catch (err) {
+                console.error("Error:", err);
+                alert("An unexpected error occurred.");
             }
-        } catch (err) {
-            console.error('Error:', err);
-            alert('An unexpected error occurred.');
-        }
+        });
     });
 </script>
 {% endblock content %}

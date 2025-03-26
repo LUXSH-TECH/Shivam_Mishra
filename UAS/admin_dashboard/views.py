@@ -319,36 +319,38 @@ class CreateRoleView(APIView):
     permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def post(self, request):
-        serializer = self.serializer_class(data=request.data)
         auth_user = request.user
         ip_address = request.META.get('REMOTE_ADDR', '')
 
-        if serializer.is_valid():
-            name = serializer.validated_data.get('name')
-            permissions = serializer.validated_data.get('permissions', [])
+        try:
+            name = request.data.get('name')
+            permission_ids = request.data.get('permissions')
 
-            try:
-                # Validate permissions
-                permission_instances = Permission.objects.filter(id__in=permissions)
-                if len(permission_instances) != len(permissions):
-                    raise ValidationError({"permissions": "One or more permissions do not exist"})
+            if not name or not isinstance(permission_ids, list) or not permission_ids:
+                return Response({"error": "name and permissions are required, and permissions must be a non-empty list"}, status=status.HTTP_400_BAD_REQUEST)
 
-                # Create the role
-                role = Role.objects.create(name=name)
-                role.permission.set(permission_instances)
+            # Fetch permission instances
+            permissions = Permission.objects.filter(id__in=permission_ids)
+            if len(permissions) != len(permission_ids):
+                return Response({'error': 'One or more permissions do not exist'}, status=status.HTTP_400_BAD_REQUEST)
 
-                logger.info(f"User {auth_user.username} created a new role '{role.name}' with permissions from {ip_address}")
-                UserActivity.objects.create(user=auth_user, action=f"Created role '{role.name}'", ip_address=ip_address)
+            # Check if a role with the same name already exists
+            if Role.objects.filter(name=name).exists():
+                return Response({'error': 'Role with this name already exists'}, status=status.HTTP_400_BAD_REQUEST)
 
-                serializer = self.serializer_class(role)
-                return Response({'message': 'role created', 'role_id': role.id, 'data': serializer.data}, status=status.HTTP_201_CREATED)
+            # Create the role and assign permissions
+            role = Role.objects.create(name=name)
+            role.permission.set(permissions)
 
-            except ValidationError as e:
-                logger.warning(f"User {auth_user.username} failed to create role due to {e.detail}")
-                return Response(e.detail, status=status.HTTP_400_BAD_REQUEST)
+            logger.info(f"User {auth_user.username} created a new role '{role.name}' with permissions from {ip_address}")
+            UserActivity.objects.create(user=auth_user, action=f"Created role '{role.name}'", ip_address=ip_address)
 
-        logger.warning(f"User {auth_user.username} failed to create role due to {serializer.errors}")
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            serializer = self.serializer_class(role)
+            return Response({'message': 'Role created successfully', 'role_id': role.id, 'data': serializer.data}, status=status.HTTP_201_CREATED)
+
+        except ValidationError as e:
+            logger.warning(f"User {auth_user.username} failed to create role due to {e.detail}")
+            return Response(e.detail, status=status.HTTP_400_BAD_REQUEST)
 
 
 class RoleListView(generics.ListAPIView):
@@ -408,7 +410,7 @@ class UpdateRoleView(APIView):
         try:
             role = self.get_object()
             name = request.data.get('name')
-            permission_ids = request.data.get('permissions', [])
+            permission_ids = request.data.get('permissions')
 
             if name and Role.objects.filter(name=name).exclude(id=role.id).exists():
                 return Response({'error': 'Role with this name already exists'}, status=status.HTTP_400_BAD_REQUEST)
@@ -421,7 +423,7 @@ class UpdateRoleView(APIView):
                     permissions = Permission.objects.filter(id__in=permission_ids)
                     if len(permissions) != len(permission_ids):
                         raise Permission.DoesNotExist
-                    role.permission.set(permissions)
+                    role.permission.set(permissions)  # Use set() for many-to-many relationships
                 except Permission.DoesNotExist:
                     return Response({'error': 'One or more permissions do not exist'}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -460,51 +462,37 @@ class CreateUserRoleView(APIView):
     serializer_class = UserRoleSerialiser
     permission_classes = [IsAuthenticated, DynamicRolePermission]
 
-    # def post(self, request):
-    #     serializer = self.serializer_class(data=request.data)
-
-    #     if serializer.is_valid():
-    #         user_role = serializer.save()
-
-    #         return Response({'message': 'user role created', 'user_role_id': user_role.id}, status=status.HTTP_201_CREATED)
-        
-    #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)            
-    
     def post(self, request):
-        serializer = self.serializer_class(data=request.data)
-        
-        if serializer.is_valid():
-            # user = request.data.get('user')
-            # role = request.data.get('role')
-            auth_user = request.user
-            ip_address = request.META.get('REMOTE_ADDR', '')      
+        auth_user = request.user
+        ip_address = request.META.get('REMOTE_ADDR', '')
 
-            user = serializer.validated_data['user']
-            role = serializer.validated_data['role']
+        try:
+            user_id = request.data.get('user')
+            role_id = request.data.get('role')
 
-            try:
-                role_instance = Role.objects.get(id=role)
-            except Role.DoesNotExist:
-                raise ValidationError({"role": "Role does not exist"})
-                
-            try:
-                user_instance = User.objects.get(id=user)
-            except User.DoesNotExist:
-                raise ValidationError({"user": "User does not exist"})
-                
-            user_role = UserRoles.objects.create(
-                role = role_instance,
-                user = user_instance
-            )
-            
+            if not user_id or not role_id:
+                return Response({'error': 'User ID and Role ID are required'}, status=status.HTTP_400_BAD_REQUEST)
+
+            user_instance = get_object_or_404(User, id=user_id)
+
+            role_instance = get_object_or_404(Role, id=role_id)
+
+            # Check if the user role already exists
+            if UserRoles.objects.filter(user=user_instance, role=role_instance).exists():
+                return Response({'error': 'User already has this role assigned'}, status=status.HTTP_400_BAD_REQUEST)
+
+            # Create the user role
+            user_role = UserRoles.objects.create(user=user_instance, role=role_instance)
+
             logger.info(f"User {auth_user.username} assigned role '{role_instance.name}' to user '{user_instance.username}' from {ip_address}")
             UserActivity.objects.create(user=auth_user, action=f"Assigned role '{role_instance.name}' to user {user_instance.username}", ip_address=ip_address)
 
-            serializer.save()
-            return Response({'message': 'user role created', 'user_role_id': user_role.id}, status=status.HTTP_201_CREATED)
-        
-        logger.warning(f"User {auth_user.username} failed to create user role due to  {serializer.errors}")
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            serializer = self.serializer_class(user_role)
+            return Response({'message': 'User role created successfully', 'user_role_id': user_role.id, 'data': serializer.data}, status=status.HTTP_201_CREATED)
+
+        except Exception as e:
+            logger.error(f"Error assigning role: {str(e)}")
+            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
 
 class UserRolesListView(generics.ListAPIView):
@@ -626,14 +614,14 @@ class ViewAccessCreateView(APIView):
             if len(role_instances) != len(roles):
                 return Response({'error': 'Some roles do not exist.'}, status=status.HTTP_400_BAD_REQUEST)
 
-            data['roles'] = role_instances  # Replace role IDs with actual role instances
+            data['roles'] = list(role_instances.values_list('id', flat=True))
             serializer = self.serializer_class(data=data)
 
             if serializer.is_valid():
                 view_access = serializer.save()
                 logger.info(f"User {auth_user.username} created view access '{view_access.view_name}' from {ip_address}")
                 UserActivity.objects.create(user=auth_user, action=f"Created view access '{view_access.view_name}'", ip_address=ip_address)
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
+                return Response({'message': 'View Access created successfully', 'data': serializer.data}, status=status.HTTP_201_CREATED)
 
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
@@ -699,31 +687,34 @@ class ViewAccessUpdateView(APIView):
     permission_classes = [IsAuthenticated, DynamicRolePermission]
 
     def get_object(self):
-        # Get the view access object by ID from the request data
-        view_accesss_id = self.request.data.get('id')
-        return get_object_or_404(ViewAccess, id=view_accesss_id)
+        view_access_id = self.request.data.get('id')
+        return get_object_or_404(ViewAccess, id=view_access_id)
     
     def put(self, request):
         auth_user = request.user
         ip_address = request.META.get('REMOTE_ADDR', '') 
 
         try:
-            # Fetch the view access object to be updated
             view_access = self.get_object()
 
-            role_instance  = get_object_or_404(Role, id=request.data.get('role')) 
-            view_access.roles = role_instance
+            role_ids = request.data.get('roles', [])
+            if not isinstance(role_ids, list):
+                return Response({'error': 'Roles must be a list of role IDs.'}, status=status.HTTP_400_BAD_REQUEST)
 
-            # Save the updated view access object
+            role_instances = Role.objects.filter(id__in=role_ids)
+            if len(role_instances) != len(role_ids):
+                return Response({'error': 'Some roles do not exist.'}, status=status.HTTP_400_BAD_REQUEST)
+
+            view_access.roles.set(role_instances)  # Update the ManyToMany relationship
             view_access.save()
+
             logger.info(f"User {auth_user.username} updated view access {view_access.view_name} from {ip_address}")
-            UserActivity.objects.create(user=auth_user, action=f"Updated view access {view_access.view_name} details", ip_address=ip_address)            
+            UserActivity.objects.create(user=auth_user, action=f"Updated view access {view_access.view_name} details", ip_address=ip_address)
 
             serializer = self.serializer_class(view_access)
-            return Response({'message': 'view access rule updated successfully', 'updated_data': serializer.data}, status=status.HTTP_200_OK)
+            return Response({'message': 'View access rule updated successfully', 'updated_data': serializer.data}, status=status.HTTP_200_OK)
         
         except Exception as e:
-            # Handle any exceptions that occur and return an error response
             return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
 

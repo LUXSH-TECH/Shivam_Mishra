@@ -1,28 +1,24 @@
 {% extends 'base.html' %}
-{% block title %}Update User Role{% endblock title %}
+{% block title %}User Role Details{% endblock title %}
 
 {% block content %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/user_css/update_user_role.css' %}">
-<form id="update-user-role-form">
-    <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" readonly>
-    </div>
-    <div>
-        <label for="roles">Roles:</label>
-        <select id="roles" name="roles" multiple>
-            <!-- Options will be dynamically populated -->
-        </select>
-    </div>
-    <button type="submit" id="update-role-btn">Update Roles</button>
-</form>
+<link rel="stylesheet" type="text/css" href="{% static 'css/user_roles/user_role_details.css' %}">
+<h2>User Role Details</h2>
+<div id="user-role-details-container">
+    <p><strong>Username:</strong> <span id="username"></span></p>
+    <p><strong>Role:</strong> 
+        <select id="role"></select>
+    </p>
+</div>
+<button onclick="window.history.back()">Go Back</button>
+<button id="save-changes">Save Changes</button>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        console.log('Update User Role page loaded.');
+        console.log('User role details page loaded.');
         const accessToken = sessionStorage.getItem('access');
-        const userId = new URLSearchParams(window.location.search).get('id');
+        const userRoleId = new URLSearchParams(window.location.search).get('id');
 
         if (!accessToken) {
             alert('Session expired. Please log in again.');
@@ -30,17 +26,17 @@
             return;
         }
 
-        if (!userId) {
-            alert('User ID is missing.');
-            window.location.href = "{% url 'user-role-list' %}";
+        if (!userRoleId) {
+            alert('User role ID is missing.');
+            window.history.back();
             return;
         }
 
-        // Fetch user details and roles
-        fetch(`http://127.0.0.1:5000/uas_admin/api/user_role_details/${userId}/`, {
+        // Fetch user role details
+        fetch(`http://127.0.0.1:5000/uas_admin/api/user_role_details/${userRoleId}/`, {
             method: 'GET',
             headers: {
-                'Authorization': 'Bearer ' + accessToken,
+                'Authorization': `Bearer ${accessToken}`,
                 'Content-Type': 'application/json'
             }
         })
@@ -54,13 +50,20 @@
         })
         .then(data => {
             console.log("Fetched user role details:", data);
-            document.getElementById('username').value = data.user_role_details.user;
+            document.getElementById('username').textContent = data.user_role_details.user;
+            fetchRoles(data.user_role_details.role.id);
+        })
+        .catch(error => {
+            console.error("Error fetching user role details:", error);
+            alert("Failed to load user role details. Please try again.");
+        });
 
-            const rolesDropdown = document.getElementById('roles');
+        // Fetch roles for dropdown
+        function fetchRoles(selectedRoleId) {
             fetch('http://127.0.0.1:5000/uas_admin/api/role_list/', {
                 method: 'GET',
                 headers: {
-                    'Authorization': 'Bearer ' + accessToken,
+                    'Authorization': `Bearer ${accessToken}`,
                     'Content-Type': 'application/json'
                 }
             })
@@ -72,60 +75,59 @@
                 }
                 return response.json();
             })
-            .then(roles => {
-                roles.forEach(role => {
+            .then(data => {
+                console.log("Fetched roles:", data);
+                const roleDropdown = document.getElementById('role');
+                roleDropdown.innerHTML = ''; // Clear existing options
+
+                data.forEach(role => { // Adjusted to match the structure in assign_user_role.html
                     const option = document.createElement('option');
-                    option.value = role.id;
+                    option.value = role.id; // Ensure the value is the numeric ID
                     option.textContent = role.name;
-                    if (data.user_role_details.role === role.name) {
+                    if (role.id === selectedRoleId) {
                         option.selected = true;
                     }
-                    rolesDropdown.appendChild(option);
+                    roleDropdown.appendChild(option);
                 });
             })
             .catch(error => {
                 console.error("Error fetching roles:", error);
                 alert("Failed to load roles. Please try again.");
             });
-        })
-        .catch(error => {
-            console.error("Error fetching user role details:", error);
-            alert("Failed to load user role details. Please try again.");
-        });
+        }
 
-        // Handle form submission
-        document.getElementById('update-user-role-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const selectedRoles = Array.from(document.getElementById('roles').selectedOptions).map(option => option.value);
+        // Save changes
+        document.getElementById('save-changes').addEventListener('click', function () {
+            const updatedDetails = {
+                id: userRoleId,
+                role: document.getElementById('role').value
+            };
 
             fetch('http://127.0.0.1:5000/uas_admin/api/update_user_role/', {
                 method: 'PUT',
                 headers: {
-                    'Authorization': 'Bearer ' + accessToken,
+                    'Authorization': `Bearer ${accessToken}`,
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    id: userId,
-                    role: selectedRoles
-                })
+                body: JSON.stringify(updatedDetails)
             })
             .then(response => {
                 if (!response.ok) {
                     return response.text().then(err => { 
-                        throw new Error(err || "Failed to update user roles"); 
+                        throw new Error(err || "Failed to update user role details"); 
                     });
                 }
                 return response.json();
             })
             .then(() => {
-                alert('User roles updated successfully.');
-                window.location.href = "{% url 'user-role-list' %}";
+                alert('User role updated successfully.');
             })
             .catch(error => {
-                console.error("Error updating user roles:", error);
-                alert("Failed to update user roles. Please try again.");
+                console.error("Error updating user role details:", error);
+                alert("Failed to update user role. Please try again.");
             });
         });
     });
 </script>
+
 {% endblock content %}

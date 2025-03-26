@@ -3,74 +3,131 @@
 
 {% block content %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/user_roles/assign_user_role.css' %}">
-<form id="assign-user-role-form" method="post">
-    {% csrf_token %}
-    <label for="username">Username:</label>
-    <select id="username" name="username" required>
-        {% for user in users %}
-        <option value="{{ user.id }}">{{ user.username }}</option>
-        {% endfor %}
+
+<form id="assign-user-role-form">
+    <label for="user">Select User:</label>
+    <select id="user" name="user" required>
+        <!-- Options will be dynamically populated -->
     </select>
     <br>
-    <label for="role_id">Role:</label>
-    <select id="role_id" name="role_id" required>
-        {% for role in roles %}
-        <option value="{{ role.id }}">{{ role.name }}</option>
-        {% endfor %}
+
+    <label for="role">Select Role:</label>
+    <select id="role" name="role" required>
+        <!-- Options will be dynamically populated -->
     </select>
     <br>
+
     <button type="submit">Assign Role</button>
 </form>
+
 <script>
-    function getCookie(name) {
-        const cookies = document.cookie.split(';').map(cookie => cookie.trim());
-        for (const cookie of cookies) {
-            if (cookie.startsWith(name + '=')) {
-                return decodeURIComponent(cookie.split('=')[1]);
-            }
-        }
-        return null;
-    }
-
-    document.getElementById('assign-user-role-form').addEventListener('submit', async function (e) {
-        e.preventDefault();
-
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('Assign User Role page loaded.');
         const accessToken = sessionStorage.getItem('access');
+
         if (!accessToken) {
             alert("Session expired. Please log in again.");
             window.location.href = "{% url 'login' %}";
             return;
         }
 
-        const csrfToken = getCookie('csrftoken');
-        const data = {
-            user: document.getElementById('username').value,
-            role: document.getElementById('role_id').value,
-        };
-
-        try {
-            const response = await fetch('http://127.0.0.1:5000/uas_admin/api/create_user_role/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${accessToken}`,
-                    'X-CSRFToken': csrfToken,
-                },
-                body: JSON.stringify(data),
-            });
-
-            const result = await response.json();
-            if (response.ok) {
-                alert('User role assigned successfully: ' + result.message);
-                window.location.reload();
-            } else {
-                alert('Error: ' + (result.error || 'Failed to assign user role.'));
+        // Fetch users list
+        fetch('http://127.0.0.1:5000/uas_admin/api/user_list/', {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + accessToken,
+                'Content-Type': 'application/json'
             }
-        } catch (err) {
-            console.error('Error:', err);
-            alert('An unexpected error occurred.');
-        }
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.text().then(err => { 
+                    throw new Error(err || "Failed to fetch users"); 
+                });
+            }
+            return response.json();
+        })
+        .then(users => {
+            console.log("Fetched users:", users);
+            const userSelect = document.getElementById('user');
+            users.forEach(user => {
+                const option = document.createElement('option');
+                option.value = user.id; // Ensure the value is the numeric ID
+                option.textContent = user.username;
+                userSelect.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error("Error fetching users:", error);
+            alert("Failed to load users. Please try again.");
+        });
+
+        // Fetch roles list
+        fetch('http://127.0.0.1:5000/uas_admin/api/role_list/', {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + accessToken,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.text().then(err => { 
+                    throw new Error(err || "Failed to fetch roles"); 
+                });
+            }
+            return response.json();
+        })
+        .then(roles => {
+            console.log("Fetched roles:", roles);
+            const roleSelect = document.getElementById('role');
+            roles.forEach(role => {
+                const option = document.createElement('option');
+                option.value = role.id; // Ensure the value is the numeric ID
+                option.textContent = role.name;
+                roleSelect.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error("Error fetching roles:", error);
+            alert("Failed to load roles. Please try again.");
+        });
+
+        // Handle form submission
+        document.getElementById('assign-user-role-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            console.log("Submitting assign user role form...");
+
+            const userId = document.getElementById('user').value;
+            const roleId = document.getElementById('role').value;
+
+            try {
+                const body = JSON.stringify({
+                    user: userId,
+                    role: roleId
+                });
+
+                const response = await fetch('http://127.0.0.1:5000/uas_admin/api/create_user_role/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${accessToken}`
+                    },
+                    body: body
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert('User role assigned successfully.');
+                    window.location.href = "{% url 'user-role-list' %}";
+                } else {
+                    alert('Error: ' + JSON.stringify(result));
+                }
+            } catch (err) {
+                console.error("Error:", err);
+                alert("An unexpected error occurred.");
+            }
+        });
     });
 </script>
 {% endblock content %}

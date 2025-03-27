@@ -8944,3 +8944,415 @@ INFO 2025-03-27 04:28:15,137 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 INFO 2025-03-27 04:28:18,544 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4887
 INFO 2025-03-27 04:28:18,593 views User shivam fetched the view access list from 127.0.0.1
 INFO 2025-03-27 04:28:18,657 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2511
+INFO 2025-03-27 04:55:55,989 autoreload Watching for file changes with StatReloader
+INFO 2025-03-27 04:57:20,489 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2063
+INFO 2025-03-27 04:57:22,058 basehttp "POST /accounts/api/logout/ HTTP/1.1" 200 37
+INFO 2025-03-27 04:57:22,111 basehttp "GET /accounts/login/ HTTP/1.1" 200 3782
+INFO 2025-03-27 05:02:47,504 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-27 05:02:48,549 basehttp "GET /accounts/verify_otp/ HTTP/1.1" 200 3602
+INFO 2025-03-27 05:02:56,189 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 540
+INFO 2025-03-27 05:02:56,216 basehttp "GET /accounts/success/ HTTP/1.1" 200 1370
+INFO 2025-03-27 05:03:08,126 basehttp "GET /uas_admin/create_user/ HTTP/1.1" 200 3717
+INFO 2025-03-27 05:03:08,219 basehttp "GET /static/css/user_css/create_user.css HTTP/1.1" 200 1099
+INFO 2025-03-27 05:03:35,111 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2063
+INFO 2025-03-27 05:03:35,905 basehttp "POST /accounts/api/logout/ HTTP/1.1" 200 37
+INFO 2025-03-27 05:03:35,932 basehttp "GET /accounts/login/ HTTP/1.1" 200 3782
+INFO 2025-03-27 05:09:13,064 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-27 05:09:14,096 basehttp "GET /accounts/verify_otp/ HTTP/1.1" 200 3602
+INFO 2025-03-27 05:09:21,525 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 540
+INFO 2025-03-27 05:09:21,549 basehttp "GET /accounts/success/ HTTP/1.1" 200 1370
+INFO 2025-03-27 05:09:33,193 basehttp "GET /uas_admin/create_user/ HTTP/1.1" 200 3717
+INFO 2025-03-27 05:09:54,905 views User shivam created a new user virat (user_id: 10) from 127.0.0.1
+INFO 2025-03-27 05:09:54,945 basehttp "POST /uas_admin/api/create_user/ HTTP/1.1" 201 52
+INFO 2025-03-27 05:09:56,299 basehttp "GET /uas_admin/create_user/ HTTP/1.1" 200 3717
+INFO 2025-03-27 05:09:59,840 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-27 05:09:59,876 basehttp "GET /static/css/user_roles/user_role_list.css HTTP/1.1" 304 0
+INFO 2025-03-27 05:09:59,908 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-27 05:09:59,967 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 133
+INFO 2025-03-27 05:10:06,132 basehttp "GET /uas_admin/user_list/ HTTP/1.1" 200 4866
+INFO 2025-03-27 05:10:06,180 basehttp "GET /static/css/user_css/user_list.css HTTP/1.1" 304 0
+INFO 2025-03-27 05:10:06,211 views User shivam fetched the user list from 127.0.0.1
+INFO 2025-03-27 05:10:06,285 basehttp "GET /uas_admin/api/user_list/ HTTP/1.1" 200 1476
+INFO 2025-03-27 05:10:08,042 basehttp "GET /uas_admin/user_details/?id=10 HTTP/1.1" 200 4974
+INFO 2025-03-27 05:10:08,112 basehttp "GET /static/css/user_css/user_details.css HTTP/1.1" 200 1287
+INFO 2025-03-27 05:10:08,152 views User shivam fetched the details of user virat from 127.0.0.1
+INFO 2025-03-27 05:10:08,226 basehttp "GET /uas_admin/api/user_details/10/ HTTP/1.1" 200 268
+INFO 2025-03-27 05:10:19,861 views User shivam updated user virat (user_id: <built-in function id>) from 127.0.0.1
+INFO 2025-03-27 05:10:19,913 basehttp "PUT /uas_admin/api/update_user/ HTTP/1.1" 200 62
+INFO 2025-03-27 05:10:25,776 basehttp "GET /uas_admin/user_list/ HTTP/1.1" 200 4866
+INFO 2025-03-27 05:10:25,843 views User shivam fetched the user list from 127.0.0.1
+INFO 2025-03-27 05:10:25,893 basehttp "GET /uas_admin/api/user_list/ HTTP/1.1" 200 1481
+INFO 2025-03-27 05:10:29,325 views User shivam deleted user virat (user_id: 10) from 127.0.0.1
+INFO 2025-03-27 05:10:29,383 basehttp "DELETE /uas_admin/api/delete_user/10/ HTTP/1.1" 202 26
+INFO 2025-03-27 05:10:35,978 basehttp "GET /uas_admin/create_role/ HTTP/1.1" 200 3874
+INFO 2025-03-27 05:10:36,035 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-27 05:10:36,110 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 4709
+INFO 2025-03-27 05:10:43,597 views User shivam created a new role 'staff' with permissions from 127.0.0.1
+INFO 2025-03-27 05:10:43,762 basehttp "POST /uas_admin/api/create_role/ HTTP/1.1" 201 189
+INFO 2025-03-27 05:10:44,966 basehttp "GET /uas_admin/role_list/ HTTP/1.1" 200 4589
+INFO 2025-03-27 05:10:45,048 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-27 05:10:45,099 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 712
+INFO 2025-03-27 05:10:49,667 basehttp "GET /uas_admin/role_details/?id=25 HTTP/1.1" 200 5260
+WARNING 2025-03-27 05:10:49,720 basehttp "GET /static/css/role_css/update_role.css HTTP/1.1" 404 1898
+INFO 2025-03-27 05:10:49,750 views User shivam fetched the details of role staff from 127.0.0.1
+INFO 2025-03-27 05:10:49,799 basehttp "GET /uas_admin/api/role_details/25/ HTTP/1.1" 200 137
+INFO 2025-03-27 05:10:49,814 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-27 05:10:49,868 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 4709
+INFO 2025-03-27 05:10:53,790 views User shivam updated role staff from 127.0.0.1
+INFO 2025-03-27 05:10:53,835 basehttp "PUT /uas_admin/api/update_role/ HTTP/1.1" 200 186
+INFO 2025-03-27 05:10:54,713 basehttp "GET /uas_admin/role_list/ HTTP/1.1" 200 4589
+INFO 2025-03-27 05:10:54,775 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-27 05:10:54,823 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 714
+WARNING 2025-03-27 05:11:06,157 log Not Found: /uas_admin/create_user_role/
+WARNING 2025-03-27 05:11:06,158 basehttp "GET /uas_admin/create_user_role/ HTTP/1.1" 404 16250
+INFO 2025-03-27 05:11:26,012 basehttp "GET /uas_admin/assign_user_role/ HTTP/1.1" 200 4876
+INFO 2025-03-27 05:11:26,085 views User shivam fetched the user list from 127.0.0.1
+INFO 2025-03-27 05:11:26,088 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-27 05:11:26,139 basehttp "GET /uas_admin/api/user_list/ HTTP/1.1" 200 1232
+INFO 2025-03-27 05:11:26,170 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 714
+INFO 2025-03-27 05:11:30,489 views User shivam assigned role 'staff' to user 'tom' from 127.0.0.1
+INFO 2025-03-27 05:11:30,532 basehttp "POST /uas_admin/api/create_user_role/ HTTP/1.1" 201 96
+INFO 2025-03-27 05:11:31,727 basehttp "GET /uas_admin/user_role_list/ HTTP/1.1" 200 4701
+INFO 2025-03-27 05:11:31,784 views User shivam fetched the user_role list from 127.0.0.1
+INFO 2025-03-27 05:11:31,850 basehttp "GET /uas_admin/api/user_role_list/ HTTP/1.1" 200 170
+INFO 2025-03-27 05:11:33,478 basehttp "GET /uas_admin/user_role_details/?id=6 HTTP/1.1" 200 5220
+INFO 2025-03-27 05:11:33,516 basehttp "GET /static/css/user_roles/user_role_details.css HTTP/1.1" 304 0
+INFO 2025-03-27 05:11:33,557 views User shivam fetched the details of user role of user tom from 127.0.0.1
+INFO 2025-03-27 05:11:33,599 basehttp "GET /uas_admin/api/user_role_details/6/ HTTP/1.1" 200 51
+INFO 2025-03-27 05:11:33,615 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-27 05:11:33,670 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 714
+INFO 2025-03-27 05:11:40,168 views User shivam updated role for user tom to employee from 127.0.0.1
+INFO 2025-03-27 05:11:40,210 basehttp "PUT /uas_admin/api/update_user_role/ HTTP/1.1" 200 86
+INFO 2025-03-27 05:12:01,954 basehttp "GET /uas_admin/create_permission/ HTTP/1.1" 200 2871
+INFO 2025-03-27 05:12:02,013 basehttp "GET /static/css/permission_css/create_permission.css HTTP/1.1" 200 872
+INFO 2025-03-27 05:12:11,747 views User shivam created a new permission test permission 1  from 127.0.0.1
+INFO 2025-03-27 05:12:11,805 basehttp "POST /uas_admin/api/create_permission/ HTTP/1.1" 201 51
+INFO 2025-03-27 05:12:13,434 basehttp "GET /uas_admin/create_permission/ HTTP/1.1" 200 2871
+INFO 2025-03-27 05:12:19,631 basehttp "GET /uas_admin/permission_list/ HTTP/1.1" 200 5131
+INFO 2025-03-27 05:12:19,696 basehttp "GET /static/css/permission_css/permission_list.css HTTP/1.1" 200 1558
+INFO 2025-03-27 05:12:19,715 views User shivam fetched the permission list from 127.0.0.1
+INFO 2025-03-27 05:12:19,789 basehttp "GET /uas_admin/api/permission_list/ HTTP/1.1" 200 4863
+INFO 2025-03-27 05:12:22,236 basehttp "GET /uas_admin/permission_details/?id=36 HTTP/1.1" 200 3778
+INFO 2025-03-27 05:12:22,286 basehttp "GET /static/css/permission_css/permission_details.css HTTP/1.1" 200 697
+INFO 2025-03-27 05:12:22,308 views User shivam fetched the details of permission test permission 1 from 127.0.0.1
+INFO 2025-03-27 05:12:22,367 basehttp "GET /uas_admin/api/permission_details/36/ HTTP/1.1" 200 168
+INFO 2025-03-27 05:12:31,870 views User shivam updated permission test permission 2  from 127.0.0.1
+INFO 2025-03-27 05:12:31,938 basehttp "PUT /uas_admin/api/update_permission/ HTTP/1.1" 200 203
+INFO 2025-03-27 05:12:38,089 basehttp "GET /uas_admin/role_list/ HTTP/1.1" 200 4589
+INFO 2025-03-27 05:12:38,158 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-27 05:12:38,244 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 714
+INFO 2025-03-27 05:12:55,233 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 2877
+INFO 2025-03-27 05:12:55,274 basehttp "GET /static/css/view_access/create_view_access.css HTTP/1.1" 304 0
+INFO 2025-03-27 05:13:03,488 views User shivam created view access 'testing view' from 127.0.0.1
+INFO 2025-03-27 05:13:03,560 basehttp "POST /uas_admin/api/create_view_access/ HTTP/1.1" 201 106
+INFO 2025-03-27 05:13:04,587 basehttp "GET /uas_admin/create_view_access/ HTTP/1.1" 200 2877
+INFO 2025-03-27 05:13:08,238 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4887
+INFO 2025-03-27 05:13:08,332 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-27 05:13:08,391 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2580
+INFO 2025-03-27 05:13:11,927 basehttp "GET /uas_admin/view_access_details/?id=30 HTTP/1.1" 200 5491
+INFO 2025-03-27 05:13:12,008 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-27 05:13:12,096 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2580
+INFO 2025-03-27 05:13:12,117 views User shivam fetched the role list from 127.0.0.1
+INFO 2025-03-27 05:13:12,156 basehttp "GET /uas_admin/api/role_list/ HTTP/1.1" 200 714
+INFO 2025-03-27 05:13:16,546 views User shivam updated view access testing view from 127.0.0.1
+INFO 2025-03-27 05:13:16,606 basehttp "PUT /uas_admin/api/update_view_access/ HTTP/1.1" 200 115
+INFO 2025-03-27 05:13:17,736 basehttp "GET /uas_admin/view_access_list/ HTTP/1.1" 200 4887
+INFO 2025-03-27 05:13:17,803 views User shivam fetched the view access list from 127.0.0.1
+INFO 2025-03-27 05:13:17,841 basehttp "GET /uas_admin/api/view_access_list/ HTTP/1.1" 200 2569
+INFO 2025-03-27 05:13:25,968 basehttp "GET /uas_admin/user_activity_list/ HTTP/1.1" 200 2923
+WARNING 2025-03-27 05:13:26,013 basehttp "GET /static/css/user_activity_css/user_activity_list.css HTTP/1.1" 404 1946
+INFO 2025-03-27 05:13:26,082 basehttp "GET /uas_admin/api/user_activity_list/ HTTP/1.1" 200 1386
+INFO 2025-03-27 05:17:52,089 basehttp "GET /accounts/login/ HTTP/1.1" 200 3782
+INFO 2025-03-27 05:17:57,134 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2063
+INFO 2025-03-27 05:17:58,799 basehttp "POST /accounts/api/logout/ HTTP/1.1" 200 37
+INFO 2025-03-27 05:17:58,842 basehttp "GET /accounts/login/ HTTP/1.1" 200 3782
+INFO 2025-03-27 05:18:05,703 basehttp "GET /accounts/success/ HTTP/1.1" 200 1370
+INFO 2025-03-27 05:18:07,032 basehttp "GET /accounts/login/ HTTP/1.1" 200 3782
+INFO 2025-03-27 05:19:04,776 basehttp "GET /accounts/request_password_reset/ HTTP/1.1" 200 1861
+INFO 2025-03-27 05:19:04,809 basehttp "GET /static/css/request_reset_password.css HTTP/1.1" 200 844
+INFO 2025-03-27 05:19:51,575 basehttp "POST /accounts/api/request_reset_password/ HTTP/1.1" 200 58
+INFO 2025-03-27 05:19:59,320 basehttp "GET /accounts/reset_password/?uid=Mw&token=cnb5h3-caf52d7c6830b3d7c948e89933493424 HTTP/1.1" 200 2994
+INFO 2025-03-27 05:19:59,416 basehttp "GET /static/css/reset_password.css HTTP/1.1" 200 661
+INFO 2025-03-27 05:20:16,216 basehttp "POST /accounts/api/reset_password/Mw/cnb5h3-caf52d7c6830b3d7c948e89933493424/ HTTP/1.1" 200 51
+INFO 2025-03-27 05:26:45,203 basehttp "POST /accounts/api/request_reset_password/ HTTP/1.1" 200 58
+INFO 2025-03-27 05:26:53,016 basehttp "GET /accounts/reset_password/?uid=Mw&token=cnb5sl-6dc288a1286700d21ff55b34880cb995 HTTP/1.1" 200 2994
+INFO 2025-03-27 05:27:03,036 basehttp "POST /accounts/api/reset_password/Mw/cnb5sl-6dc288a1286700d21ff55b34880cb995/ HTTP/1.1" 200 51
+INFO 2025-03-27 05:27:10,168 basehttp "GET /accounts/login/ HTTP/1.1" 200 3782
+INFO 2025-03-27 05:27:15,835 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-27 05:27:16,864 basehttp "GET /accounts/verify_otp/ HTTP/1.1" 200 3602
+INFO 2025-03-27 05:27:32,221 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 540
+INFO 2025-03-27 05:27:32,245 basehttp "GET /accounts/success/ HTTP/1.1" 200 1370
+INFO 2025-03-27 05:27:36,607 basehttp "GET /accounts/logout/ HTTP/1.1" 200 2063
+INFO 2025-03-27 05:27:36,634 basehttp "GET /static/css/logout.css HTTP/1.1" 304 0
+INFO 2025-03-27 05:27:37,557 basehttp "POST /accounts/api/logout/ HTTP/1.1" 200 37
+INFO 2025-03-27 05:27:37,579 basehttp "GET /accounts/login/ HTTP/1.1" 200 3782
+INFO 2025-03-27 05:35:11,783 autoreload Watching for file changes with StatReloader
+INFO 2025-03-27 05:35:12,181 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2025-03-27 05:35:12,288 basehttp "GET /admin/ HTTP/1.1" 200 19183
+INFO 2025-03-27 05:35:12,379 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-03-27 05:35:12,389 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-03-27 05:35:16,922 basehttp "GET /admin/ HTTP/1.1" 200 18863
+INFO 2025-03-27 05:35:20,262 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16724
+INFO 2025-03-27 05:35:20,298 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:35:24,390 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 16851
+INFO 2025-03-27 05:35:24,424 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:35:24,429 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-03-27 05:35:24,462 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-03-27 05:35:29,962 basehttp "POST /admin/socialaccount/socialaccount/ HTTP/1.1" 200 14296
+INFO 2025-03-27 05:35:30,036 basehttp "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-03-27 05:35:30,983 basehttp "POST /admin/socialaccount/socialaccount/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:35:31,004 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 15256
+INFO 2025-03-27 05:35:31,035 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:35:32,307 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16724
+INFO 2025-03-27 05:35:32,343 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:35:35,823 basehttp "POST /admin/accounts/user/ HTTP/1.1" 200 14359
+INFO 2025-03-27 05:35:36,901 basehttp "POST /admin/accounts/user/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:35:36,923 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16577
+INFO 2025-03-27 05:35:36,953 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:35:39,429 basehttp "GET /admin/socialaccount/socialapp/ HTTP/1.1" 200 15706
+INFO 2025-03-27 05:35:39,459 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:35:40,594 basehttp "GET /admin/socialaccount/socialtoken/ HTTP/1.1" 200 16094
+INFO 2025-03-27 05:35:40,625 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:36:26,128 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:36:31,022 basehttp "GET /auth/google/login/callback/?state=9sMQ3nCVRZ94gJai&code=4%2F0AQSTgQHqQfuTxRo8LHbrUVg47VWI7P2NV1nLdKLusyhMVB3fyv9g1s5rZt579URlVW-y8g&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none HTTP/1.1" 302 0
+WARNING 2025-03-27 05:36:31,038 log Not Found: /accounts/profile/
+WARNING 2025-03-27 05:36:31,038 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7396
+INFO 2025-03-27 05:38:04,789 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:38:06,073 basehttp "GET /auth/google/login/callback/?state=XfANhdUqL5fGNGAz&code=4%2F0AQSTgQF5y48raYA5ttnRyW-rR-rs-W1SIBOhAxYwqSS4-DdCrgiC1f3c0vyze11uVpYJAQ&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none HTTP/1.1" 302 0
+WARNING 2025-03-27 05:38:06,083 log Not Found: /accounts/profile/
+WARNING 2025-03-27 05:38:06,083 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7396
+INFO 2025-03-27 05:38:17,720 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:38:18,658 basehttp "GET /auth/google/login/callback/?state=gJe9NWxbJDaGL0el&code=4%2F0AQSTgQGZVmwUluRFHRGt21cRtuw4zsLvbYR1FH34lGI9NCmgSWDdvoH7CvfVhd-rRHCOEA&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none HTTP/1.1" 302 0
+WARNING 2025-03-27 05:38:18,668 log Not Found: /accounts/profile/
+WARNING 2025-03-27 05:38:18,668 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7396
+INFO 2025-03-27 05:38:48,338 basehttp "GET /auth/google/login HTTP/1.1" 301 0
+INFO 2025-03-27 05:38:48,407 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:38:52,398 basehttp "GET /auth/google/login/callback/?state=zBlv8oIgQg21M9BR&code=4%2F0AQSTgQG1L7oketNsVKXW1S8P27rxXQZCa8yPI-krRQHnMHudkLlsrNprvsy7tECRa_d-RA&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none HTTP/1.1" 302 0
+WARNING 2025-03-27 05:38:52,415 log Not Found: /accounts/profile/
+WARNING 2025-03-27 05:38:52,415 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7396
+INFO 2025-03-27 05:40:39,986 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:40:40,778 basehttp "GET /auth/google/login/callback/?state=FlGTWujdMAP2MM5W&code=4%2F0AQSTgQHASo8OGG9kZO2BWDPPxuR-wRwds3kPNcCM0CH8zdTeLmJmzYmkH-jpEkArF3SHnw&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none HTTP/1.1" 302 0
+WARNING 2025-03-27 05:40:40,800 log Not Found: /accounts/profile/
+WARNING 2025-03-27 05:40:40,800 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7396
+INFO 2025-03-27 05:40:48,499 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:40:49,402 basehttp "GET /auth/google/login/callback/?state=UBBuuIjuUIXOb8yS&code=4%2F0AQSTgQG_qhiIA-QRHfzj0eM84F95jas9x9IoPH1a2SlUQ_dQRy0WhdG18euMyfzoWeb_hg&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none HTTP/1.1" 302 0
+WARNING 2025-03-27 05:40:49,431 log Not Found: /accounts/profile/
+WARNING 2025-03-27 05:40:49,431 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7396
+INFO 2025-03-27 05:40:56,858 basehttp "GET /auth/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:40:57,012 basehttp "GET /auth/email/ HTTP/1.1" 200 4740
+INFO 2025-03-27 05:41:02,034 basehttp "GET /auth/email/ HTTP/1.1" 200 4247
+INFO 2025-03-27 05:41:18,681 basehttp "POST /auth/email/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:41:18,701 basehttp "GET /auth/email/ HTTP/1.1" 200 2963
+INFO 2025-03-27 05:41:22,528 basehttp "GET /auth/email/ HTTP/1.1" 200 2724
+INFO 2025-03-27 05:41:24,135 basehttp "GET /auth/logout/ HTTP/1.1" 200 1925
+INFO 2025-03-27 05:41:25,940 basehttp "POST /auth/logout/ HTTP/1.1" 302 0
+WARNING 2025-03-27 05:41:25,957 log Not Found: /auth/logout/accounts/api/login/
+WARNING 2025-03-27 05:41:25,957 basehttp "GET /auth/logout/accounts/api/login/ HTTP/1.1" 404 10697
+INFO 2025-03-27 05:42:47,302 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:42:47,397 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4286
+INFO 2025-03-27 05:42:47,479 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-03-27 05:43:04,808 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:43:04,830 basehttp "GET /admin/ HTTP/1.1" 200 18945
+INFO 2025-03-27 05:43:06,485 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16725
+INFO 2025-03-27 05:43:06,525 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:43:11,619 basehttp "POST /admin/accounts/user/ HTTP/1.1" 200 14358
+INFO 2025-03-27 05:43:12,552 basehttp "POST /admin/accounts/user/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:43:12,573 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16576
+INFO 2025-03-27 05:43:12,604 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:43:14,609 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 15111
+INFO 2025-03-27 05:43:14,646 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:43:17,994 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 15111
+INFO 2025-03-27 05:43:18,031 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:43:20,634 basehttp "POST /admin/logout/ HTTP/1.1" 200 3555
+INFO 2025-03-27 05:43:50,999 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:43:51,874 basehttp "GET /auth/google/login/callback/?state=BJ2qmkt7Kt8zqfeT&code=4%2F0AQSTgQFCGGG1why2vZTVtsYvgIocHgBFftDKyp_HlOYIwDI2Ffiy6yLBQDzVY6AZt8wpNA&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none HTTP/1.1" 302 0
+WARNING 2025-03-27 05:43:51,885 log Not Found: /accounts/profile/
+WARNING 2025-03-27 05:43:51,885 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7396
+WARNING 2025-03-27 05:44:54,528 log Not Found: /auth/accounts/api/login/
+WARNING 2025-03-27 05:44:54,528 basehttp "GET /auth/accounts/api/login/ HTTP/1.1" 404 10676
+WARNING 2025-03-27 05:45:14,957 log Not Found: /auth
+WARNING 2025-03-27 05:45:14,957 basehttp "GET /auth HTTP/1.1" 404 3294
+INFO 2025-03-27 05:45:22,929 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:45:23,718 basehttp "GET /auth/google/login/callback/?state=vgApVsdn8mEPCwJu&code=4%2F0AQSTgQEtaUkTIGIEZ80YGLsl94lLgOD9ddO3Nm8IU4u2ULL8gacTly7qtyqYCwSZ0ZwveA&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none HTTP/1.1" 302 0
+WARNING 2025-03-27 05:45:23,738 log Not Found: /accounts/profile/
+WARNING 2025-03-27 05:45:23,738 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7396
+INFO 2025-03-27 05:47:10,463 basehttp "GET /auth/login/ HTTP/1.1" 302 0
+WARNING 2025-03-27 05:47:10,473 log Not Found: /accounts/profile/
+WARNING 2025-03-27 05:47:10,474 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7396
+INFO 2025-03-27 05:48:47,713 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:48:48,810 basehttp "GET /auth/google/login/callback/?state=qYvAUx3CNb35Luhx&code=4%2F0AQSTgQGzp9Y7Q1iIsXOHLvAM-7SbI36rTMumr5tX-Fmbd1qSOUUPBJXGjP1bf4MF0jBPPA&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none HTTP/1.1" 302 0
+WARNING 2025-03-27 05:48:48,822 log Not Found: /accounts/profile/
+WARNING 2025-03-27 05:48:48,823 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7396
+INFO 2025-03-27 05:50:53,123 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:50:53,822 basehttp "GET /auth/google/login/callback/?state=6WXIcKRBqku5IUx9&code=4%2F0AQSTgQHDnEj0AxsA4NgjSCOCRbQtMAd60Fc5EVEe7nbCDkiDrwvG9uSDPyNUguHLhL51qw&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none HTTP/1.1" 302 0
+WARNING 2025-03-27 05:50:53,835 log Not Found: /accounts/profile/
+WARNING 2025-03-27 05:50:53,835 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7396
+INFO 2025-03-27 05:55:38,813 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\UAS\settings.py changed, reloading.
+INFO 2025-03-27 05:55:41,012 autoreload Watching for file changes with StatReloader
+INFO 2025-03-27 05:55:56,548 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\UAS\settings.py changed, reloading.
+INFO 2025-03-27 05:55:57,879 autoreload Watching for file changes with StatReloader
+INFO 2025-03-27 05:56:12,233 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:56:13,066 basehttp "GET /auth/google/login/callback/?state=ftD9eF0sy0tlYiRS&code=4%2F0AQSTgQEV7CuAHhd0PdCuKmzjzB5dnVvqoik-v0GNJYO1zuGnM0Ua6oQQ_fZm8TkuissjHg&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=none HTTP/1.1" 302 0
+WARNING 2025-03-27 05:56:13,092 log Not Found: /auth/google/login/callback/accounts/success
+WARNING 2025-03-27 05:56:13,093 basehttp "GET /auth/google/login/callback/accounts/success HTTP/1.1" 404 11224
+INFO 2025-03-27 05:56:34,660 autoreload D:\shivam\LUXSH-MAK-TD\AWOL\UAS\UAS\settings.py changed, reloading.
+INFO 2025-03-27 05:56:35,804 autoreload Watching for file changes with StatReloader
+INFO 2025-03-27 05:57:41,807 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:57:41,850 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4218
+INFO 2025-03-27 05:59:13,501 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:59:13,529 basehttp "GET /admin/ HTTP/1.1" 200 18858
+INFO 2025-03-27 05:59:13,622 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-03-27 05:59:17,873 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16725
+INFO 2025-03-27 05:59:17,911 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:59:22,781 basehttp "GET /admin/accounts/user/12/change/ HTTP/1.1" 200 22756
+INFO 2025-03-27 05:59:22,824 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:59:28,474 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16725
+INFO 2025-03-27 05:59:29,289 basehttp "GET /admin/accounts/user/12/change/ HTTP/1.1" 200 22756
+INFO 2025-03-27 05:59:29,322 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:59:31,103 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16725
+INFO 2025-03-27 05:59:34,950 basehttp "POST /admin/accounts/user/ HTTP/1.1" 200 14500
+INFO 2025-03-27 05:59:35,941 basehttp "POST /admin/accounts/user/ HTTP/1.1" 302 0
+INFO 2025-03-27 05:59:35,964 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16576
+INFO 2025-03-27 05:59:36,000 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:59:37,134 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 15111
+INFO 2025-03-27 05:59:37,171 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 05:59:39,211 basehttp "GET /admin/socialaccount/socialaccount/add/ HTTP/1.1" 200 17077
+INFO 2025-03-27 05:59:39,240 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 06:00:40,117 basehttp "POST /admin/logout/ HTTP/1.1" 200 3555
+INFO 2025-03-27 06:00:41,353 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-27 06:00:41,364 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2025-03-27 06:04:50,360 basehttp "GET /auth/ HTTP/1.1" 302 0
+INFO 2025-03-27 06:04:50,485 basehttp "GET /auth/login/ HTTP/1.1" 200 2521
+INFO 2025-03-27 06:05:14,051 basehttp "GET /auth/google/login/?process=login HTTP/1.1" 302 0
+INFO 2025-03-27 06:10:53,772 basehttp "GET /auth/login/ HTTP/1.1" 200 2521
+INFO 2025-03-27 06:10:58,883 basehttp "GET /auth/signup/ HTTP/1.1" 200 2976
+INFO 2025-03-27 06:11:07,498 basehttp "GET /auth/google/login/?process=login HTTP/1.1" 302 0
+INFO 2025-03-27 06:12:36,607 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-27 06:12:36,622 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2025-03-27 06:12:54,654 basehttp "GET /auth/ HTTP/1.1" 302 0
+INFO 2025-03-27 06:12:54,672 basehttp "GET /auth/login/ HTTP/1.1" 200 2521
+WARNING 2025-03-27 06:12:54,749 log Not Found: /favicon.ico
+WARNING 2025-03-27 06:12:54,750 basehttp "GET /favicon.ico HTTP/1.1" 404 3315
+INFO 2025-03-27 06:13:19,198 basehttp "GET /auth/google/login/?process=login HTTP/1.1" 302 0
+INFO 2025-03-27 06:14:00,533 basehttp "GET /auth/google/login/ HTTP/1.1" 302 0
+INFO 2025-03-27 06:14:17,923 basehttp "GET /auth/ HTTP/1.1" 302 0
+INFO 2025-03-27 06:14:17,937 basehttp "GET /auth/login/ HTTP/1.1" 200 2521
+INFO 2025-03-27 06:15:22,596 basehttp "GET /auth/google/login/?process=login HTTP/1.1" 302 0
+INFO 2025-03-27 06:15:56,091 basehttp "GET /auth/google/login/callback/?state=09cdd6BmUgcwrnc2&code=4%2F0AQSTgQFo2GIK7F5L1zqu6EszYXYQoeJ0xDW8DdembDspcTw_QA4CWZO8JSdh4Oz4sMvsrw&scope=email+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent HTTP/1.1" 302 0
+WARNING 2025-03-27 06:15:56,100 log Not Found: /accounts/profile/
+WARNING 2025-03-27 06:15:56,100 basehttp "GET /accounts/profile/ HTTP/1.1" 404 7396
+INFO 2025-03-27 06:17:03,843 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-27 06:17:03,858 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2025-03-27 06:17:11,702 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-03-27 06:17:11,743 basehttp "GET /admin/ HTTP/1.1" 200 18778
+INFO 2025-03-27 06:17:13,225 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 16850
+INFO 2025-03-27 06:17:13,267 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 06:58:04,535 basehttp "GET /admin/socialaccount/socialaccount/ HTTP/1.1" 200 16850
+INFO 2025-03-27 06:58:04,573 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 06:58:06,197 basehttp "GET /admin/accounts/user/ HTTP/1.1" 200 16725
+INFO 2025-03-27 06:58:06,232 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 08:27:50,525 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 24219
+INFO 2025-03-27 08:27:50,558 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 08:27:52,184 basehttp "GET /admin/accounts/permission/36/change/ HTTP/1.1" 200 17002
+INFO 2025-03-27 08:27:52,238 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 08:27:53,744 basehttp "GET /admin/accounts/permission/ HTTP/1.1" 200 24219
+INFO 2025-03-27 08:27:53,773 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-27 09:15:25,652 basehttp "GET /uas_admin/user_activity_list/ HTTP/1.1" 200 2923
+WARNING 2025-03-27 09:15:25,700 basehttp "GET /static/css/user_activity_css/user_activity_list.css HTTP/1.1" 404 1946
+INFO 2025-03-27 09:15:27,220 basehttp "GET /accounts/login/ HTTP/1.1" 200 3782
+INFO 2025-03-27 09:15:34,476 basehttp "POST /accounts/api/login/ HTTP/1.1" 200 52
+INFO 2025-03-27 09:15:35,500 basehttp "GET /accounts/verify_otp/ HTTP/1.1" 200 3602
+INFO 2025-03-27 09:15:44,740 basehttp "POST /accounts/api/verify_otp/ HTTP/1.1" 200 540
+INFO 2025-03-27 09:15:44,761 basehttp "GET /accounts/success/ HTTP/1.1" 200 1370
+INFO 2025-03-27 09:15:52,537 basehttp "GET /uas_admin/user_activity_list/ HTTP/1.1" 200 2923
+WARNING 2025-03-27 09:15:52,567 basehttp "GET /static/css/user_activity_css/user_activity_list.css HTTP/1.1" 404 1946
+INFO 2025-03-27 09:15:52,601 basehttp "GET /uas_admin/api/user_activity_list/ HTTP/1.1" 200 1329
+INFO 2025-03-27 09:59:32,840 basehttp "GET /uas_admin/user_activity_list/ HTTP/1.1" 200 2653
+WARNING 2025-03-27 09:59:32,873 basehttp "GET /static/css/user_activity_css/user_activity_list.css HTTP/1.1" 404 1946
+INFO 2025-03-27 09:59:32,897 basehttp "GET /uas_admin/api/user_activity_list/ HTTP/1.1" 200 1329
+INFO 2025-03-27 09:59:33,586 basehttp "GET /uas_admin/user_activity_list/ HTTP/1.1" 200 2653
+WARNING 2025-03-27 09:59:33,617 basehttp "GET /static/css/user_activity_css/user_activity_list.css HTTP/1.1" 404 1946
+INFO 2025-03-27 09:59:33,639 basehttp "GET /uas_admin/api/user_activity_list/ HTTP/1.1" 200 1329
+INFO 2025-03-27 09:59:34,419 basehttp "GET /uas_admin/user_activity_list/ HTTP/1.1" 200 2653
+WARNING 2025-03-27 09:59:34,455 basehttp "GET /static/css/user_activity_css/user_activity_list.css HTTP/1.1" 404 1946
+INFO 2025-03-27 09:59:34,474 basehttp "GET /uas_admin/api/user_activity_list/ HTTP/1.1" 200 1329
+INFO 2025-03-27 09:59:35,761 basehttp "GET /uas_admin/user_activity_list/ HTTP/1.1" 200 2653
+WARNING 2025-03-27 09:59:35,794 basehttp "GET /static/css/user_activity_css/user_activity_list.css HTTP/1.1" 404 1946
+INFO 2025-03-27 09:59:35,836 basehttp "GET /uas_admin/api/user_activity_list/ HTTP/1.1" 200 1329
+INFO 2025-03-27 09:59:37,473 basehttp "GET /uas_admin/user_activity_list/ HTTP/1.1" 200 2653
+WARNING 2025-03-27 09:59:37,499 basehttp "GET /static/css/user_activity_css/user_activity_list.css HTTP/1.1" 404 1946
+INFO 2025-03-27 09:59:37,519 basehttp "GET /uas_admin/api/user_activity_list/ HTTP/1.1" 200 1329
+INFO 2025-03-27 09:59:38,257 basehttp "GET /uas_admin/user_activity_list/ HTTP/1.1" 200 2653
+WARNING 2025-03-27 09:59:38,282 basehttp "GET /static/css/user_activity_css/user_activity_list.css HTTP/1.1" 404 1946
+INFO 2025-03-27 09:59:38,302 basehttp "GET /uas_admin/api/user_activity_list/ HTTP/1.1" 200 1329
+INFO 2025-03-27 10:08:35,987 basehttp "GET /uas_admin/user_activity_list/ HTTP/1.1" 200 3025
+WARNING 2025-03-27 10:08:36,027 basehttp "GET /static/css/user_activity_css/user_activity_list.css HTTP/1.1" 404 1946
+INFO 2025-03-27 10:08:36,047 basehttp "GET /uas_admin/api/user_activity_list/ HTTP/1.1" 200 1329
+INFO 2025-03-27 10:08:36,065 basehttp "GET /uas_admin/api/user_activity_list/?page=2 HTTP/1.1" 200 1448
+INFO 2025-03-27 10:08:36,085 basehttp "GET /uas_admin/api/user_activity_list/?page=3 HTTP/1.1" 200 1399
+INFO 2025-03-27 10:08:36,102 basehttp "GET /uas_admin/api/user_activity_list/?page=4 HTTP/1.1" 200 1365
+INFO 2025-03-27 10:08:36,131 basehttp "GET /uas_admin/api/user_activity_list/?page=5 HTTP/1.1" 200 1353
+INFO 2025-03-27 10:08:36,163 basehttp "GET /uas_admin/api/user_activity_list/?page=6 HTTP/1.1" 200 1381
+INFO 2025-03-27 10:08:36,181 basehttp "GET /uas_admin/api/user_activity_list/?page=7 HTTP/1.1" 200 1383
+INFO 2025-03-27 10:08:36,198 basehttp "GET /uas_admin/api/user_activity_list/?page=8 HTTP/1.1" 200 1357
+INFO 2025-03-27 10:08:36,215 basehttp "GET /uas_admin/api/user_activity_list/?page=9 HTTP/1.1" 200 1373
+INFO 2025-03-27 10:08:36,350 basehttp "GET /uas_admin/api/user_activity_list/?page=10 HTTP/1.1" 200 1398
+INFO 2025-03-27 10:08:36,426 basehttp "GET /uas_admin/api/user_activity_list/?page=11 HTTP/1.1" 200 1340
+INFO 2025-03-27 10:08:36,590 basehttp "GET /uas_admin/api/user_activity_list/?page=12 HTTP/1.1" 200 1393
+INFO 2025-03-27 10:08:36,632 basehttp "GET /uas_admin/api/user_activity_list/?page=13 HTTP/1.1" 200 1371
+INFO 2025-03-27 10:08:36,654 basehttp "GET /uas_admin/api/user_activity_list/?page=14 HTTP/1.1" 200 1383
+INFO 2025-03-27 10:08:36,672 basehttp "GET /uas_admin/api/user_activity_list/?page=15 HTTP/1.1" 200 1383
+INFO 2025-03-27 10:08:36,689 basehttp "GET /uas_admin/api/user_activity_list/?page=16 HTTP/1.1" 200 1393
+INFO 2025-03-27 10:08:36,705 basehttp "GET /uas_admin/api/user_activity_list/?page=17 HTTP/1.1" 200 1399
+INFO 2025-03-27 10:08:36,723 basehttp "GET /uas_admin/api/user_activity_list/?page=18 HTTP/1.1" 200 1432
+INFO 2025-03-27 10:08:36,743 basehttp "GET /uas_admin/api/user_activity_list/?page=19 HTTP/1.1" 200 1368
+INFO 2025-03-27 10:08:36,763 basehttp "GET /uas_admin/api/user_activity_list/?page=20 HTTP/1.1" 200 1377
+INFO 2025-03-27 10:08:36,781 basehttp "GET /uas_admin/api/user_activity_list/?page=21 HTTP/1.1" 200 1384
+INFO 2025-03-27 10:08:36,800 basehttp "GET /uas_admin/api/user_activity_list/?page=22 HTTP/1.1" 200 1388
+INFO 2025-03-27 10:08:36,841 basehttp "GET /uas_admin/api/user_activity_list/?page=23 HTTP/1.1" 200 1379
+INFO 2025-03-27 10:08:36,859 basehttp "GET /uas_admin/api/user_activity_list/?page=24 HTTP/1.1" 200 1365
+INFO 2025-03-27 10:08:36,875 basehttp "GET /uas_admin/api/user_activity_list/?page=25 HTTP/1.1" 200 1368
+INFO 2025-03-27 10:08:36,917 basehttp "GET /uas_admin/api/user_activity_list/?page=26 HTTP/1.1" 200 1381
+INFO 2025-03-27 10:08:36,935 basehttp "GET /uas_admin/api/user_activity_list/?page=27 HTTP/1.1" 200 1382
+INFO 2025-03-27 10:08:36,984 basehttp "GET /uas_admin/api/user_activity_list/?page=28 HTTP/1.1" 200 1432
+INFO 2025-03-27 10:08:37,000 basehttp "GET /uas_admin/api/user_activity_list/?page=29 HTTP/1.1" 200 1459
+INFO 2025-03-27 10:08:37,054 basehttp "GET /uas_admin/api/user_activity_list/?page=30 HTTP/1.1" 200 1385
+INFO 2025-03-27 10:08:37,073 basehttp "GET /uas_admin/api/user_activity_list/?page=31 HTTP/1.1" 200 1335
+INFO 2025-03-27 10:08:37,105 basehttp "GET /uas_admin/api/user_activity_list/?page=32 HTTP/1.1" 200 1335
+INFO 2025-03-27 10:08:37,120 basehttp "GET /uas_admin/api/user_activity_list/?page=33 HTTP/1.1" 200 1369
+INFO 2025-03-27 10:08:37,139 basehttp "GET /uas_admin/api/user_activity_list/?page=34 HTTP/1.1" 200 1410
+INFO 2025-03-27 10:08:37,171 basehttp "GET /uas_admin/api/user_activity_list/?page=35 HTTP/1.1" 200 1395
+INFO 2025-03-27 10:08:37,186 basehttp "GET /uas_admin/api/user_activity_list/?page=36 HTTP/1.1" 200 1534
+INFO 2025-03-27 10:08:37,201 basehttp "GET /uas_admin/api/user_activity_list/?page=37 HTTP/1.1" 200 1590
+INFO 2025-03-27 10:08:37,219 basehttp "GET /uas_admin/api/user_activity_list/?page=38 HTTP/1.1" 200 1526
+INFO 2025-03-27 10:08:37,246 basehttp "GET /uas_admin/api/user_activity_list/?page=39 HTTP/1.1" 200 1404
+INFO 2025-03-27 10:08:37,261 basehttp "GET /uas_admin/api/user_activity_list/?page=40 HTTP/1.1" 200 1457
+INFO 2025-03-27 10:08:37,297 basehttp "GET /uas_admin/api/user_activity_list/?page=41 HTTP/1.1" 200 1496
+INFO 2025-03-27 10:08:37,313 basehttp "GET /uas_admin/api/user_activity_list/?page=42 HTTP/1.1" 200 1494
+INFO 2025-03-27 10:08:37,332 basehttp "GET /uas_admin/api/user_activity_list/?page=43 HTTP/1.1" 200 1447
+INFO 2025-03-27 10:08:37,351 basehttp "GET /uas_admin/api/user_activity_list/?page=44 HTTP/1.1" 200 1393
+INFO 2025-03-27 10:08:37,366 basehttp "GET /uas_admin/api/user_activity_list/?page=45 HTTP/1.1" 200 1575
+INFO 2025-03-27 10:08:37,381 basehttp "GET /uas_admin/api/user_activity_list/?page=46 HTTP/1.1" 200 1448
+INFO 2025-03-27 10:08:37,398 basehttp "GET /uas_admin/api/user_activity_list/?page=47 HTTP/1.1" 200 1407
+INFO 2025-03-27 10:08:37,415 basehttp "GET /uas_admin/api/user_activity_list/?page=48 HTTP/1.1" 200 1399
+INFO 2025-03-27 10:08:37,434 basehttp "GET /uas_admin/api/user_activity_list/?page=49 HTTP/1.1" 200 1427
+INFO 2025-03-27 10:08:37,452 basehttp "GET /uas_admin/api/user_activity_list/?page=50 HTTP/1.1" 200 1382
+INFO 2025-03-27 10:08:37,470 basehttp "GET /uas_admin/api/user_activity_list/?page=51 HTTP/1.1" 200 1406
+INFO 2025-03-27 10:08:37,486 basehttp "GET /uas_admin/api/user_activity_list/?page=52 HTTP/1.1" 200 1395
+INFO 2025-03-27 10:08:37,503 basehttp "GET /uas_admin/api/user_activity_list/?page=53 HTTP/1.1" 200 1395
+INFO 2025-03-27 10:08:37,520 basehttp "GET /uas_admin/api/user_activity_list/?page=54 HTTP/1.1" 200 1382
+INFO 2025-03-27 10:08:37,537 basehttp "GET /uas_admin/api/user_activity_list/?page=55 HTTP/1.1" 200 1380
+INFO 2025-03-27 10:08:37,553 basehttp "GET /uas_admin/api/user_activity_list/?page=56 HTTP/1.1" 200 1505
+INFO 2025-03-27 10:08:37,568 basehttp "GET /uas_admin/api/user_activity_list/?page=57 HTTP/1.1" 200 1466
+INFO 2025-03-27 10:08:37,584 basehttp "GET /uas_admin/api/user_activity_list/?page=58 HTTP/1.1" 200 1356
+INFO 2025-03-27 10:08:37,601 basehttp "GET /uas_admin/api/user_activity_list/?page=59 HTTP/1.1" 200 1339
+INFO 2025-03-27 10:08:37,620 basehttp "GET /uas_admin/api/user_activity_list/?page=60 HTTP/1.1" 200 1375
+INFO 2025-03-27 10:08:37,635 basehttp "GET /uas_admin/api/user_activity_list/?page=61 HTTP/1.1" 200 1369
+INFO 2025-03-27 10:08:37,651 basehttp "GET /uas_admin/api/user_activity_list/?page=62 HTTP/1.1" 200 1318
+INFO 2025-03-27 10:08:37,666 basehttp "GET /uas_admin/api/user_activity_list/?page=63 HTTP/1.1" 200 1304
+INFO 2025-03-27 10:08:37,682 basehttp "GET /uas_admin/api/user_activity_list/?page=64 HTTP/1.1" 200 1296
+INFO 2025-03-27 10:08:37,697 basehttp "GET /uas_admin/api/user_activity_list/?page=65 HTTP/1.1" 200 1255
+INFO 2025-03-27 10:08:37,714 basehttp "GET /uas_admin/api/user_activity_list/?page=66 HTTP/1.1" 200 1296
+INFO 2025-03-27 10:08:37,731 basehttp "GET /uas_admin/api/user_activity_list/?page=67 HTTP/1.1" 200 1388
+INFO 2025-03-27 10:08:37,748 basehttp "GET /uas_admin/api/user_activity_list/?page=68 HTTP/1.1" 200 1485
+INFO 2025-03-27 10:08:37,765 basehttp "GET /uas_admin/api/user_activity_list/?page=69 HTTP/1.1" 200 1124

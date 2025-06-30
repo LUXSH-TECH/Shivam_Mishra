@@ -41,7 +41,7 @@ class CreateUserView(APIView):
                 logger.warning(f"User {auth_user.username} attempted to create a user with an existing email {email} from {ip_address}")
                 return Response({'error': 'Email already exists'}, status=status.HTTP_400_BAD_REQUEST)
 
-            new_user = serializer.save()
+            new_user = serializer.save() 
             logger.info(f"User {auth_user.username} created a new user {new_user.username} (user_id: {new_user.id}) from {ip_address}")
             UserActivity.objects.create(user=auth_user, action=f"Created user {new_user.username}", ip_address=ip_address)
 
@@ -109,7 +109,7 @@ class UpdateUserDetailsView(APIView):
 
         user_id = request.data.get('id')
         username = request.data.get('username')
-        full_name = request.data.get('name')
+        full_name = request.data.get('full_name')
         email = request.data.get('email')
         is_active = request.data.get('is_active')
         is_inactive = request.data.get('is_inactive')
@@ -468,7 +468,7 @@ class CreateUserRoleView(APIView):
 
         try:
             user_id = request.data.get('user')
-            role_id = request.data.get('role')
+            role_id = request.data.get('role')  
 
             if not user_id or not role_id:
                 return Response({'error': 'User ID and Role ID are required'}, status=status.HTTP_400_BAD_REQUEST)
@@ -603,7 +603,7 @@ class ViewAccessCreateView(APIView):
         auth_user = request.user
         ip_address = request.META.get('REMOTE_ADDR', '')
 
-        data = request.data
+        data = request.data 
         roles = data.get('roles', [])
 
         if not isinstance(roles, list):

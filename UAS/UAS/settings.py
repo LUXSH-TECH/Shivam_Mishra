@@ -232,7 +232,7 @@ SOCIALACCOUNT_LOGIN_ON_GET= True
 SOCIALACCOUNT_AUTO_SIGNUP = True  # Automatically create user on first login
 
 # Login/logout settings
-# LOGIN_REDIRECT_URL = "accounts/success/"
+LOGIN_REDIRECT_URL = "accounts/success/"
 # LOGOUT_REDIRECT_URL = "accounts/api/login/"
 
 ACCOUNT_ADAPTER = 'allauth.account.adapter.DefaultAccountAdapter'
